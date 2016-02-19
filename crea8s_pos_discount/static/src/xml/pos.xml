@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="PosWidget">
+	    <t t-jquery="#placeholder-NumpadWidget" t-operation="after">
+			<div class="discountbox">
+				<label style='height:25px; font-size:15px'><b> Discount (%)</b></label>
+				<input id='discount_box' style='height:20px; width:30px;'/>
+				<button id='discount_fnc' style='height:25px; font-size:15px'><b> Apply </b></button>
+            </div>
+		</t>
+    </t>	
+</templates>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		
+        <record id="crea8s_view_partners_form_crm1_inherit" model="ir.ui.view">
+            <field name="name">crea8s.view.partners.form.crm1.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="crm.view_partners_form_crm1"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='section_id']" position="after">
+                	<field name="user_view" invisible="1"/>
+                </xpath>                	
+            </field>
+        </record>
+                
+    </data>
+</openerp>

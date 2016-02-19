@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_crea8s_nail_partner_form_inherit">
+            <field name="name">res.partner.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+           
+               <xpath expr="//field[@name='name']" position="after">
+               	<label string="(nail)" />
+               </xpath>
+			   
+            </field>
+        </record>  
+        
+
+		<menuitem parent="base.menu_sales" sequence="2" id="menu_crea8s_nail_service"  name="Service Packages" string="menu_exeaaa-string" />
+		
+               	
+    </data>
+</openerp>
+
+
+
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>				
+        <report
+            id="crea8s_account_invoice_dotmatrix"
+            model="account.invoice"
+            name="crea8s.account.invoice.dotmatrix"
+            rml="crea8s_invoice_domatix/account_print_invoice.rml"
+            string="Invoice Dot Matrix"
+            />
+    </data>
+</openerp>

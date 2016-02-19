@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    	<!-- SO: form view  -->
+        <record model="ir.ui.view" id="view_sale_order_form_inherit">
+            <field name="name">sale.order.form.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+            
+        		<xpath expr="//field[@name='client_order_ref']" position="after">
+					<!-- <button type="object" string="do_wkf-estimate_sent" class="" name="do_wkf_estimate_sent" ></button> -->
+					<field name="crea8s_vec_valid_till"></field>
+					<field name="crea8s_vec_shipment_terms"></field>
+					<field name="crea8s_vec_lead_time"></field>
+					<field name="crea8s_vec_project_id"></field>
+					<field name="crea8s_vec_ob_ref"></field>
+
+               </xpath>
+               
+               
+            	<!-- 2014/11/26: from Nelson's requirements -->
+        		<xpath expr="//field[@name='partner_id']" position="after">
+					<!-- <button type="object" string="do_wkf-estimate_sent" class="" name="do_wkf_estimate_sent" ></button> -->
+					<field name="crea8s_vec_type_of_proposal"></field>
+					<field name="crea8s_vec_type_of_proposal_package"></field>
+					<field name="crea8s_vec_project_site"></field>
+					<field name="crea8s_vec_name_of_end_user"></field>
+					<field name="crea8s_vec_proposal_sales_rep"></field>
+
+               </xpath>
+               
+            </field>
+        </record>  
+        
+        
+        
+        <!-- SO Line: form views -->
+        <record model="ir.ui.view" id="view_sale_order_line_form_inherit">
+           <field name="name">sale.order.form.inherit02</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+            
+        		<xpath expr="//page[@string='Order Lines']/field[@name='order_line']/tree[@string='Sales Order Lines']/field[@name='sequence']" position="before">
+						
+               </xpath>
+               
+        		<xpath expr="//page[@string='Order Lines']/field[@name='order_line']/form[@string='Sales Order Lines']/group/group/field[@name='product_id']" position="after"> 
+					<field name="crea8s_vec_product_title"></field>
+               </xpath>
+        
+            </field>
+        </record>  
+        
+               	
+    </data>
+</openerp>
+
+
+
+

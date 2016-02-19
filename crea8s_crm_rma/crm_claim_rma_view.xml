@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+		
+		 <record id="crea8s_view_invoice_claim_wizard" model="ir.ui.view">
+            <field name="name"> Claim </field>
+            <field name="model">account.invoice.claim</field>
+            <field name="arch" type="xml">
+                <form string="Claim Issue" version="7.0">
+                	<sheet>
+                		<group>
+	                        <field name="name" invisible="1"/>
+	                        <field name="inv_line" colspan="4" nolabel="1" domain="[('invoice_id', '=',  name)]"/>
+	                    </group>
+                	</sheet>
+                    <footer>
+                        <button name="action_view_po" type="object" string="OK" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+       <record id="crea8s_view_invoice_claim_wizard_action" model="ir.actions.act_window">
+            <field name="name">Claim</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.invoice.claim</field>
+            <field name="view_type">form</field>
+            <field name="target">new</field>
+        </record>    
+		
+		<record id="crea8s_invoice_claim_form_view_inherit" model="ir.ui.view">
+            <field name="name">crea8s.account.invoice.claim.form.view.inherit</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='invoice_open']" position="after">
+					<button name="%(crea8s_view_invoice_claim_wizard_action)d" string="Claim" class="oe_highlight" type="action"/>
+				</xpath>
+            </field>
+        </record>
+		
+     </data>
+</openerp>

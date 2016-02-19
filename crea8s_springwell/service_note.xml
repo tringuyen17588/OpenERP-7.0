@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+   		<record id="view_crea8s_sw_service_note_form" model="ir.ui.view">
+			<field name="name">crea8s.sw.service.note.form.view</field>
+			<field name="model">crea8s.sw.service.note</field>
+			<field name="arch" type="xml">
+			<form string="view_crea8s_sw_service_note_form-FORM" version="7.0">
+				
+				<sheet>
+					<h1>
+						<field name="name"></field>		
+					</h1>						
+					<group>
+				 		<group>
+				 			<field name="crea8s_sw_partner_id" domain="[('customer','=',True)]" ></field>
+				 			<field name="crea8s_sw_your_po_no"></field>
+				 		</group>
+				 		<group>
+				 			<field name="crea8s_sw_date"></field>
+				 			<field name="crea8s_sw_model_of_machine"></field>
+				 		</group> 
+			 		</group>					
+					<group col="2">
+		 				<field name="crea8s_sw_description"></field>
+					</group>
+					
+					
+					
+			 		
+			 		
+				 		
+				</sheet>
+			</form> 
+		   </field>
+		</record>
+	
+		
+		<record id="view_crea8s_sw_service_note_tree_inherit" model="ir.ui.view">
+			<field name="name">crea8s.sw.service.note.inherit</field>
+			<field name="model">crea8s.sw.service.note</field>
+			<field name="arch" type="xml">
+				<tree string="view_crea8s_sw_service_note_tree_inherit..." > <!-- editable="bottom" -->
+					<!-- <field name="service_number"></field> -->
+					<field name="name"></field>
+					<field name="crea8s_sw_partner_id" domain="[('customer','=',True)]"  ></field>  <!-- -->
+					<field name="crea8s_sw_your_po_no"></field>
+					<field name="crea8s_sw_date"></field>
+					<field name="crea8s_sw_model_of_machine"></field>
+					
+				</tree>
+			</field>
+		</record>
+		
+		<record id="action_crea8s_sw_service_note" model="ir.actions.act_window">
+            <field name="name">Service Notes</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crea8s.sw.service.note</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+		<menuitem parent="base.menu_sales" sequence="6" id="menu_crea8s_sw_service" action="action_crea8s_sw_service_note" string="action-menuitem-asd-asd-asd" />
+               
+	
+           <!-- Sequences for crea8s.sw.service.note -->
+        <record id="seq_type_crea8s_sw_service_note" model="ir.sequence.type">
+            <field name="name">Service Note</field>
+            <field name="code">crea8s.sw.work.order.no</field>
+        </record>
+
+        <record id="seq_crea8s_sw_service_note" model="ir.sequence">
+            <field name="name">Service Note</field>
+            <field name="code">crea8s.sw.work.order.no</field>
+            <field name="prefix">SPL</field>
+            <field name="padding">6</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        
+        
+        
+        <!-- showing search-box -->
+       	<record id="search_crea8s_sw_service_note" model="ir.ui.view">
+       		<field name="name">crea8s.sw.service.note.filter</field>
+       		<field name="model">crea8s.sw.service.note</field>
+       		<field name="arch" type="xml">
+				<search>
+				
+				    <field name="name"/>
+					<field name="crea8s_sw_your_po_no"/>
+					<field name="crea8s_sw_date"/>
+					<field name="crea8s_sw_model_of_machine"/>
+					<field name="crea8s_sw_partner_id"/>
+					
+					<group expand="1" string="Group By ser0...">
+						
+						<separator orientation="vertical"/>
+	                    <filter domain="[('name','like','SPL')]" help="Group by Customer (only: SPL" string="Customer" icon="terp-personal" context="{'group_by':'crea8s_sw_partner_id'}"/>
+					
+					</group>
+					
+				</search>
+       		</field>       		
+       	</record>
+       	
+    </data>
+</openerp>
+
+
+
+

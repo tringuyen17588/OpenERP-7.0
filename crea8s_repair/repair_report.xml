@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<report auto="False" id="report_repair_cr8s" model="crea8s.repair" name="report.repair.cr8s"
+                rml="crea8s_repair/report/repair.rml" string="Print Report"
+                usage="default"/>
+				
+    </data>
+</openerp>

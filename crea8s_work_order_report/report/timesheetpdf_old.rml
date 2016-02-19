@@ -1,0 +1,296 @@
+﻿<?xml version="1.0"?>
+<document filename="Production Order.pdf">
+  <template title="Production Order" author="OpenERP S.A. (sales@openerp.com)" allowSplitting="20">
+    <pageTemplate id="all">
+      <frame id="first" x1="10" y1="40" width="540" height="778"/>
+         <stylesheet>
+            <!-- Set here the default font to use for all <para> tags -->
+            <paraStyle name='Normal' fontName="DejaVu Sans"/>
+            <paraStyle name="main_footer" fontSize="8.0" alignment="CENTER"/>
+            <paraStyle name="main_header" fontSize="8.0" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+         </stylesheet>
+        <pageGraphics>
+	    <fill color="black"/>
+            <setFont name="DejaVu Sans" size="8"/>
+        </pageGraphics>
+    </pageTemplate>
+  </template>
+  <stylesheet>
+    <blockTableStyle id="Standard_Outline">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table3">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#e6e6e6" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="2,-1" stop="2,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table5">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#e6e6e6" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="2,-1" stop="2,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table1" width="600">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+<lineStyle kind="GRID" colorName="black" borderStrokeWidth="22"  thickness="2"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table2">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#e6e6e6" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="3,-1" stop="3,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table6">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="4,0" stop="4,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#e6e6e6" start="4,0" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="4,0" stop="4,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="4,-1" stop="4,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table4">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+          <lineStyle kind="GRID" colorName="black" borderStrokeWidth="22"  thickness="2"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="0,-1" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="0,0" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="1,-1" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,0" stop="1,0" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,0" stop="2,-1" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,0" stop="2,0" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,0" stop="3,-1" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,0" stop="3,0" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,0" stop="4,-1" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="4,0" stop="4,-1" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,0" stop="4,0" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,0" stop="5,-1" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,0" stop="5,-1" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,0" stop="5,0" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1" borderStrokeWidth="22"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table8">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table9">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="3,-1" stop="3,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table10">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="3,-1" stop="3,-1"/>
+    </blockTableStyle>
+    <initialize>
+      <paraStyle name="all" alignment="justify"/>
+    </initialize>
+    <paraStyle name="terp_header" fontSize="15.0" leading="19" alignment="LEFT" spaceBefore="12.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_tblheader_Details" fontSize="11.0" leading="13" alignment="LEFT" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_default_8" fontSize="11.0" leading="13" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Bold_8" fontSize="11.0" leading="13" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_tblheader_General_Centre" fontSize="11.0" leading="13" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_tblheader_Details_Centre" fontSize="11.0" leading="13" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_default_Centre_8" fontSize="11.0" leading="12" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+        <paraStyle name="terp_default_Centre_81" fontSize="10.5" leading="12" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_9" fontSize="11.0" leading="13" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Bold_9" fontName="Helvetica-Bold" fontSize="13.0" leading="13" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Centre_9" fontSize="11.0" leading="13" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Right_9" fontSize="11.0" leading="13" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_2" fontSize="2.0" leading="3" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <images/>
+  </stylesheet>
+  
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+      <blockTable colWidths="520" rowHeights="0.75cm" style="Standard_Outline">
+        <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Date:  [[ formatLang(get_date(), date=True) ]] </b></para>
+          </td>
+         </tr>
+        </blockTable>
+      <spacer length="0.25cm"/>
+      <section>
+      <para style="terp_default_8">[[ repeatIn(get_mrp(),'mrp') ]]</para>
+      <blockTable colWidths="520" rowHeights="0.75cm" style="Standard_Outline">
+        <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Job Order : [[ mrp.name ]] </b></para>
+          </td>
+        </tr>
+      </blockTable>
+      <spacer length="0.05cm"/>
+      <blockTable colWidths="100,100,120,120,80" rowHeights="0.75cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> Routing </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> Workcenter </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> Start Time </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> End Time </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> Duration </b></para>
+          </td>
+        </tr>
+      </blockTable>
+       <section>
+      <para style="terp_default_8">[[ repeatIn(get_activity_detail(mrp),'line') ]]</para>
+      <blockTable colWidths="100,100,120,120,80" rowHeights="0.75cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line['act'] ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line['wct'] or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line['start'] and formatLang(line['start'], date_time=True) or line['end'] ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line['end'] and formatLang(line['end'], date_time=True) or line['end'] ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line['tcop'] and get_time(line['tcop']) or '' ]] </b></para>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <spacer length="0.25cm"/>
+    </section>
+
+    <para style="terp_default_8">
+      ________________________________________________________________________________________________________________________
+    </para>
+
+      <section>
+      <para style="terp_default_8">[[ repeatIn(get_wct(),'wct') ]]</para>
+      <blockTable colWidths="520" rowHeights="0.75cm" style="Standard_Outline">
+        <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> [[ wct.name ]] </b></para>
+          </td>
+        </tr>
+      </blockTable>
+      <spacer length="0.05cm"/>
+      <blockTable colWidths="130,130,130,130" rowHeights="0.75cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> Activity </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> Start Time </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> End Time </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> Duration </b></para>
+          </td>
+        </tr>
+      </blockTable>
+       <section>
+      <para style="terp_default_8">[[ repeatIn(get_activity(wct),'line1') ]]</para>
+      <blockTable colWidths="130,130,130,130" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line1['act'] ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line1['start_date'] and (line1['start_date'] == 'Total'and 'Total' or formatLang(line1['start_date'], date_time=True)) or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line1['end_date'] and (line1['end_date'] == 'Total'and 'Total' or formatLang(line1['end_date'], date_time=True)) or line1['end_date'] ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line1['tcop'] and get_time(line1['tcop']) or '' ]] </b></para>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <spacer length="0.25cm"/>
+    </section>
+  </pto>
+  </story>
+</document>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    	<!-- rename "Refund" -> "Credit Note" -->
+        <menuitem name="Customer Credit Note" id="account.menu_action_invoice_tree3" parent="account.menu_finance_receivables"/>
+        <menuitem name="Supplier Credit Note" id="account.menu_action_invoice_tree4" parent="account.menu_finance_payables"/> 
+		<!-- <menuitem name="Accounting" id="account.menu_finance"/> -->
+		
+		<!-- inherit invoice form -->
+		 <record id="account_invoice_form" model="ir.ui.view">
+            <field name="name">crea8s_springwell.account_invoice_form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form" />
+            <field name="arch" type="xml">
+				
+		        <xpath expr="//field[@name='account_id']" position="after">
+	          		<field name="crea8s_sw_po_ref"></field>
+	          		<!-- <field name="crea8s_sw_terms"></field> -->
+	          	</xpath>  
+	          	
+            </field>
+        </record> 
+		
+    </data>
+</openerp>
+
+
+
+

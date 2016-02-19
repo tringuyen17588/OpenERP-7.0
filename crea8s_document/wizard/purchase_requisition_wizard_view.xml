@@ -1,0 +1,44 @@
+<openerp>
+      <data>
+
+        <record id="view_purchase_requisition_wizard" model="ir.ui.view">
+            <field name="name">Create Income Shipment</field>
+            <field name="model">purchase.requisition.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Create Income Shipment" version="7.0">
+                    <group>
+                        <field name="from_warehouse"/>
+                        <field name="to_warehouse"/>
+                        <field name="purchase_requisition"/>
+                    </group>
+                    <footer>
+                        <button name="create_shipment" string="Create Quotation" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_view_purchase_requisition_wizard" model="ir.actions.act_window">
+               <field name="name">Create Income Shipment</field>
+               <field name="type">ir.actions.act_window</field>
+               <field name="res_model">purchase.requisition.wizard</field>
+               <field name="view_type">form</field>
+               <field name="view_mode">form</field>
+               <field name="context">{'record_id' : active_id}</field>
+               <field name="target">new</field>
+        </record>
+        
+        <record id="crea8s_purchase_requisition_inherit1" model="ir.ui.view">
+            <field name="name">purchase.requisition.form.inherit1</field>
+            <field name="model">purchase.requisition</field>
+            <field name="inherit_id" ref="purchase_requisition.view_purchase_requisition_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='tender_in_progress']" position="before">
+                	<button name="%(action_view_purchase_requisition_wizard)d" string="Create Income Shipment" type="action" class="oe_highlight"/>
+                </xpath>
+            </field>
+        </record>
+</data>
+</openerp>

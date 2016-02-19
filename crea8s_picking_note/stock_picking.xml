@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+        <record id="crea8s_view_picking_out_form_inherit" model="ir.ui.view">
+            <field name="name">crea8s.stock.picking.out.form.inherit</field>
+            <field name="model">stock.picking.out</field>
+            <field name="inherit_id" ref="stock.view_picking_out_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='origin']" position="after">
+                    <group colspan="2" col="2">
+                        <field name="remark"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

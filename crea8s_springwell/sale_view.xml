@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		<!-- Sequences for sale.order->tab: Service Note => removed 2014/12/19 -->
+        
+		
+		
+     	<!-- Sale Order -->
+        <record id="view_order_form_inherit_service_note" model="ir.ui.view">
+            <field name="name">crea8s.sw.sale.order.form.inherited</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+				 <xpath expr="//field[@name='payment_term']" position="replace">
+				 	<field name="payment_term"></field>
+				 </xpath>
+				 <xpath expr="//field[@name='payment_term']" position="before">
+				 	<field name="crea8s_sw_delivery"></field>
+				 </xpath>
+				 <xpath expr="//field[@name='payment_term']" position="after">
+				 	<field name="crea8s_sw_warranty"></field>
+				 </xpath>
+				 
+				 <xpath expr="//field[@name='client_order_ref']" position="after">
+				 	<field name="crea8s_sw_validity"></field>
+				 </xpath>
+				 <xpath expr="//notebook/page[@string='Other Information']" position="after">
+				 	<!-- there's nothing -->
+                </xpath> 
+            </field>
+        </record> 
+        
+    
+		
+    </data>
+</openerp>

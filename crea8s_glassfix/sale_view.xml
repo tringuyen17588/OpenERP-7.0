@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!--
+            This menu item's purpose is to overwrite another one defined in
+            the base module in order to set new groups.
+        -->
+        
+        
+        <record id="product_normal_action_part" model="ir.actions.act_window">
+            <field name="name">Products Parts</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.product</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('is_part', '=', 1)]</field>
+            <field name="context">{"default_is_part":1,"search_default_is_part":1}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to define a new product.
+              </p><p>
+                You must define a product for everything you sell, whether it's
+                a physical product, a consumable or a service you offer to
+                customers.
+              </p><p>
+                The product form contains information to simplify the sale
+                process: price, notes in the quotation, accounting data,
+                procurement methods, etc.
+              </p>
+            </field>
+        </record>
+        
+        <record id="open_view_product_part_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="2"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="product.product_product_tree_view"/>
+            <field name="act_window_id" ref="product_normal_action_part"/>
+        </record>
+
+        <record id="open_view_product_part_form" model="ir.actions.act_window.view">
+            <field name="sequence" eval="3"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="product.product_normal_form_view"/>
+            <field name="act_window_id" ref="product_normal_action_part"/>
+        </record>
+
+        <record id="open_view_product_part_kanban" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="product.product_kanban_view"/>
+            <field name="act_window_id" ref="product_normal_action_part"/>
+        </record>
+        
+        <menuitem id="product_parts" name="Parts"
+            parent="base.menu_product" sequence="1" action="product_normal_action_part"/>
+        
+        <record id="product_normal_action_service" model="ir.actions.act_window">
+            <field name="name">Products Services</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.product</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('type', '=', 'service')]</field>
+            <field name="context">{"default_type":'service',"search_default_type":'service'}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to define a new product.
+              </p><p>
+                You must define a product for everything you sell, whether it's
+                a physical product, a consumable or a service you offer to
+                customers.
+              </p><p>
+                The product form contains information to simplify the sale
+                process: price, notes in the quotation, accounting data,
+                procurement methods, etc.
+              </p>
+            </field>
+        </record>
+        
+        <record id="open_view_product_service_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="2"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="product.product_product_tree_view"/>
+            <field name="act_window_id" ref="product_normal_action_service"/>
+        </record>
+
+        <record id="open_view_product_service_form" model="ir.actions.act_window.view">
+            <field name="sequence" eval="3"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="product.product_normal_form_view"/>
+            <field name="act_window_id" ref="product_normal_action_service"/>
+        </record>
+
+        <record id="open_view_product_service_kanban" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="product.product_kanban_view"/>
+            <field name="act_window_id" ref="product_normal_action_service"/>
+        </record>
+        
+        <menuitem id="product_services" name="Services"
+            parent="base.menu_product" sequence="1" action="product_normal_action_service"/>
+		
+    </data>
+</openerp>

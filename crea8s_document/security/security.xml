@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    
+    <data noupdate="0">
+    	<record id="group_accept_right_partner" model="res.groups">
+			<field name="name">Limit Accept Right Saleman </field>
+		</record>
+	
+		<record model="ir.rule" id="rule_partner_saleman">
+			<field name="name">Limit Partner View Sale Man</field>
+			<field name="model_id" ref="model_res_partner"/>
+			<field name="groups" eval="[(4, ref('group_accept_right_partner'))]"/>
+			<field name="domain_force">['|',('user_view' , 'in', user.id), ('section_id' , '=', False)]</field>
+		</record>
+	
+	</data>
+</openerp>

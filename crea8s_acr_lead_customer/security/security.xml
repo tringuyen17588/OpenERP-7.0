@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+
+	<data noupdate="0">
+	<record id="group_own_customer" model="res.groups">
+        <field name="name"> See Own Customer </field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+	</data>
+    <data noupdate="1">
+    <record model="ir.rule" id="see_own_customer_rule">
+        <field name="name"> See Own Customer </field>
+        <field name="model_id" ref="model_res_partner"/>
+        <field name="domain_force">['|',('user_id', '=', user.id),('user_ids', 'in', user.id)]</field>
+		<field name="groups" eval="[(4, ref('group_own_customer'))]"/>
+    </record>
+	<record id="crm.crm_rule_personal_lead" model="ir.rule">
+        <field name="name">Personal Leads</field>
+        <field ref="model_crm_lead" name="model_id"/>
+        <field name="domain_force">[('user_id','=',user.id)]</field>
+        <field name="groups" eval="[(4, ref('base.group_sale_salesman'))]"/>
+    </record>
+	</data>
+	
+</openerp>

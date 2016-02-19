@@ -1,0 +1,596 @@
+<?xml version="1.0"?>
+<document filename="Invoices.pdf">
+  <template title="Invoices" author="Crea8s(sales@crea8s.com)" allowSplitting="20">
+    <pageTemplate id="first">
+      <frame id="first" x1="34.0" y1="28.0" width="530" height="786"/>
+		  <header>
+			<frame id="first" x1="1.3cm" y1="3.0cm" height="21.7cm" width="19.0cm"/>
+			 <stylesheet>
+				<!-- Set here the default font to use for all <para> tags -->
+				<paraStyle name='Normal' fontName="DejaVu Sans"/>
+				<paraStyle name="main_company" fontSize="10.0" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+				<paraStyle name="main_footer" fontSize="8.0" alignment="CENTER"/>
+				<paraStyle name="signature" fontSize="8.0" alignment="LEFT"/>
+				<paraStyle name="main_header" fontSize="8.0" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+			 </stylesheet>
+			<pageGraphics>
+				<!-- Set here the default font to use for all <drawString> tags -->
+				<setFont name="DejaVu Sans" size="8"/>
+				<!-- You Logo - Change X,Y,Width and Height -->
+				<image x="16cm" y="26.8cm" height="60.0" >[[ company.logo or removeParentNode('image') ]]</image>
+				<fill color="black"/>
+				<stroke color="black"/>
+
+				<!-- page header -->
+				<!-- lines>1.3cm 27.7cm 20cm 27.7cm</lines -->
+				<!-- drawRightString x="20cm" y="27.8cm">[[ company.rml_header1 ]]</drawRightString -->
+				<place x="1.3cm" y="27.3cm" height="1.25cm" width="18.5cm">
+					<para style="main_company"><b> [[ company.partner_id.name ]] </b></para>
+				</place>
+				<place x="1.3cm" y="26.3cm" height="1.8cm" width="18.0cm">
+					<para style="main_header">[[ company.partner_id.street or  '' ]] [[ company.partner_id.street2 or  '' ]] </para>
+<!--para style="main_header">[[ display_address(company.partner_id) or  '' ]]</para-->
+				</place>
+                            <drawRightString x="10.05cm" y="27.45cm"> [[ company.partner_id.city or  '' ]] [[ company.partner_id.zip or  '' ]]   Tel: [[ company.partner_id.phone or  '' ]]   Fax: [[ company.partner_id.fax or  '' ]] </drawRightString>
+                            <drawRightString x="10.05cm" y="27.1cm"> Email: [[ company.partner_id.email or  '' ]]    [['Co/Gst Reg No:' ]] [[ company.company_registry or  '' ]]  </drawRightString>
+				<!-- Signature -->
+				<place x="16.3cm" y="3.5cm" height="1.5cm" width="19.0cm">
+					<para style="signature"> JMD Pacific Pte Ltd </para>
+				</place>
+				<lines>15.2cm 2.25cm 19.9cm 2.25cm</lines>
+				<place x="16.3cm" y="1.25cm" height="1.0cm" width="19.0cm">
+					<para style="signature"> Authorised Signature </para>
+				</place>
+				<!--page bottom-->
+				<lines>1.2cm 1.75cm 19.9cm 1.75cm</lines>
+				<place x="1.3cm" y="0cm" height="1.5cm" width="19.0cm">
+					<para style="main_footer">[[ 'Phone: ' + company.partner_id.phone + ' | ' + ' Fax: ' + company.partner_id.fax + ' | ' + ' Email: ' + company.partner_id.email + ' | ' + ' Website: ' + company.partner_id.website + ' | ' + ' Co/GST: ' + company.company_registry ]]</para>
+					<para style="main_footer">Created By : [[ user.name ]] <!-- Page: <pageNumber/--></para>
+				</place>
+			</pageGraphics>
+		
+	  </header>
+        </pageTemplate>
+  </template>
+  <stylesheet>
+    <blockTableStyle id="Standard_Outline">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table_Partner_Address">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table_Invoice_General_Header">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table_General_Detail_Content">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table7">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table8">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="5,-1" stop="5,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table10">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,2" stop="1,2"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,2" stop="2,2"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table11">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="2,0"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table9">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table2">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="2,-1" stop="2,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table1">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <initialize>
+      <paraStyle name="all" alignment="justify"/>
+    </initialize>
+    <paraStyle name="Standard"/>
+    <paraStyle name="Text body" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="List" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="Table Contents" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="Caption" fontSize="10.0" leading="13" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="Index"/>
+
+    <paraStyle name="terp_header" fontSize="12.0" leading="15" alignment="LEFT" spaceBefore="12.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_default_8" rightIndent="0.0" leftIndent="0.0" fontSize="8.0" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="Footer"/>
+    <paraStyle name="Horizontal Line" fontSize="6.0" leading="8" spaceBefore="0.0" spaceAfter="14.0"/>
+    <paraStyle name="terp_tblheader_General" fontSize="8.0" leading="10" alignment="LEFT" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_tblheader_Details" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_tblheader_General_Centre" fontSize="8.0" leading="10" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_tblheader_General_Right" fontSize="8.0" leading="10" alignment="RIGHT" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_tblheader_Details_Centre" fontSize="9.0" leading="11" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_tblheader_Details_Right" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="6.0" spaceAfter="6.0"/>
+
+    <paraStyle name="terp_default_Right_8" rightIndent="0.0" leftIndent="0.0" fontSize="8.0" leading="10" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Centre_8" rightIndent="0.0" leftIndent="0.0" fontSize="8.0" leading="10" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_address" rightIndent="0.0" leftIndent="0.0" fontSize="10.0" leading="13" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_9" rightIndent="0.0" leftIndent="0.0" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_91" rightIndent="0.0" leftIndent="0.0" fontSize="8.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+
+    <paraStyle name="terp_default_Bold_9" rightIndent="0.0" leftIndent="-3.0" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Centre_9" rightIndent="0.0" leftIndent="0.0" fontSize="9.0" leading="11" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Right_9" rightIndent="0.0" leftIndent="0.0" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Bold_Right_9" rightIndent="0.0" leftIndent="-3.0" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_2" rightIndent="0.0" leftIndent="0.0" fontSize="2.0" leading="3" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_White_2" rightIndent="0.0" leftIndent="0.0"  fontSize="2.0" leading="3" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" textColor="#ffffff"/>
+
+    <paraStyle name="Table" fontSize="10.0" leading="13" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="User Index 10" rightIndent="0.0" leftIndent="127.0"/>
+    <paraStyle name="Preformatted Text" fontSize="10.0" leading="13" spaceBefore="0.0" spaceAfter="0.0"/>
+    <images/>
+  </stylesheet>
+  <story>
+  <pto>
+    <para style="terp_default_8">[[ repeatIn(objects,'o') ]]</para>
+    <para style="terp_default_8">[[ setLang(o.partner_id.lang) ]]</para>
+    <pto_header><!-- Must be after setLang() -->
+    temp = 0
+    <blockTable colWidths="202.0,87.0,71.0,57.0,42.0,71.0" style="Table7">
+    <tr>
+        <td><para style="terp_tblheader_Details"><b>Description</b></para></td>
+        <td><para style="terp_tblheader_Details_Centre"><b>Taxes</b></para></td>
+        <td><para style="terp_tblheader_Details_Centre"><b>Quantity</b></para></td>
+        <td><para style="terp_tblheader_Details_Right"><b>Unit Price</b></para></td>
+        <td><para style="terp_tblheader_Details_Right"><b>Disc.(%)</b></para></td>
+        <td><para style="terp_tblheader_Details_Right"><b>Price</b></para></td>
+    </tr>
+    </blockTable>
+    </pto_header>
+	<spacer length="2.0cm"/>
+    <blockTable colWidths="297.0,233.0" style="Table_Partner_Address">
+      <tr>
+        <td>
+          <para style="terp_default_9"><b> Bill To: </b></para>
+          <para style="terp_default_9">[[ o.partner_invoice_id.parent_id and o.partner_invoice_id.parent_id.name or o.partner_invoice_id.name ]] </para>
+          <para style="terp_default_9">[[ o.partner_invoice_id.street and o.partner_invoice_id.street or '' ]] </para>
+          <para style="terp_default_9">[[ o.partner_invoice_id.street2 and o.partner_invoice_id.street2 or '' ]] </para>
+          <para style="terp_default_9"> [[ o.partner_invoice_id.city and o.partner_invoice_id.city or '' ]] [[ o.partner_invoice_id.state_id and o.partner_invoice_id.state_id.name or '' ]] [[ o.partner_invoice_id.country_id and o.partner_invoice_id.country_id.name or '' ]] [[ o.partner_invoice_id.zip and o.partner_invoice_id.zip or '' ]] </para>
+          <para style="terp_default_9"> Attn: [[ (o.partner_invoice_id and o.partner_invoice_id.title and o.partner_invoice_id.title.name) or '' ]] [[ (o.partner_invoice_id and o.partner_invoice_id.name) or '' ]] </para>
+          <para style="terp_default_9"> Tel: [[ o.partner_invoice_id.phone and o.partner_invoice_id.phone or '' ]] [[ '&amp; ' + o.partner_invoice_id.mobile if o.partner_invoice_id.mobile and o.partner_invoice_id.phone else (o.partner_invoice_id.mobile and o.partner_invoice_id.mobile or '') ]] </para>
+          <para style="terp_default_9">
+            <font color="white"> </font>
+          </para>
+          
+        </td>
+        <td>
+          <para style="terp_default_9"><b> Ship To: </b></para>
+          <para style="terp_default_9">[[ o.partner_shipping_id.parent_id and o.partner_shipping_id.parent_id.name or o.partner_shipping_id.name ]] </para>
+          <para style="terp_default_9">[[ o.partner_shipping_id.street and o.partner_shipping_id.street or '' ]] </para>
+          <para style="terp_default_9">[[ o.partner_shipping_id.street2 and o.partner_shipping_id.street2 or '' ]] </para>
+          <para style="terp_default_9"> [[ o.partner_shipping_id.city and o.partner_shipping_id.city or '' ]] [[ o.partner_shipping_id.state_id and o.partner_shipping_id.state_id.name or '' ]] [[ o.partner_shipping_id.country_id and o.partner_shipping_id.country_id.name or '' ]] [[ o.partner_shipping_id.zip and o.partner_shipping_id.zip or '' ]] </para>
+          <para style="terp_default_9"> Attn: [[ (o.partner_shipping_id and o.partner_shipping_id.title and o.partner_shipping_id.title.name) or '' ]] [[ (o.partner_shipping_id and o.partner_shipping_id.name) or '' ]] </para>
+          <para style="terp_default_9"> Tel: [[ o.partner_shipping_id.phone and o.partner_shipping_id.phone or '' ]] [[ '&amp; ' + o.partner_shipping_id.mobile if o.partner_shipping_id.mobile and o.partner_shipping_id.phone else (o.partner_shipping_id.mobile and o.partner_shipping_id.mobile or '') ]] </para>
+            <para style="terp_default_8">
+          </para>
+        </td>
+      </tr>
+    </blockTable>
+    <para style="terp_header"><b> Tax Invoice [[ ((o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')) or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
+    <para style="terp_header"><b>PRO-FORMA [[ ((o.type == 'out_invoice' and o.state == 'proforma2') or removeParentNode('para')) and '' ]]</b></para>
+    <para style="terp_header"><b>Tax Invoice [[ ((o.type == 'out_invoice' and o.state == 'draft') or removeParentNode('para')) and '' ]]</b></para>
+    <para style="terp_header"><b>Cancelled Tax Invoice [[ ((o.type == 'out_invoice' and o.state == 'cancel') or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
+    <para style="terp_header"><b>Credit Note [[ (o.type=='out_refund' or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
+    <para style="terp_header"><b>Supplier Credit Note [[ (o.type=='in_refund' or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
+    <para style="terp_header"><b>Supplier Invoice [[ (o.type=='in_invoice' or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="132.50,132.50,132.50,132.50" style="Table_Invoice_General_Header">
+      <tr>
+        <td>
+          <para style="terp_tblheader_General_Centre"><b>Invoice Date</b></para>
+        </td>
+        <td>
+          <para style="terp_tblheader_General_Centre"><b> Payment Terms </b></para>
+        </td>
+        <td>
+          <para style="terp_tblheader_General_Centre"><b>[[ o.type in ['in_invoice','out_invoice'] and 'Salesperson' or 'Source' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_tblheader_General_Centre"><b> P/O Number </b></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="132.50,132.50,132.50,132.50" style="Table_General_Detail_Content">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_9">[[ formatLang(o.date_invoice,date=True) ]]</para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_9"> [[ o.payment_term and o.payment_term.name or ' ' ]] </para>
+        </td>
+    <td>
+          <para style="terp_default_Centre_9">[[ o.type in ['in_invoice','out_invoice'] and (o.user_id and o.user_id.name or '') or (o.origin and o.origin or '') ]]</para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_9">[[ (o.po_num) or ' ' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="90.0,205.0,60.0,60.0,50.0,65.0" style="Table7">
+      <tr>
+        <td>
+          <para style="terp_tblheader_General"><b>Item No</b></para>
+        </td>
+        <td>
+          <para style="terp_tblheader_General"><b>Description</b></para>
+        </td>
+        <td>
+          <para style="terp_tblheader_General"><b>Quantity</b></para>
+        </td>
+        <td>
+          <para style="terp_tblheader_General_Right"><b>Unit Price</b></para>
+        </td>
+        <td>
+          <para style="terp_tblheader_General_Right"><b>Disc.(%)</b></para>
+        </td>
+        <td>
+          <para style="terp_tblheader_General_Right"><b>Amount</b></para>
+        </td>
+      </tr>
+    </blockTable>
+    <section>
+      <para style="terp_default_2">[[ repeatIn(get_line(o.invoice_line)[0],'l') ]]</para>
+      temp += 1
+      <blockTable colWidths="90.0,180.0,80.0,60.0,50.0,70.0" style="Table8">
+        <tr>
+          <td>
+            <para style="terp_default_9"> [[ temp ]] [[ l.product_id and (l.product_id.default_code and l.product_id.default_code or '') or '' ]]</para>
+          </td>
+          <td>
+            <!--para style="terp_default_9">[[ l.product_id and (l.product_id.ean13 and '[' + l.product_id.ean13 +'] ' + l.product_id.name or '') or format(l.name) ]]</para-->
+            <para style="terp_default_9">[[ get_description(l) ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_Right_9">[[ formatLang(l.quantity, dp='Product Unit of Measure')]] [[ (l.uos_id and l.uos_id.name) or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_Right_9">[[ o.currency_id and o.currency_id.symbol or '' ]] [[ formatLang(l.price_unit, dp='Account') ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_9">[[ o.currency_id and o.currency_id.code or '' ]] [[ formatLang(l.discount, dp='Account') ]] </para>
+          </td>
+          <td>
+            <para style="terp_default_Right_9"> [[ o.currency_id and o.currency_id.symbol or '' ]] [[ formatLang(l.price_subtotal, dp='Account') ]]</para>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <blockTable colWidths="385.0,60.0,85.0" style="Table11">
+      <tr>
+        <td>
+          <para style="terp_default_8">
+            [[ len(get_line(o.invoice_line)[1]) > 0 and removeParentNode('blockTable') or '' ]]
+          </para>
+        </td>
+        <td>
+          <para style="terp_default_Right_9">Sub-Total:</para>
+		  <spacer length="0.20cm"/>
+		  <para style="terp_default_Right_9">7% GST:</para>
+        </td>
+        <td>
+          <para style="terp_default_Right_9"> [[ o.currency_id and o.currency_id.symbol or '' ]][[ formatLang(o.amount_untaxed, digits=get_digits(dp='Account')) ]]</para>
+		  <spacer length="0.20cm"/>
+		  <para style="terp_default_Right_9"> [[ o.currency_id and o.currency_id.symbol or '' ]][[ formatLang(o.amount_tax, dp='Account') ]]</para>
+        </td>
+      </tr>
+	</blockTable>
+	<blockTable colWidths="360.0,85.0,85.0" style="Table10">
+      <tr>
+        <td>
+          <para style="terp_default_8"> [[ o.type=='out_refund' and removeParentNode('para') or 'Cheques to be crossed &amp; made payable to "JMD Pacific Pte Ltd" or direct' ]]
+          </para>
+          <para style="terp_default_8"> [[ o.type=='out_refund' and removeParentNode('para') or 'payment to DBS Bank A/C No : 022-900614-7' ]]
+          </para>
+        </td>
+        <td>
+          <para style="terp_default_Bold_Right_9"><b>Total Inc GST: [[ len(get_line(o.invoice_line)[1]) > 0 and removeParentNode('blockTable') or '' ]] </b></para>
+          
+        </td>
+        <td>
+          <para style="terp_default_Bold_Right_9"><b> [[ o.currency_id and o.currency_id.symbol or '' ]][[ formatLang(o.amount_total, digits=get_digits(dp='Account')) ]]</b></para>
+        </td>
+      </tr>
+    </blockTable>
+    <para style="Text body">
+      <font color="white"> </font>
+    </para>
+    <para style="terp_default_9">
+      <font color="white"> </font>
+    </para>
+    <spacer length="1cm"/>
+    <para style="terp_default_9"><b> Remarks: </b></para>
+    <para style="terp_default_9">[[ (o.comment and format(o.comment )) or removeParentNode('para') ]]</para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+<!--     <para style="terp_default_9">[[ (o.payment_term and o.payment_term.note and format(o.payment_term and o.payment_term.note)) or removeParentNode('para') ]]</para> -->
+    <para style="terp_default_9">
+      <font color="white"> </font>
+    </para>
+<!--     <blockTable colWidths="120.0,410.0" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_Bold_9"><b>Fiscal Position Remark : </b></para>
+        </td>
+        <td>
+          <para style="terp_default_9">[[ (o.fiscal_position and o.fiscal_position.note and format(o.fiscal_position.note)) or removeParentNode('blockTable') ]]</para>
+        </td>
+      </tr>
+    </blockTable> -->
+    <para style="terp_default_2">
+      <font color="white"> </font>
+    </para>
+  </pto>
+</story>
+
+<story>
+  <pto>
+    <para style="terp_default_8">[[ repeatIn(objects,'o') ]]</para>
+    <para style="terp_default_8">[[ setLang(o.partner_id.lang) ]]</para>
+    
+
+	<spacer length="2.0cm"/>
+    <blockTable colWidths="297.0,233.0" style="Table_Partner_Address">
+      <tr>
+        <td>
+          <para style="terp_default_9"><b> Bill To: </b></para>
+          <para style="terp_default_9">[[ o.partner_invoice_id.parent_id and o.partner_invoice_id.parent_id.name or o.partner_invoice_id.name ]] </para>
+          <para style="terp_default_9">[[ o.partner_invoice_id.street and o.partner_invoice_id.street or '' ]] </para>
+          <para style="terp_default_9">[[ o.partner_invoice_id.street2 and o.partner_invoice_id.street2 or '' ]] </para>
+          <para style="terp_default_9"> [[ o.partner_invoice_id.city and o.partner_invoice_id.city or '' ]] [[ o.partner_invoice_id.state_id and o.partner_invoice_id.state_id.name or '' ]] [[ o.partner_invoice_id.country_id and o.partner_invoice_id.country_id.name or '' ]] [[ o.partner_invoice_id.zip and o.partner_invoice_id.zip or '' ]] </para>
+          <para style="terp_default_9"> Attn: [[ (o.partner_invoice_id and o.partner_invoice_id.title and o.partner_invoice_id.title.name) or '' ]] [[ (o.partner_invoice_id and o.partner_invoice_id.name) or '' ]] </para>
+          <para style="terp_default_9"> Tel: [[ o.partner_invoice_id.phone and o.partner_invoice_id.phone or '' ]] [[ '&amp; ' + o.partner_invoice_id.mobile if o.partner_invoice_id.mobile and o.partner_invoice_id.phone else (o.partner_invoice_id.mobile and o.partner_invoice_id.mobile or '') ]] </para>
+          <para style="terp_default_9">
+            <font color="white"> </font>
+          </para>
+          
+        </td>
+        <td>
+          <para style="terp_default_9"><b> Ship To: </b></para>
+          <para style="terp_default_9">[[ o.partner_shipping_id.parent_id and o.partner_shipping_id.parent_id.name or o.partner_shipping_id.name ]] </para>
+          <para style="terp_default_9">[[ o.partner_shipping_id.street and o.partner_shipping_id.street or '' ]] </para>
+          <para style="terp_default_9">[[ o.partner_shipping_id.street2 and o.partner_shipping_id.street2 or '' ]] </para>
+          <para style="terp_default_9"> [[ o.partner_shipping_id.city and o.partner_shipping_id.city or '' ]] [[ o.partner_shipping_id.state_id and o.partner_shipping_id.state_id.name or '' ]] [[ o.partner_shipping_id.country_id and o.partner_shipping_id.country_id.name or '' ]] [[ o.partner_shipping_id.zip and o.partner_shipping_id.zip or '' ]] </para>
+          <para style="terp_default_9"> Attn: [[ (o.partner_shipping_id and o.partner_shipping_id.title and o.partner_shipping_id.title.name) or '' ]] [[ (o.partner_shipping_id and o.partner_shipping_id.name) or '' ]] </para>
+          <para style="terp_default_9"> Tel: [[ o.partner_shipping_id.phone and o.partner_shipping_id.phone or '' ]] [[ '&amp; ' + o.partner_shipping_id.mobile if o.partner_shipping_id.mobile and o.partner_shipping_id.phone else (o.partner_shipping_id.mobile and o.partner_shipping_id.mobile or '') ]] </para>
+            <para style="terp_default_8">
+          </para>
+        </td>
+      </tr>
+    </blockTable>
+    
+
+    <para style="terp_header"><b> Tax Invoice [[ ((o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')) or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
+    <para style="terp_header"><b>PRO-FORMA [[ ((o.type == 'out_invoice' and o.state == 'proforma2') or removeParentNode('para')) and '' ]]</b></para>
+    <para style="terp_header"><b>Tax Invoice [[ ((o.type == 'out_invoice' and o.state == 'draft') or removeParentNode('para')) and '' ]]</b></para>
+    <para style="terp_header"><b>Cancelled Tax Invoice [[ ((o.type == 'out_invoice' and o.state == 'cancel') or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
+    <para style="terp_header"><b>Credit Note [[ (o.type=='out_refund' or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
+    <para style="terp_header"><b>Supplier Credit Note [[ (o.type=='in_refund' or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
+    <para style="terp_header"><b>Supplier Invoice [[ (o.type=='in_invoice' or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
+    <para style="terp_default_8">
+      [[ len(get_line(o.invoice_line)[1]) == 0 and removeParentNode('story') or '']]
+    </para>
+        <blockTable colWidths="132.50,132.50,132.50,132.50" style="Table_Invoice_General_Header">
+      <tr>
+        <td>
+          <para style="terp_tblheader_General_Centre"><b>Invoice Date</b></para>
+        </td>
+        <td>
+          <para style="terp_tblheader_General_Centre"><b> Payment Terms </b></para>
+        </td>
+        <td>
+          <para style="terp_tblheader_General_Centre"><b>Source</b></para>
+        </td>
+        <td>
+          <para style="terp_tblheader_General_Centre"><b> P/O Number </b></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="132.50,132.50,132.50,132.50" style="Table_General_Detail_Content">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_9">[[ formatLang(o.date_invoice,date=True) ]]</para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_9"> [[ o.payment_term and o.payment_term.name or ' ' ]] </para>
+        </td>
+    <td>
+          <para style="terp_default_Centre_9">[[ o.origin or '' ]]</para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_9">[[ (o.po_num) or ' ' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="90.0,205.0,60.0,60.0,50.0,65.0" style="Table7">
+      <tr>
+        <td>
+          <para style="terp_tblheader_General"><b>Item No</b></para>
+        </td>
+        <td>
+          <para style="terp_tblheader_General"><b>Description</b></para>
+        </td>
+        <td>
+          <para style="terp_tblheader_General"><b>Quantity</b></para>
+        </td>
+        <td>
+          <para style="terp_tblheader_General_Right"><b>Unit Price</b></para>
+        </td>
+        <td>
+          <para style="terp_tblheader_General_Right"><b>Disc.(%)</b></para>
+        </td>
+        <td>
+          <para style="terp_tblheader_General_Right"><b>Amount</b></para>
+        </td>
+      </tr>
+    </blockTable>
+    <section>
+      <para style="terp_default_2">[[ repeatIn(get_line(o.invoice_line)[1],'l') ]]</para>
+      <blockTable colWidths="90.0,180.0,80.0,60.0,50.0,70.0" style="Table8">
+        <tr>
+          <td>
+            <para style="terp_default_9"> [[ l.product_id and (l.product_id.default_code and l.product_id.default_code or '') or '' ]]</para>
+          </td>
+          <td>
+            <!--para style="terp_default_9">[[ l.product_id and ((l.product_id.ean13 and '[' + l.product_id.ean13 +'] ' + l.product_id.name or '')) or format(l.name) ]]</para-->
+            <para style="terp_default_9">[[ get_description(l) ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_Right_9">[[ formatLang(l.quantity, dp='Product Unit of Measure')]] [[ (l.uos_id and l.uos_id.name) or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_Right_9">[[ o.currency_id and o.currency_id.symbol or '' ]] [[ formatLang(l.price_unit, dp='Account') ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_9">[[ o.currency_id and o.currency_id.code or '' ]] [[ formatLang(l.discount, dp='Account') ]] </para>
+          </td>
+          <td>
+            <para style="terp_default_Right_9"> [[ o.currency_id and o.currency_id.symbol or '' ]] [[ formatLang(l.price_subtotal, dp='Account') ]]</para>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <blockTable colWidths="385.0,60.0,85.0" style="Table11">
+      <tr>
+        <td>
+          <para style="terp_default_8">
+            
+          </para>
+        </td>
+        <td>
+          <para style="terp_default_Right_9">Sub-Total:</para>
+		  <spacer length="0.20cm"/>
+		  <para style="terp_default_Right_9">7% GST:</para>
+        </td>
+        <td>
+          <para style="terp_default_Right_9"> [[ o.currency_id and o.currency_id.symbol or '' ]][[ formatLang(o.amount_untaxed, digits=get_digits(dp='Account')) ]]</para>
+		  <spacer length="0.20cm"/>
+		  <para style="terp_default_Right_9"> [[ o.currency_id and o.currency_id.symbol or '' ]][[ formatLang(o.amount_tax, dp='Account') ]]</para>
+        </td>
+      </tr>
+	</blockTable>
+	<blockTable colWidths="360.0,85.0,85.0" style="Table10">
+      <tr>
+        <td>
+          <para style="terp_default_8"> [[ o.type=='out_refund' and removeParentNode('para') or 'Cheques to be crossed &amp; made payable to "JMD Pacific Pte Ltd" or direct' ]]
+          </para>
+          <para style="terp_default_8"> [[ o.type=='out_refund' and removeParentNode('para') or 'payment to DBS Bank A/C No : 022-900614-7' ]]
+          </para>
+        </td>
+        <td>
+          <para style="terp_default_Bold_Right_9"><b>Total Inc GST: </b></para>
+          
+        </td>
+        <td>
+          <para style="terp_default_Bold_Right_9"><b> [[ o.currency_id and o.currency_id.symbol or '' ]][[ formatLang(o.amount_total, digits=get_digits(dp='Account')) ]]</b></para>
+        </td>
+      </tr>
+    </blockTable>
+    <para style="Text body">
+      <font color="white"> </font>
+    </para>
+    <para style="terp_default_9">
+      <font color="white"> </font>
+    </para>
+    <spacer length="1cm"/>
+    <para style="terp_default_9"><b> Remarks: </b></para>
+    <para style="terp_default_9">[[ (o.comment and format(o.comment )) or removeParentNode('para') ]]</para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+<!--     <para style="terp_default_9">[[ (o.payment_term and o.payment_term.note and format(o.payment_term and o.payment_term.note)) or removeParentNode('para') ]]</para> -->
+    <para style="terp_default_9">
+      <font color="white"> </font>
+    </para>
+<!--     <blockTable colWidths="120.0,410.0" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_Bold_9"><b>Fiscal Position Remark : </b></para>
+        </td>
+        <td>
+          <para style="terp_default_9">[[ (o.fiscal_position and o.fiscal_position.note and format(o.fiscal_position.note)) or removeParentNode('blockTable') ]]</para>
+        </td>
+      </tr>
+    </blockTable> -->
+    <para style="terp_default_2">
+      <font color="white"> </font>
+    </para>
+  </pto>
+
+  </story>
+</document>

@@ -1,0 +1,11 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_crea8s_job_requirement","crea8s.job.requirement","model_crea8s_job_requirement","crea8s_active_hr.group_own_job_order",1,1,1,1
+"access_crea8s_job_position","crea8s.job.position","model_crea8s_job_position","crea8s_active_hr.group_own_job_order",1,1,1,1
+"access_crea8s_srv_pack_type","crea8s.srv.pack.type","model_crea8s_srv_pack_type","crea8s_active_hr.group_own_job_order",1,1,1,1
+"access_crea8s_job_requirement","crea8s.job.requirement","model_crea8s_job_requirement","crea8s_active_hr.group_all_job_order",1,1,1,1
+"access_crea8s_job_position","crea8s.job.position","model_crea8s_job_position","crea8s_active_hr.group_all_job_order",1,1,1,1
+"access_crea8s_srv_pack_type","crea8s.srv.pack.type","model_crea8s_srv_pack_type","crea8s_active_hr.group_all_job_order",1,1,1,1
+"access_crea8s_job_candidate","crea8s.job.candidate","model_crea8s_job_candidate","crea8s_active_hr.group_visible_candidate",1,1,1,1
+"access_crea8s_job_position","crea8s.job.position","model_crea8s_job_position","crea8s_active_hr.group_visible_candidate",1,1,1,1
+"access_crea8s_srv_pack_type","crea8s.srv.pack.type","model_crea8s_srv_pack_type","crea8s_active_hr.group_visible_candidate",1,1,1,1
+"access_crm_lead","crm.lead","model_crm_lead","crea8s_active_hr.group_visible_oppor",1,1,1,1

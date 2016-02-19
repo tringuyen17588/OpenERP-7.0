@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		<report auto="False" id="account_invoice_noqty" model="account.invoice" name="account.invoice.noqty"
+                rml="crea8s_glassfix/report/account_invoice_noqty.rml" string="Invoices No Quantity" menu="False"/>
+
+        <report auto="False" id="account_invoices_fixed" model="account.invoice" name="account.invoice.fixed"
+                rml="crea8s_glassfix/report/account_invoice_new.rml" string="Invoices Report" menu="False"/>
+        <report auto="False" id="customer_report" model="res.partner" name="customer_report"
+                rml="crea8s_glassfix/report/customer_report.rml" string="Print Report"/>
+                
+        <report auto="False" id="sale.report_sale_order" model="sale.order" name="crea8s.sale.order.fix"
+                rml="crea8s_glassfix/report/sale_order.rml" string="Quotation / Order"
+                usage="default"/>
+        
+        <report
+            auto="False"
+            id="account.account_invoices"
+            model="account.invoice"
+            name="account.invoice"
+            rml="account/report/account_print_invoice.rml"
+            string="Invoices"
+            attachment_use="True"
+            usage="default" menu="False"
+            />
+    </data>
+</openerp>

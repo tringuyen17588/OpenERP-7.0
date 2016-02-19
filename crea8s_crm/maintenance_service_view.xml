@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+    <!-- Maintenance Service Tree -->
+    	<record id="view_crea8s_maintenance_service_tree" model="ir.ui.view">
+            <field name="name">crea8s.maintenance.service.tree</field>
+            <field name="model">crea8s.maintenance.service</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <tree string="Servicing" fonts="bold:message_unread==True">
+                    <field name="message_unread" invisible="1"/>
+                    <field name="name"/>
+                    <field name="res_partner"/>
+                    <field name="total"/>
+                    <field name="gst"/>
+                    <field name="grand_total"/>
+                </tree>
+            </field>
+        </record>
+    <!-- Maintenance Service Form -->
+    	<record id="view_crea8s_maintenance_service_form" model="ir.ui.view">
+            <field name="name">crea8s.maintenance.service.form</field>
+            <field name="model">crea8s.maintenance.service</field>
+            <field name="arch" type="xml">
+                <form string="Servicing" version="7.0">
+                    <sheet>
+                    <h1>
+                        <label string="Maintenance Service "/>
+                        <field name="name" class="oe_inline" readonly="1"/>
+                    </h1>
+                    <group colspan="4" col="4">
+                    	<field name="res_partner" context="{'search_default_customer':1, 'show_address': 1}" options='{"always_reload": True}'/>
+                    	<label string="Contact" colspan="1"/>
+                    	<field name="contact_person" nolabel="1" colspan="1"/>
+                    </group>
+                    <separator string="Fault / Complaint" colspan="4"/>
+                    <group colspan="4" col="6">
+                        <group colspan="2" col="2">
+                            <field name="clearing" />
+                            <field name="hard_df" />
+                            <field name="claim_id" invisible="1"/>
+                        </group>
+                        <group colspan="2" col="2">
+                            <field name="soft_s" />
+                            <field name="general_serving" />
+                        </group>
+                        <group colspan="2" col="2">
+                           	<field name="train" />
+                           	<field name="other" />
+                       </group>
+                    </group>
+                    <separator string="Remarks" colspan="4"/>
+                  	<group colspan="4" col="6">
+                  		<group colspan="2" col="2"> 
+                           <field name="contract" />
+                           <field name="warranty" />
+                       </group>
+                       <group colspan="2" col="2">
+                           <field name="chargeable" />
+                           <field name="others" />
+                       </group>
+                       <group colspan="2" col="2">
+                           <field name="new_type"/>
+                       </group>
+                    </group>
+                    <separator string="Engineer's Comments" colspan="4"/>
+                    <group colspan="4" col="4">
+	                   <field name="name_engineer"/>
+	                   <field name="case_close"/>
+	                   <field name="time_arr" />
+	                   <field name="case_nclose"/>
+	                   <field name="time_depart" />
+	                   <field name="place_return"/>
+	                   <field name="date_call" />
+                    </group>
+                    <group colspan="4" col="4">
+                        <field name="line_ids" nolabel="1" colspan="4">
+           					<tree string="Products" editable="bottom">
+           						<field name="name" />
+           						<field name="product_id" />
+           						<field name="part_change" />
+           						<field name="qty" on_change="onchange_qty_up(qty,unit_price)"/>
+           						<field name="brand" />
+           						<field name="model" />
+           						<field name="serial" />
+           						<field name="unit_price" on_change="onchange_qty_up(qty,unit_price)"/>
+           						<field name="maintenance_id" invisible="1"/>
+           						<field name="total"/>
+           					</tree>
+                        </field>
+                        <group colspan="1" col="2">
+                    		<separator string="Parts Used" colspan="2"/>
+                    		<field name="part_use" nolabel="1" colspan="2"/>
+                    	</group>
+                    	<group colspan="1" col="2">
+                    		<separator string="Service Done" colspan="2"/>
+                    		<field name="service_done" nolabel="1" colspan="2"/>                    		
+                        </group>
+                        <group colspan="2" col="2">
+                        <group class="oe_subtotal_footer oe_right" colspan="2">
+                           <field name="total" widget='monetary' options="{'currency_field': 'currency_id'}" />
+                           <field name="gst" widget='monetary' options="{'currency_field': 'currency_id'}" />
+                           <div class="oe_subtotal_footer_separator oe_inline">
+                               <label for="grand_total"/>
+                               <button name="button_dummy" string="(update)" type="object" class="oe_edit_only oe_link"/>
+                           </div>
+                           <field name="grand_total" readonly="0" nolabel="1" class="oe_subtotal_footer_separator" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                       		<field name="date" />
+	                     	<field name="cus_name" />
+	                    	<field name="designation" />
+                       </group>
+                     </group>
+                     
+                    </group>
+	                </sheet>
+	                <div class="oe_chatter">
+	                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+	                </div>
+                </form>
+           </field>
+        </record>
+    <!-- Maintenance Service Action -->
+        <record id="action_crea8s_maintenance_service_form" model="ir.actions.act_window">
+            <field name="name">Maintenance Service</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crea8s.maintenance.service</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    <!-- Maintenance Service Menu -->
+        <menuitem id="menu_action_crea8s_maintenance_service_form" name="Maintenance Service" parent="base.menu_aftersale" action="action_crea8s_maintenance_service_form"/>
+        
+    
+    <!-- Post Sale System Support Tree -->
+    	<record id="view_crea8s_post_sale_tree" model="ir.ui.view">
+            <field name="name">crea8s.post.sale.system.tree</field>
+            <field name="model">crea8s.post.sale.system</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <tree string="Servicing" fonts="bold:message_unread==True">
+                    <field name="message_unread" invisible="1"/>
+                    <field name="name"/>
+                    <field name="sale_id" invisible="1"/>
+                    <field name="res_partner"/>
+                    <field name="cus_name"/>
+                    <field name="sale_man"/>
+                    <field name="date"/>
+                </tree>
+            </field>
+        </record>
+    <!-- Post Sale System Support Form -->
+    	<record id="view_crea8s_post_sale_form" model="ir.ui.view">
+            <field name="name">crea8s.post.sale.system.form</field>
+            <field name="model">crea8s.post.sale.system</field>
+            <field name="arch" type="xml">
+                <form string="Servicing" version="7.0">
+                    <sheet>
+                    <h1>
+                        <label string="Post Sale System Support "/>
+                        <field name="name" class="oe_inline" />
+                    </h1>
+                    <group colspan="4" col="4">
+                        <separator string="Customer Information" colspan="4"/>
+				<group colspan="2" col="2">
+                            	<field name="res_partner" context="{'search_default_customer':1, 'show_address': 1}" options='{"always_reload": True}'/>
+				</group>
+                            <group colspan="2" col="2">
+					<field name="sale_man"/>
+					<field name="contact_person"/>
+					<field name="sale_id" invisible="1"/>
+				</group>
+                    </group>
+                    <group colspan="4" col="4">
+                         
+                         <group colspan="2" col="2">
+                            <separator string="Product Details" colspan="2"/>
+                            <field name="delivery_date"/>                            
+                            <field name="deli_am"/>
+                            <field name="deli_pm"/>
+                           	<field name="install_date"/>
+                           	<field name="instal_am" />
+                            <field name="instal_pm"/>
+						</group>
+						
+						<group colspan="2" col="2">
+                            <separator string="Service To Be Done" colspan="2"/>
+                            <field name="instal"/>
+                    		<field name="instal_con"/>
+							<field name="training"/>
+							<field name="trouble_con"/>
+							<field name="other"/>
+							<field name="other_def" nolabel="1" conspan="2"/>
+						</group>
+                        </group>
+                        <group colspan="4" col="4">
+                            <field name="line_ids" nolabel="1" colspan="4">
+               					<tree string="Products Information" editable="bottom">
+               						<field name="product_id" on_change='onchange_product_id(product_id)'/>
+               						<field name="name" invisible="1"/>
+               						<field name="serial" />
+               						<field name="parent_id" invisible="1"/>
+               					</tree>
+                            </field>
+                    	</group>
+                    	<group colspan="4" col="4">
+                    	<group colspan="2" col="2">
+                    		<separator string="Customer Requirement" colspan="2"/>
+                        	<field name="num_com" string="Number Of Computers"/>
+                        	<field name="mac_os" />
+                            <field name="mac_info"/>
+                            <field name="win_2000" />
+                            <field name="win7_32" />
+                            <field name="win7_64" />
+                            <field name="win_vista_32" />
+                            <field name="win_vista_64" />
+                            <separator string="Accessories / Others" colspan="2"/>
+                        	<field name="docuwork"/>
+                    		<field name="network"/>
+                    		<field name="net_point"/>
+                    		<field name="fax_point"/>
+                    		<b><label string="Network Cable"/></b>
+                    		<newline/>
+                    		<field name="cap_str"/>
+                    		<field name="cap_cross"/>
+                    		<field name="extra_length"/>
+                    		<separator string="Customer Acknowledgement" colspan="2"/>
+                    		<field name="cus_name"/>
+                    		<field name="designation"/>
+                    		<field name="date"/>
+                        </group>
+                        <group colspan="2" col="2">
+                        	<separator string="Additional Program Functions Required" colspan="2"/>
+                        	<field name="scan_server"/>
+	                        <field name="scan_email"/>
+	                        <separator string="Auditron" colpan="2"/>
+                       		<group colspan="2" col="4">
+	                       		<field name="au_on" />
+	                           	<field name="au_off"/>
+                           	</group>
+                           	<separator string="Incoming Fax" colspan="2"/>
+                        	<field name="hard_cp" />
+                        	<field name="email"/>
+                    		<field name="smb"/>
+                    		<field name="mail_box"/>
+                    		<separator string="Docuconnex Engineer Used Only" colspan="2"/>
+                    		<field name="ab_install_date" />
+                    		<b><label string="Installation Time"/></b>
+                    		<newline/>
+                            <field name="ab_instal_am" />
+                            <field name="ab_instal_pm" />
+                            <field name="ab_instal_am911" />
+                            <field name="ab_instal_am111" />
+                            <field name="ab_instal_am13" />
+                            <field name="ab_instal_am35" />
+                       	</group>
+                       	    
+                       	    <separator string="Docuconnex Authorised" colspan="4"/>
+                    		<group colspan="2" col="2">
+	                    		<field name="ab_delivery_date"/>
+	                    		<field name="ab_deli_am"/>
+	                    		<field name="ab_deli_pm"/>
+	                            <b><label string="Firmware Upgrade"/></b>
+	                    		<newline/>
+	                            <field name="firm_up_y" />
+	                            <field name="firm_up_n" />
+                    		</group>
+                    		<group colspan="2" col="2">
+                    			<group>
+                    				<b><label string="Additional Optional Kit/Software" colspan="2"/></b>
+                    			</group>
+                    			<newline/>
+	                    		<group>
+	                    		<field name="if_kit" />
+	                            <field name="u_kit" />
+	                            <field name="ps_kit" />
+	                            </group>
+                       	</group>
+                        </group>
+                        
+	                </sheet>
+	                <div class="oe_chatter">
+	                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+	                </div>
+                </form>
+           </field>
+        </record>
+
+	<record id="view_crea8s_post_sale_system__calendar" model="ir.ui.view">
+            <field name="name">crea8s.post.sale.system.calendar</field>
+            <field name="model">crea8s.post.sale.system</field>
+            <field name="arch" type="xml">
+                <calendar string="Post Sale System Support" color="sale_man" date_start="ab_install_date" day_length="0">
+                    <field name="date"/>
+                    <field name="sale_id" invisible="1"/>
+                    <field name="sale_man"/>
+                    <field name="res_partner"/>
+                    <field name="ab_install_date"/>
+                </calendar>
+            </field>
+        </record>
+
+    <!-- Post Sale System Support Action -->
+        <record id="action_crea8s_post_sale_form" model="ir.actions.act_window">
+            <field name="name">Post Sale System Support</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crea8s.post.sale.system</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+        </record>
+                
+    <!-- Post Sale System Support Menu -->
+        <menuitem id="menu_action_crea8s_post_sale_form" name="Post Sale System Support" parent="base.menu_aftersale" action="action_crea8s_post_sale_form"/>
+    
+    <!--  Service Agreement Tree -->
+    	<record id="view_crea8s_service_agreement_tree" model="ir.ui.view">
+            <field name="name">crea8s.service.agreement.tree</field>
+            <field name="model">crea8s.service.agreement</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <tree string="Service Agreement" fonts="bold:message_unread==True">
+                    <field name="message_unread" invisible="1"/>
+                    <field name="name"/>
+                    <field name="sale_id" invisible="1"/>
+                    <field name="customer_bill_id"/>
+                    <field name="customer_install_id"/>
+                </tree>
+            </field>
+        </record>
+    <!-- Service Agreement Form -->
+    	<record id="view_crea8s_service_agreement_form" model="ir.ui.view">
+            <field name="name">crea8s.service.agreement.form</field>
+            <field name="model">crea8s.service.agreement</field>
+            <field name="arch" type="xml">
+                <form string="Service Agreement" version="7.0">
+                    <sheet>
+                    <h1>
+                        <label string="Agreement No. "/>
+                        <field name="name" class="oe_inline"/>
+                    </h1>
+                    <group colspan="4" col="4">
+						<group colspan="2" col="2">
+							<field name="customer_bill_id" context="{'search_default_customer':1, 'show_address': 1}" options='{"always_reload": True}'/>
+							<field name="date"/>
+							<field name="sale_id" invisible="1"/>
+							<field name="ref"/>
+							<field name="ser_date"/>
+							<field name="mini_equip"/>
+							<field name="main_charge"/>
+							<field name="currency_id" invisible="1"/>
+						</group>
+						<group colspan="2" col="2">
+							<field name="customer_install_id" context="{'search_default_customer':1, 'show_address': 1}" options='{"always_reload": True}'/>
+							<field name="comited_copy1"/>
+							<field name="comited_copy2" string=" "/>
+							<field name="price_copy" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+							<field name="mini_soft"/>
+							<field name="year_charge_soft"/>
+						</group>
+					</group>
+					<group colspan="4" col="4">
+						<field name="line_ids" colspan="4" nolabel="1">
+							<tree string="Schedule" editable="bottom">
+								<field name="name" invisible="1"/>
+								<field name="product_id" on_change="onchange_product_id(product_id)"/>
+								<field name="Serial"/>
+								<field name="type"/>
+								<field name="parent_id" invisible="1"/>
+							</tree>
+						</field>						
+                    </group>
+			<group name="Remark" string="Remark" colspan="4" col="4">
+                    	<field name="remark" nolabel="1" colspan="4"/>
+                    </group>
+	                </sheet>
+	                <div class="oe_chatter">
+	                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+	                </div>
+                </form>
+           </field>
+        </record>
+    <!-- Service Agreement Action -->
+        <record id="action_crea8s_service_agreement_form" model="ir.actions.act_window">
+            <field name="name">Service Agreement</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crea8s.service.agreement</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>        
+
+    <!--  Sale Agreement Tree -->
+    	<record id="view_crea8s_sale_agreement_tree" model="ir.ui.view">
+            <field name="name">crea8s.sale.agreement.tree</field>
+            <field name="model">crea8s.sale.agreement</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <tree string="Sale Agreement" fonts="bold:message_unread==True">
+                    <field name="message_unread" invisible="1"/>
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="contact_person"/>
+                    <field name="sale_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+        
+        
+    <!-- Sale Agreement Form -->
+    	<record id="view_crea8s_sale_agreement_form" model="ir.ui.view">
+            <field name="name">crea8s.sale.agreement.form</field>
+            <field name="model">crea8s.sale.agreement</field>
+            <field name="arch" type="xml">
+                <form string="Sale Agreement" version="7.0">
+                    <sheet>
+                    <h1>
+                        <label string="Agreement No. "/>
+                        <field name="name" class="oe_inline"/>
+                    </h1>
+                    <group colspan="4" col="4">
+                    	<field name="partner_id" context="{'search_default_customer':1, 'show_address': 1}" options='{"always_reload": True}'/>
+                    	<field name="date" />
+						<group colspan="2" col="2">
+							<field name="sale_id" invisible="1"/>
+							<field name="contact_person"/>
+							<field name="designation"/>
+							<field name="rent_lc"/>
+							<field name="bw_copy_charge" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+							<field name="color_copy_charge" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+							<field name="cash_cheque_num"/>
+							<field name="currency_id" invisible="1"/>
+						</group>
+						<group colspan="2" col="2">
+							<field name="ref" invisible="1"/>
+							<field name="deposit_down" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+							<field name="monthly_payment" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+							<field name="term"/>
+							<field name="final_payment" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+							<field name="sale_consultant"/>
+							<field name="amount_receive" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+						</group>
+					</group>
+					<group colspan="4" col="4">
+						<field name="line_ids" colspan="4" nolabel="1">
+							<tree string="Schedule" editable="bottom">
+								<field name="name"/>
+								<field name="product_id"/>
+								<field name="total"/>
+								<field name="parent_id" invisible="1"/>
+							</tree>
+						</field>						
+                    </group>
+                    <group colspan="4" col="4" string="Special Instruction">
+                    	<field name="spec_instruction" nolabel="1" colspan="4"/>
+                    </group>
+	                </sheet>
+	                <div class="oe_chatter">
+	                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+	                </div>
+                </form>
+           </field>
+        </record>
+    <!-- Service Agreement Action -->
+        <record id="action_crea8s_sale_agreement_form" model="ir.actions.act_window">
+            <field name="name">Sale Agreement</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crea8s.sale.agreement</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    <!-- Link with Sale Order -->
+    
+        <record id="action_crea8s_service_agreement_form_filter" model="ir.actions.act_window">
+            <field name="name">Service Agreement</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crea8s.service.agreement</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('sale_id','=',active_id)]</field>
+            <field name="view_mode">form</field>
+        </record>
+        
+        <record model="ir.values" id="action_crea8s_service_agreement_form_link">
+            <field name="model_id" ref="crea8s_crm.model_crea8s_service_agreement" /> 
+            <field name="name">Service Agreement</field>
+            <field name="key2">client_action_multi</field> 
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_crea8s_service_agreement_form_filter'))" />
+            <field name="key">action</field>
+            <field name="model">sale.order</field>
+        </record>
+
+        <record id="action_crea8s_post_sale_form_filter" model="ir.actions.act_window">
+            <field name="name">Post Sale System Support</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crea8s.post.sale.system</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('sale_id','=',active_id)]</field>
+            <field name="view_mode">form</field>
+        </record>
+        
+        <record model="ir.values" id="action_crea8s_post_sale_form_link">
+            <field name="model_id" ref="crea8s_crm.model_crea8s_post_sale_system" /> 
+            <field name="name">Post Sale System Support</field>
+            <field name="key2">client_action_multi</field> 
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_crea8s_post_sale_form_filter'))" />
+            <field name="key">action</field>
+            <field name="model">sale.order</field>
+        </record>
+        
+        <record id="action_crea8s_sale_agreement_form_form_filter" model="ir.actions.act_window">
+            <field name="name">Sale Agreement</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crea8s.sale.agreement</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('sale_id','=',active_id)]</field>
+            <field name="view_mode">form</field>
+        </record>
+        
+        <record model="ir.values" id="action_crea8s_sale_agreement_form_form_link">
+            <field name="model_id" ref="crea8s_crm.model_crea8s_sale_agreement" /> 
+            <field name="name">Sale Agreement</field>
+            <field name="key2">client_action_multi</field> 
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_crea8s_sale_agreement_form_form_filter'))" />
+            <field name="key">action</field>
+            <field name="model">sale.order</field>
+        </record>
+        
+    <!-- Service Agreement Menu -->
+        <menuitem id="menu_action_crea8s_sale_agreement_form" name="Sale Agreement" parent="base.menu_sales" action="action_crea8s_sale_agreement_form"/>
+    <!-- Service Agreement Menu -->
+        <menuitem id="menu_action_crea8s_service_agreement_form" name="Service Agreement" parent="base.menu_sales" action="action_crea8s_service_agreement_form"/>
+
+		<!-- Sale Agreement Link Sale Order -->
+		<record id="crea8s_view_sale_order_form_inherit" model="ir.ui.view">
+            <field name="name">crea8s.view.sale.order.form.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_view_invoice']" position="before">
+                	<button type="object" string="Sale Agreement" name="action_view_sale_agr1" 
+                        attrs="{'invisible': ['|', ('state', 'in', ('draft','sent')),('sale_agr_id','!=',False)]}"
+                        class="oe_highlight" 
+                        context="{'default_sale_id' : active_id, 'default_partner_id': partner_id}" 
+                        domain="[('sale_id', '=', active_id)]"/>
+                    <button type="object" string="Sale Agreement" name="action_view_sale_agr2" 
+                    	attrs="{'invisible': ['|', ('state', 'in', ('draft','sent')),('sale_agr_id','=',False)]}"
+                        context="{'default_sale_id' : active_id, 'default_partner_id': partner_id}" 
+                        domain="[('sale_id', '=', active_id)]"/>
+                    <button type="object" string="Service Agreement" name="action_view_serv_agr1" 
+                        attrs="{'invisible': ['|', ('state', 'in', ('draft','sent')),('service_agr_id','!=',False)]}"
+                        class="oe_highlight" 
+                        context="{'default_sale_id' : active_id, 'default_customer_bill_id': partner_id, 'customer_install_id': partner_id}" 
+                        domain="[('sale_id', '=', active_id)]"/>
+                    <button type="object" string="Service Agreement" name="action_view_serv_agr2" 
+                        attrs="{'invisible': ['|', ('state', 'in', ('draft','sent')),('service_agr_id','=',False)]}"
+                        context="{'default_sale_id' : active_id, 'default_customer_bill_id': partner_id, 'customer_install_id': partner_id}" 
+                        domain="[('sale_id', '=', active_id)]"/>
+                    <button type="object" string="Post Sale System Support" name="action_view_post_sale1" 
+                    	attrs="{'invisible': ['|', ('state', 'in', ('draft','sent')),('post_sale_sys_id','!=',False)]}" 
+                    	class="oe_highlight" 
+                    	context="{'default_sale_id' : active_id, 'default_res_partner': partner_id}" 
+                    	domain="[('sale_id', '=', active_id)]"/>
+                    <button type="object" string="Post Sale System Support" name="action_view_post_sale2" 
+                    	attrs="{'invisible': ['|', ('state', 'in', ('draft','sent')),('post_sale_sys_id','=',False)]}" 
+                    	context="{'default_sale_id' : active_id, 'default_res_partner': partner_id}" 
+                    	domain="[('sale_id', '=', active_id)]"/>
+                    	
+                    <button type="object" string="Get Serial Number" name="get_serial_number"/>
+                    	
+                    
+                </xpath>
+                <xpath expr="//field[@name='date_order']" position="after">
+                	<field name="sale_agr_id" invisible="1"/>
+                	<field name="service_agr_id" invisible="1"/>
+                	<field name="post_sale_sys_id" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+		<!-- CRM Helpdesk -->
+		<record id="crea8s_crm_case_form_view_helpdesk_inherit" model="ir.ui.view">
+            <field name="name">Crea8s CRM - Helpdesk Support Form Inherit</field>
+            <field name="model">crm.helpdesk</field>
+            <field name="inherit_id" ref="crm_helpdesk.crm_case_form_view_helpdesk"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@class='oe_header']" position="before">
+					<h1>
+                        <label string="Helpdesk Support "/>
+                        <field name="reference" class="oe_inline" readonly="1"/>
+                    </h1>
+                </xpath>
+            </field>
+        </record>
+        
+        
+        <record id="crea8s_crm_case_tree_view_helpdesk_inherit" model="ir.ui.view">
+            <field name="name">Crea8s CRM - Helpdesk Support Tree Inherit</field>
+            <field name="model">crm.helpdesk</field>
+            <field name="inherit_id" ref="crm_helpdesk.crm_case_tree_view_helpdesk"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="reference"/>
+                </xpath>
+            </field>
+        </record>
+		
+		<record model="ir.actions.act_window" id="crm_claim.crm_case_categ_claim0">
+            <field name="name">Helpdesk</field>
+            <field name="res_model">crm.claim</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,calendar,form</field>
+            <field name="view_id" ref="crm_claim.crm_case_claims_tree_view"/>
+            <field name="context">{"search_default_user_id":uid, "stage_type":'claim'}</field>
+            <field name="search_view_id" ref="crm_claim.view_crm_case_claims_filter"/>
+            <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Record and track your customers' Helpdesk. Helpdesk may be linked to a sales order or a lot.You can send emails with attachments and keep the full history for a claim (emails sent, intervention type and so on).Claims may automatically be linked to an email address using the mail gateway module.
+            </p>
+            </field>
+        </record>
+		
+		<menuitem name="Helpdesk" id="crm_claim.menu_crm_case_claims"
+            parent="base.menu_aftersale" action="crm_claim.crm_case_categ_claim0" sequence="1"/>
+		
+		<record model="ir.ui.view" id="crea8s_crm_case_claims_form_view_inherit">
+            <field name="name">Crea8s CRM - Claims Form Inherit</field>
+            <field name="model">crm.claim</field>
+            <field name="inherit_id" ref="crm_claim.crm_case_claims_form_view"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//button[@name='case_close']" position="before">
+                    <button name="view_maintenance_serv" string="Maintenance Service" type="object" context="{'default_claim_id': active_id}"/>
+                </xpath>
+                <xpath expr="//field[@name='user_id']" position="before">
+                    <field name="maintenance_id" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+		
+    </data>
+</openerp>

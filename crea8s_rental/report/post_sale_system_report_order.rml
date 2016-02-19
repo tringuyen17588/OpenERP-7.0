@@ -1,0 +1,1120 @@
+<?xml version="1.0"?>
+<document filename="Customer.pdf">
+  <template title="Invoices" author="CREA8S(info@crea8s.com)" allowSplitting="20">
+    <pageTemplate id="first">
+      <frame id="first" x1="20.0" y1="28.15" width="540" height="786"/>
+	  <header>
+	    <pageGraphics>
+			<stylesheet>
+				<paraStyle name="main_footer" fontSize="10.0" alignment="CENTER"/>
+			</stylesheet>
+			<image x="1.4cm" y="27cm" height="45.0" >[[ company.logo or removeParentNode('image') ]]</image>
+            <place x="1.3cm" y="0cm" height="2.25cm" width="19.0cm">
+                <para style="main_footer">[[ company.name ]]</para>
+                <para style="main_footer">Contact : [[ company.rml_footer ]] </para>
+		        <para style="main_footer"> Page: <pageNumber/></para>
+            </place>
+		</pageGraphics>
+	  </header>
+    </pageTemplate>
+  </template>
+  <stylesheet>
+    <blockTableStyle id="Standard_Outline">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Header1">
+      <blockAlignment value="CENTER"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table1">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table2">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table3" >
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+	  
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+    </blockTableStyle>
+	<blockTableStyle id="Table31">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table4">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+	  <lineStyle kind="LINEABOVE" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,-1" stop="5,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="0,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="1,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,0" stop="2,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,0" stop="3,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,0" stop="4,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,0" stop="5,-1"/>
+	  <lineStyle kind="LINEAFTER" colorName="#000000" start="4,0" stop="5,-1"/>
+    </blockTableStyle>
+	    <blockTableStyle id="TableCate">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+	  <blockBackground colorName="gray"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+	  <lineStyle kind="LINEABOVE" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,-1" stop="5,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="0,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="1,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,0" stop="2,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,0" stop="3,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,0" stop="4,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,0" stop="5,-1"/>
+	  <lineStyle kind="LINEAFTER" colorName="#000000" start="4,0" stop="5,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="underline">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      
+    </blockTableStyle>
+    <blockTableStyle id="Table_split">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="0,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table7">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <initialize>
+      <paraStyle name="all" alignment="justify"/>
+    </initialize>
+    <paraStyle name="terp_header" fontSize="15.0" leading="19" alignment="LEFT" spaceBefore="12.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_default_8" fontSize="8.0" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_default_8b" fontSize="8.0" leading="12" alignment="LEFT" spaceBefore="2.2" spaceAfter="2.2"/>
+	<paraStyle name="terp_default_8c" fontSize="8.0" leading="10" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Bold_9" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_9" fontSize="5.5" leading="2.0" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_default_cate" fontName="Helvetica-Bold" fontSize="5.5" leading="2" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_default_p" fontSize="10.0" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_default_p" fontSize="10.0" leading="10" alignment="JUSTIFY" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_default_p1" fontName="Helvetica-Bold" fontSize="9.0" leading="12.5" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_default_p_cb" fontSize="10.0" leading="10" alignment="CENTER" spaceBefore="0.0" spaceAfter="1.50"/>
+    <paraStyle name="terp_title" fontSize="15" leading="11" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_title_lba" fontSize="7.0" leading="4" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_title_vl" fontSize="12.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_title_above" fontSize="5" leading="11" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_title_vla" fontSize="7.0" leading="4" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_product_name" fontSize="5.5" leading="2" alignment="CENTER,TOP" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_product_namel" fontSize="7" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_product_namer" fontSize="5.5" leading="2" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_tblheader_General_Centre" fontSize="8.0" leading="10" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_default_Centre_8" fontSize="8.0" leading="10" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_tblheader_Details" fontSize="8.0" leading="11" alignment="LEFT" spaceBefore="0" spaceAfter="0"/>
+    <paraStyle name="terp_tblheader_Details_Centre" fontSize="7.0" leading="10" alignment="CENTER" spaceBefore="0" spaceAfter="0"/>
+    <paraStyle name="terp_tblheader_Details_Right" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_default_Centre_9" fontSize="9.0" leading="11" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Right_9" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_1" fontSize="2.0" leading="3" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Right_9_Bold" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <images/>
+  </stylesheet>
+  <story>
+  <pto>
+  <para style="terp_default_8">[[repeatIn(objects,'b')]]</para>
+  <section>
+	<para style="terp_default_8">[[repeatIn([get_all(b.post_sale_sys_id )],'o')]]</para>
+	<section>
+	<spacer length="1.5cm"/>
+	<blockTable colWidths="520" style="Table1">
+	<tr>
+		<td>
+			<para style="terp_title"><b> Post Sales System Support </b></para>			
+		</td>		
+      </tr>
+    </blockTable>
+
+	<spacer length="0.5cm"/>
+	
+	<blockTable colWidths="553" rowHeights="15.7" style="Table1">
+	  <tr>
+        <td>
+          <para style="terp_default_p1" backColor="black" ><font color="black">...</font><font color="white"> CUSTOMER INFORMATION  </font></para>
+        </td>
+      </tr>
+	</blockTable>
+
+	<blockTable colWidths="360,180" style="Table3">
+	  <tr>
+        <td>
+          <para style="terp_default_8"> Company Name: [[ o.res_partner and (o.res_partner.parent_id and o.res_partner.parent_id.name or (o.res_partner.name and o.res_partner.name or '')) or ''  ]] </para>
+		  
+        </td>
+        <td>
+          <para style="terp_default_8"> Contact Person: [[ o.contact_person and o.contact_person or ' ' ]] </para>
+        </td>
+      </tr>
+	</blockTable>
+
+	<blockTable colWidths="360,180" style="Table3">
+	  <tr>
+        <td>
+          <para style="terp_default_8"> Installation Address: [[ o.res_partner and (o.res_partner.street and o.res_partner.street or '') or ' ' ]] [[ o.res_partner and (o.res_partner.city and o.res_partner.city or '') or ' ' ]] </para>
+        </td>
+        <td>
+          <para style="terp_default_8"> Office No.: [[ o.res_partner and (o.res_partner.phone and o.res_partner.phone or '') or ' ' ]] </para>
+        </td>
+      </tr>
+	</blockTable>
+	
+	<blockTable colWidths="360,180" style="Table3">
+	  <tr>
+        <td>
+          <para style="terp_default_8"> Sales Person / Handphone No.: [[ o.sale_man and (o.sale_man.name and o.sale_man.name or '') or ' ' ]] </para>
+        </td>
+        <td>
+          <para style="terp_default_8"> Handphone No.: [[ o.sale_man and (o.sale_man.phone and o.sale_man.phone or '') or ' ' ]] </para>
+        </td>
+      </tr>
+	</blockTable>
+	
+
+	<blockTable colWidths="553" rowHeights="15.7" style="Table1">
+	  <tr>
+        <td backColor="black">
+          <para style="terp_default_p1" backColor="black" ><font color="black">...</font><font color="white"> PRODUCT DETAILS </font></para>
+        </td>
+      </tr>
+	</blockTable>
+	<blockTable colWidths="170,190,180" rowHeights="3.5cm" style="Table3">
+	  <tr>
+	    <td>
+		  <blockTable colWidths="95,58"  style="Table1">
+		    <tr>
+			  <td>
+				<para style="terp_default_8"> Delivery Date:  </para>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> [[ o.delivery_date and formatLang(o.delivery_date, date=True) or ' ' ]] </para>
+			  </td>
+			</tr>
+		  </blockTable>
+		  <blockTable colWidths="83,17,17,17,17"  style="Table1">
+		    <tr>
+			  <td>
+				<para style="terp_default_8"> Delivery Time: </para>
+			  </td>
+		      <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.deli_am and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> am </para>
+			  </td>
+			  <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.deli_pm and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> pm </para>
+			  </td>
+			</tr>
+			</blockTable>
+		  <blockTable colWidths="95,58"  style="Table1">
+		    <tr>
+			  <td>
+				<para style="terp_default_8"> Installation Date: </para>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> [[ o.delivery_date and formatLang(o.install_date, date=True) or ' ' ]] </para>
+			  </td>
+			</tr>
+		  </blockTable>
+		  <blockTable colWidths="83,17,17,17,17"  style="Table1">
+		    <tr>
+			  <td>
+				<para style="terp_default_8"> Installation Time: </para>
+			  </td>
+		      <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.instal_am and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> am </para>
+			  </td>
+			  <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.instal_pm and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> pm </para>
+			  </td>
+			</tr>
+			</blockTable>
+			<blockTable colWidths="151"  style="Table1">
+		  <tr>
+			<td>
+				<para style="terp_default_8"> am installation: 9am - 12noon </para>
+				<spacer length="0.15cm"/>
+				<para style="terp_default_8"> pm installation: 1pm - 5pm </para>
+			</td>
+		  </tr>
+		  </blockTable>		  
+        </td>
+        <td>
+		  <blockTable colWidths="88,88"  style="Table1">
+		  <tr>
+			<td>
+				<para style="terp_default_8"><b> Machine Model </b></para>
+				<spacer length="0.15cm"/>
+				<section>
+				<para style="terp_default_8">[[ repeatIn(o.line_ids,'line') ]]</para>
+				<para style="terp_default_8"> [[ line.name ]] </para>
+				</section>
+            </td>
+			<td>
+				<para style="terp_default_8"><b> Serial No </b></para>
+				<spacer length="0.15cm"/>
+				<section>
+				<para style="terp_default_8">[[repeatIn(o.line_ids,'line1')]]</para>
+				<para style="terp_default_8"> [[ line1.serial ]] </para>
+				</section>
+            </td>
+		  </tr>
+		  </blockTable>
+		</td>
+        <td>
+          <para style="terp_default_8"> Service to be done </para>
+		  <blockTable colWidths="18,155"  style="Table1">
+		    <tr>
+		      <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.instal and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> Installation </para>
+			  </td>
+			</tr>
+			</blockTable>
+			<blockTable colWidths="18,155"  style="Table1">
+		    <tr>
+		      <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.instal_con and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> Installation Continuation </para>
+			  </td>
+			</tr>
+			</blockTable>
+			<blockTable colWidths="18,155"  style="Table1">
+		    <tr>
+		      <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.training and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> Training </para>
+			  </td>
+			</tr>
+			</blockTable>
+			<blockTable colWidths="18,155"  style="Table1">
+		    <tr>
+		      <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.trouble_con and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> Troubleshooting / Configuration </para>
+			  </td>
+			</tr>
+			</blockTable>
+			<blockTable colWidths="18,155"  style="Table1">
+		    <tr>
+		      <td>
+				<blockTable colWidths="15.0" rowHeights="0.40cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.other and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> Others (please specify) </para>
+			  </td>
+			</tr>
+			</blockTable>
+        </td>
+      </tr>
+	</blockTable>
+	
+	<blockTable colWidths="553" rowHeights="15.7" style="Table1">
+	  <tr>
+        <td>
+          <para style="terp_default_p1" backColor="black" ><font color="black">...</font><font color="white"> Customer Requirements </font></para>
+        </td>
+      </tr>
+	</blockTable>
+
+	<blockTable colWidths="170,190,180" rowHeights="5.75cm" style="Table3">
+	  <tr>
+	    <td>
+		  <blockTable colWidths="125,28"  style="Table1">
+		    <tr>
+			  <td>
+				<para style="terp_default_8"> Number of Computer: </para>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> [[ o.num_com and o.num_com or '' ]] </para>
+			  </td>
+			</tr>
+		  </blockTable>
+		  <blockTable colWidths="18,133"  style="Table1">
+		    <tr>
+			  <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.mac_os and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> Mac (please specify Mac OS) </para>
+			  </td>
+			</tr>
+			</blockTable>
+			<blockTable colWidths="18,133"  style="Table1">
+		    <tr>
+			  <td>
+				<para style="terp_default_8">  </para>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> [[ o.mac_info and o.mac_info or '_______________________' ]] </para>			  </td>
+			</tr>
+			</blockTable>
+
+			
+		  <blockTable colWidths="18,133"  style="Table1">
+		    <tr>
+			  <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.win_2000 and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> Windows 2000/XP </para>
+			  </td>
+			</tr>
+			</blockTable>
+		<blockTable colWidths="18,133"  style="Table1">
+		    <tr>
+			  <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.win7_32 and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> Windows 7 (32 bit) </para>
+			  </td>
+			</tr>
+			</blockTable>
+			<blockTable colWidths="18,133"  style="Table1">
+		    <tr>
+			  <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.win7_64 and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> Windows 7 (64 bit) </para>
+			  </td>
+			</tr>
+			</blockTable>
+			<blockTable colWidths="18,133"  style="Table1">
+		    <tr>
+			  <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.win_vista_32 and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> Windows Vista (32 bit) </para>
+			  </td>
+			</tr>
+			</blockTable>
+			<blockTable colWidths="18,133"  style="Table1">
+		    <tr>
+			  <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.win_vista_64 and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> Windows Vita (64 bit) </para>
+			  </td>
+			</tr>
+			</blockTable>
+			<blockTable colWidths="151"  style="Table1">
+		    <tr>
+			  <td>
+				<para style="terp_default_8"> Note: Mac OS 9.0, Win 95/98/ME no longer supported </para>
+			  </td>
+			</tr>
+			</blockTable>
+        </td>
+        <td>
+		  <para style="terp_default_8"> Additional Program Functions Required </para>
+		  <blockTable colWidths="73,88"  style="Table1">
+		    <tr>
+			  <td>
+				<para style="terp_default_8"> Scan to Server </para>
+			  </td>
+			  <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.scan_server and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			</tr>
+			</blockTable>
+			<blockTable colWidths="73,88"  style="Table1">
+		    <tr>
+			  <td>
+				<para style="terp_default_8"> Scan to Email </para>
+			  </td>
+			  <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.scan_email and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			</tr>
+			</blockTable>
+			<blockTable colWidths="73,18,26,18,26"  style="Table1">
+		    <tr>
+			  <td>
+				<para style="terp_default_8"> Auditron </para>
+			  </td>
+			  <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.au_on and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> ON </para>
+			  </td>
+			  <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.au_off and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> OFF </para>
+			  </td>
+			</tr>
+			</blockTable>
+			<blockTable colWidths="80,81"  style="Table1">
+		    <tr>
+			  <td>
+				<para style="terp_default_8"> Incoming Fax </para>
+			  </td>
+			  <td>
+			    <blockTable colWidths="18,60"  style="Table1">
+					<tr>
+					  <td>
+						<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+						  <tr>
+							<td>
+								<para style="terp_default_8"> [[ o.hard_cp and 'X' or '' ]] </para>
+							</td>
+						  </tr>
+						</blockTable>
+					  </td>
+					  <td>
+						<para style="terp_default_8"> Hard Copy </para>
+					  </td>
+					  </tr>
+				</blockTable>
+				<blockTable colWidths="18,60"  style="Table1">
+					<tr>
+					  <td>
+						<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+						  <tr>
+							<td>
+								<para style="terp_default_8"> [[ o.email and 'X' or '' ]] </para>
+							</td>
+						  </tr>
+						</blockTable>
+					  </td>
+					  <td>
+						<para style="terp_default_8"> Email </para>
+					  </td>
+					  </tr>
+				</blockTable>
+				<blockTable colWidths="18,60"  style="Table1">
+					<tr>
+					  <td>
+						<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+						  <tr>
+							<td>
+								<para style="terp_default_8"> [[ o.smb and 'X' or '' ]] </para>
+							</td>
+						  </tr>
+						</blockTable>
+					  </td>
+					  <td>
+						<para style="terp_default_8"> SMB </para>
+					  </td>
+					  </tr>
+				</blockTable>
+				<blockTable colWidths="18,60"  style="Table1">
+					<tr>
+					  <td>
+						<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+						  <tr>
+							<td>
+								<para style="terp_default_8"> [[ o.mail_box and 'X' or '' ]] </para>
+							</td>
+						  </tr>
+						</blockTable>
+					  </td>
+					  <td>
+						<para style="terp_default_8"> Mailbox </para>
+					  </td>
+					  </tr>
+				</blockTable>
+			  </td>
+			</tr>
+			</blockTable>
+		</td>
+        <td>
+          <para style="terp_default_8"> Accessories/Others </para>
+		  <blockTable colWidths="18,155"  style="Table1">
+		    <tr>
+		      <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.docuwork and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> Docuworks </para>
+			  </td>
+			</tr>
+			</blockTable>
+			<blockTable colWidths="18,155"  style="Table1">
+		    <tr>
+		      <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.network and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> Network Set up/Router/Suitch </para>
+			  </td>
+			</tr>
+			</blockTable>
+			<blockTable colWidths="18,155"  style="Table1">
+		    <tr>
+		      <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.net_point and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> Network Point </para>
+			  </td>
+			</tr>
+			</blockTable>
+			<blockTable colWidths="18,155"  style="Table1">
+		    <tr>
+		      <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.fax_point and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> Fax Point </para>
+			  </td>
+			</tr>
+			</blockTable>
+			<blockTable colWidths="75,17,36,17,26"  style="Table1">
+		    <tr>
+			  <td>
+				<para style="terp_default_8"> Network Cable: </para>
+			  </td>
+			  <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.cap_str and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> Straight </para>
+			  </td>
+			  <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.cap_cross and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> Cross </para>
+			  </td>
+			</tr>
+			</blockTable>
+			<blockTable colWidths="105,68"  style="Table1">
+		    <tr>
+			  <td>
+				<para style="terp_default_8"> Extra length needed: </para>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> [[ o.extra_length and o.extra_length or '' ]] </para>
+			  </td>
+			</tr>
+		  </blockTable>
+			<blockTable colWidths="174"  style="Table1">
+		    <tr>
+			  <td>
+				<para style="terp_default_8"> Note: standard length is 2m straight cable if not specified. </para>
+			  </td>
+			</tr>
+		  </blockTable>
+        </td>
+      </tr>
+	</blockTable>
+	<blockTable colWidths="553" rowHeights="15.7" style="Table1">
+	  <tr>
+        <td>
+          <para style="terp_default_p1" backColor="black" ><font color="black">...</font><font color="white"> Docuconnex IT Support </font><font color="black">.................................................................... </font><font color="white"> Customer Acknowledgement </font></para>
+        </td>
+      </tr>
+	</blockTable>
+
+	<blockTable colWidths="360,180" style="Table3">
+	  <tr>
+        <td>
+		  <blockTable colWidths="364"  style="Table1">
+			  <tr>
+				<td>
+					<para style="terp_default_pf"> Installation of additional computers within one (1) month from the date of initial installation is free of charge. Subsequent installations, troubleshooting &amp; configuration will be chargeable. All prices subject to prevailing GST. </para>
+				</td>
+			  </tr>
+		  </blockTable>
+		  <spacer length="0.35cm"/>
+		  <blockTable colWidths="96,266"  style="Table1">
+			  <tr>
+				<td>
+				  <para style="terp_default_p"> Ad hoc Services: </para>
+				</td>
+				<td>
+				  <para style="terp_default_pf"> Ad hoc Services : For subsequent installation of additional users at S$40/trip. </para>
+				  <para style="terp_default_pf"> *For troubleshooting &amp; configuration at S$80/st hr &amp; S$40/hr for subsequent hours. </para>
+				</td>
+			  </tr>
+			</blockTable>
+			<spacer length="0.25cm"/>
+			<blockTable colWidths="364"  style="Table1">
+			  <tr>
+				<td>
+					<para style="terp_default_pf"> *(Minimum of one hour is charged for each visit and subsequent time is charged in half hour blocks.) </para>
+				</td>
+			  </tr>
+			</blockTable>
+        </td>
+		<td>
+		  <para style="terp_default_p"> Name  <b> [[ o.cus_name and o.cus_name or '' ]] </b></para>
+		  <spacer length="0.55cm"/>
+		  <para style="terp_default_p"> Destination  <b> [[ o.designation and o.designation or '' ]] </b></para>
+		  <spacer length="0.55cm"/>
+		  <para style="terp_default_p"> Date  <b> [[ o.date and formatLang(o.date, date=True) or '' ]] </b></para>
+		  <spacer length="1.5cm"/>
+		  <para style="terp_default_p"> Signature and Company Stamp </para>
+        </td>
+      </tr>
+	</blockTable>
+	
+	<blockTable colWidths="553" rowHeights="15.7" style="Table1">
+	  <tr>
+        <td>
+          <para style="terp_default_p1" height="1.25cm" backColor="black" ><font color="black">...</font><font color="white"> Docuconnex Authorised Used Only </font><font color="black">................................................... </font><font color="white"> Docuconnex Engineer Used Only </font></para>
+        </td>
+      </tr>
+	</blockTable>
+	<blockTable colWidths="360,180" style="Table3">
+	  <tr>
+        <td>
+			<blockTable colWidths="333" style="Table1">
+			  <tr>
+				<td>
+				   <para style="terp_default_p"> Delivery Date :  [[ o.ab_delivery_date and formatLang(o.ab_delivery_date, date=True) or '' ]] </para>
+				</td>
+			  </tr>
+			</blockTable>
+			<blockTable colWidths="83,18,107,18,107"  style="Table1">
+		    <tr>
+			  <td>
+				<para style="terp_default_8"> Delivery Time: </para>
+			  </td>
+		      <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.ab_deli_am and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> AM (9am - 12noon) </para>
+			  </td>
+			  <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.ab_deli_pm and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> PM (2:30pm - 5:00pm) </para>
+			  </td>
+			</tr>
+			</blockTable>
+			<spacer length="0.35cm"/>
+			<blockTable colWidths="143,16,42,17,42,16,65"  style="Table1">
+		    <tr>
+			  <td>
+				<para style="terp_default_8"> Additional Optional Kit/Software: </para>
+			  </td>
+		      <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.if_kit and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> iFax Kit </para>
+			  </td>
+			  <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.u_kit and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> USB Kit </para>
+			  </td>
+			  <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.ps_kit and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> Postscript Kit </para>
+			  </td>
+			</tr>
+			</blockTable>
+			<blockTable colWidths="333" style="Table1">
+			  <tr>
+				<td>
+				   <para style="terp_default_p"> Installation Date :  [[ o.ab_install_date and formatLang(o.ab_install_date, date=True) or '' ]] </para>
+				</td>
+			  </tr>
+			</blockTable>
+			<blockTable colWidths="18,107,18,190"  style="Table1">
+		    <tr>
+		      <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.ab_instal_am and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> AM (9am - 12noon) </para>
+			  </td>
+			  <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.ab_instal_pm and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> PM (1:00pm - 5:00pm) </para>
+			  </td>
+			</tr>
+			</blockTable>
+			<blockTable colWidths="103,18,27,18,167"  style="Table1">
+		    <tr>
+			  <td>
+				<para style="terp_default_8"> Firmware Upgrade : </para>
+			  </td>
+		      <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.firm_up_y and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> Yes </para>
+			  </td>
+			  <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.firm_up_n and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> No </para>
+			  </td>
+			</tr>
+			</blockTable>
+		</td>
+		<td>
+			<blockTable colWidths="170" style="Table1">
+			  <tr>
+				<td>
+				   <para style="terp_default_p"> Installation Date :   [[ o.ab_install_date and formatLang(o.ab_install_date, date=True) or '' ]]</para>
+				</td>
+			  </tr>
+			</blockTable>
+			<spacer length="0.35cm"/>
+			<blockTable colWidths="170" style="Table1">
+			  <tr>
+				<td>
+				   <para style="terp_default_p"> Installation Time : </para>
+				</td>
+			  </tr>
+			</blockTable>
+			<blockTable colWidths="18,152"  style="Table1">
+		    <tr>
+			  <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.ab_instal_am911 and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> 9:00am - 11:00am </para>
+			  </td>
+			</tr>
+			</blockTable>
+			<blockTable colWidths="18,152"  style="Table1">
+		    <tr>
+			  <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.ab_instal_am111 and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> 11:00am - 1:00pm </para>
+			  </td>
+			</tr>
+			</blockTable>
+			<blockTable colWidths="18,152"  style="Table1">
+		    <tr>
+			  <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.ab_instal_am13 and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> 1:00pm - 3:00pm </para>
+			  </td>
+			</tr>
+			</blockTable>
+			<blockTable colWidths="18,152"  style="Table1">
+		    <tr>
+			  <td>
+				<blockTable colWidths="15.0" rowHeights="0.4cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ o.ab_instal_am35 and 'X' or '' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_8"> 3:00pm - 5:00pm </para>
+			  </td>
+			</tr>
+			</blockTable>
+		</td>
+	  </tr>
+	</blockTable>
+	</section>
+	</section>
+  </pto>
+  </story>
+</document>

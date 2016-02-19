@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<record id="view_sale_order_form_inherit_discount" model="ir.ui.view">
+            <field name="name">sale.order.form.inherit.discount</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+	            <xpath expr="//field[@name='order_line']" position="after">
+	            <group colspan="1" col="2">
+	                <field name="discount_type"/>
+	                <field name="discount" colspan="1"/>
+	                 <button name="button_dummy_discount" states="draft,sent" string="(update)" type="object" class="oe_edit_only oe_link" colspan="1"/>
+	            </group>
+	            </xpath>
+	            <xpath expr="//field[@name='amount_untaxed']" position="after">
+	                <field name="dis_amount"  widget="monetary" options="{'currency_field': 'currency_id'}"/>
+	            </xpath>
+	            <xpath expr="//field[@name='amount_total']" position="replace">
+	                <field name="amount_total" nolabel="1" class="oe_subtotal_footer_separator" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+	            </xpath>
+				<xpath expr="//tree[@string='Sales Order Lines']/field[@name='price_subtotal']" position="replace">
+	                <field name="price_subtotal"/>
+	            </xpath>
+				
+	            
+            </field>
+        </record>
+        
+    </data>
+</openerp>

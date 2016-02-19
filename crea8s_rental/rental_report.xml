@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+	
+        <report auto="False" id="maintenance_report" model="crea8s.maintenance.service" name="maintenance_report"
+                rml="crea8s_crm/report/maintenance_report.rml" string="Print Report"/>
+                
+	<report auto="False" id="crea8s_report_post_sale" model="crea8s.post.sale.system" name="crea8s_report_post_sale"
+                rml="crea8s_crm/report/post_sale_system_report.rml" string="Print Report"/>
+
+	<report auto="False" id="crea8s_report_service_agreement" model="crea8s.service.agreement" name="crea8s_report_service_agreement"
+                rml="crea8s_crm/report/service_agreement.rml" string="Print Service Agreement"/>
+
+	<report auto="False" id="sale.report_sale_order" model="sale.order" name="crea8s.sale.order"
+                rml="crea8s_crm/report/sale_order.rml" string="Quotation / Order"
+                usage="default"/>
+                
+	<report auto="False" id="crea8s_report_sale_agreement" model="crea8s.sale.agreement" name="crea8s_report_sale_agreement"
+                rml="crea8s_crm/report/sale_agreement.rml" string="Print Sale Agreement"/>
+    
+    <!-- For Sale Order -->
+    
+    <report auto="False" id="crea8s_report_sale_agreement_order" model="sale.order" name="crea8s_report_sale_agreement_order"
+                rml="crea8s_crm/report/sale_agreement_order.rml" string="Print Sale Agreement"/>
+                
+    <report auto="False" id="crea8s_report_service_agreement_order" model="sale.order" name="crea8s_report_service_agreement_order"
+                rml="crea8s_crm/report/service_agreement_order.rml" string="Print Service Agreement"/>
+    
+    <report auto="False" id="crea8s_report_post_sale_order" model="sale.order" name="crea8s_report_post_sale_order"
+                rml="crea8s_crm/report/post_sale_system_report_order.rml" string="Print Post Sale System Report"/>
+    
+
+    </data>
+</openerp>

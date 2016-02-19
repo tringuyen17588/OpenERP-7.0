@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+	<!-- Fix on sale receipt -->
+		<record model="ir.ui.view" id="crea8s_view_sale_receipt_form_glassfix_inherit">
+            <field name="name">crea8s.account.voucher.inherit</field>
+            <field name="model">account.voucher</field>
+            <field name="inherit_id" ref="account_voucher.view_sale_receipt_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="attributes">
+                   	<attribute name="string">Reference</attribute>
+                </xpath>
+			</field>
+		</record>
+		<record id="crea8s_invoice_tree" model="ir.ui.view">
+            <field name="name">crea8s.account.invoice.tree</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="before">
+                    <field name="vehicle_no"/>
+                </xpath>
+        	</field>
+    	</record>
+
+	<record id="crea8s_view_account_invoice_filter" model="ir.ui.view">
+        <field name="name">crea8s.account.invoice.select</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+        <field name="arch" type="xml">
+			<xpath expr="//field[@name='number']" position="before">
+               	<field name="vehicle_no"/>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="replace">
+               	<field name="partner_id" filter_domain="['|', '|', ('partner_id', 'child_of', self), ('vehicle.regis_no', '=', self), ('vehicle', '=', self)]"/>
+            </xpath>
+            
+            
+		</field>
+	</record>
+		
+	<!-- Fix on invoice -->
+	<record model="ir.ui.view" id="crea8s_invoice_form_view_glassfix_inherit">
+            <field name="name">crea8s.invoice.form.glassfix.inherit</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+		  <xpath expr="//field[@name='fiscal_position']" position="after">
+                   	<field name="po_no"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="after">
+                   	<field name="vehicle" domain="[('is_company', '=', False)]" context="{'vehicle':True}"/>
+			<field name="vehicle_no" invisible="1"/>
+			<field name="is_vehicle" string="For Insurance"/>
+                   	<field name="delivery_id"/>
+                </xpath>
+				<xpath expr="//page[@string='Payments']" position="after">
+					<page string="Term">
+						<field name="term" colspan="4" nolabel="1"/>
+					</page>
+				</xpath>
+		<xpath expr="//field[@name='journal_id']" position="after">
+                   	<field name="shop_id" attrs="{'readonly':[('state', '=', 'paid')]}" domain="[('parent_id', '=', 1)]"/>
+                </xpath>
+            </field>
+        </record>
+
+		<record id="account.action_invoice_tree3" model="ir.actions.act_window">
+            <field name="name">Credit Note</field>
+            <field name="res_model">account.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('type','=','out_refund')]</field>
+            <field name="context">{'default_type':'out_refund', 'type':'out_refund', 'journal_type': 'sale_refund'}</field>
+            <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+            <field name="help" type="html">
+              <p class="account.oe_view_nocontent_create">
+                Click to create a customer refund. 
+              </p><p>
+                A refund is a document that credits an invoice completely or
+                partially.
+              </p><p>
+                Instead of manually creating a customer refund, you
+                can generate it directly from the related customer invoice.
+              </p>
+            </field>
+        </record>
+	
+	<menuitem action="account.action_invoice_tree3" id="account.menu_action_invoice_tree3" parent="account.menu_finance_receivables" name="Credit Note"/>
+
+    </data>
+</openerp>

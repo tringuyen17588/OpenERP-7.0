@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+    	<!-- Fix Account Invoice Customer -->
+		<record id="crea8s_invoice_form_sequence" model="ir.ui.view">
+            <field name="name">crea8s.account.invoice.form.inherit_sequence</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+				<xpath expr="/form/sheet/notebook/page/field/tree/field[@name='product_id']" position="before">
+	                <field name="sequence"/>
+	            </xpath>
+			</field>
+		</record>
+
+		<!-- Fix Account Invoice Supplier -->
+		<record id="crea8s_invoice_supplier_form_sequence" model="ir.ui.view">
+            <field name="name">crea8s.account.invoice.form.supplier.inherit_sequence</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+				<xpath expr="/form/sheet/notebook/page/field/tree/field[@name='product_id']" position="before">
+	                <field name="sequence"/>
+	            </xpath>
+			</field>
+		</record>
+
+    </data>
+</openerp>

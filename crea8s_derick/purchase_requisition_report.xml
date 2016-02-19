@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		<!-- For Purchase Requisition -->
+		<report auto="False" id="purchase_requisition.report_purchase_requisition" model="purchase.requisition" 
+		name="purchase_requisition" rml="crea8s_derick/report/purchase_requisition.rml" string="Purchase Requisition A4"/>
+                <report auto="False" id="report_purchase_requisition_a5" model="purchase.requisition" 
+		name="purchase_requisition_a5" rml="crea8s_derick/report/purchase_requisition_a5.rml" string="Purchase Requisition A5"/>
+		<!-- For Income Shipment -->
+		<report id="report_picking_inship_company" model="stock.picking.in" name="picking_inship_company" string="Physical Inventory List" 
+		rml="crea8s_derick/report/picking.rml"/>
+		<!-- For Invoice Customer -->
+		<report
+            auto="False"
+            id="account.account_invoices"
+            model="account.invoice"
+            name="account.invoice.crea8s_derick"
+            rml="crea8s_derick/report/account_print_invoice.rml"
+            string="Invoices A4"
+            attachment_use="True"
+            usage="default"
+            />
+		<report
+            auto="False"
+            id="account.account_invoices1"
+            model="account.invoice"
+            name="account.invoice.crea8s_derick1"
+            rml="crea8s_derick/report/account_print_invoice1.rml"
+            string="Invoices A5"
+            attachment_use="True"
+            usage="default"
+            />
+    	
+    	<!-- For Purchase Order -->
+    	<report auto="False" id="purchase.report_purchase_quotation" model="purchase.order" 
+                name="crea8s.purchase.quotation" rml="crea8s_derick/report/request_quotation.rml"
+                string="Request for Quotation"/>
+        <report auto="False" id="purchase.report_purchase_order" model="purchase.order"
+                name="crea8s.purchase.order" rml="crea8s_derick/report/purchase_order.rml"
+                usage="default" string="Purchase Order"/>
+        
+        <!-- For Inventory Order -->
+    	<report id="stock.report_stock_inventory_move" model="stock.inventory" name="crea8s.stock.inventory.move" string="Stock Inventory" rml="crea8s_derick/report/stock_inventory_move.rml"/>
+    	
+    	<!-- For Sale Order -->
+    	<report auto="False" id="sale.report_sale_order" model="sale.order" name="crea8s.sale.order_oqty"
+                rml="crea8s_derick/report/sale_order.rml" string="Quotation / Order A4"
+                usage="default"/>
+        <report auto="False" id="report_sale_ordera5" model="sale.order" name="crea8s.sale.order_oqty_a5"
+                rml="crea8s_derick/report/sale_order_a5.rml" string="Quotation / Order A5"
+                usage="default"/>
+                
+        <!-- For report warehouse  -->
+        
+        <report id="report_picking_list" model="stock.picking" name="crea8s.stock.picking.list" string="Picking Slip" rml="stock/report/picking.rml"/>
+        <report id="report_picking_list_in" model="stock.picking.in" name="crea8s.stock.picking.list.in" string="Receipt Slip" rml="stock/report/picking.rml"/>
+        <report id="report_picking_list_out" model="stock.picking.out" name="crea8s.stock.picking.list.out" string="Delivery Slip" rml="crea8s_derick/report/picking_oqty.rml"/>
+    	<report auto="False"  id="stock.report_location_overview" model="stock.location" name="crea8s.lot.stock.overview" string="Location Inventory Overview" rml="crea8s_derick/report/lot_overview.rml"/>
+        <report id="stock.report_location_overview_all" model="stock.location" name="crea8s.lot.stock.overview_all" string="Location Content" rml="crea8s_derick/report/lot_overview_all.rml"/>
+    	
+    	
+    </data>
+</openerp>

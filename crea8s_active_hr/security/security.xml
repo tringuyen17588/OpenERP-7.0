@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    
+    <data noupdate="0">
+    	<record id="group_own_job_order" model="res.groups">
+        <field name="name">Own Job Order</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+       </record>
+       <record id="group_all_job_order" model="res.groups">
+        <field name="name">All Job Order</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+       </record>
+       <record id="group_visible_oppor" model="res.groups">
+        <field name="name">View Opportunities</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+       </record>
+       <record id="group_visible_candidate" model="res.groups">
+        <field name="name">View Candidate</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+       </record>
+       <record id="group_read_candidate" model="res.groups">
+        <field name="name">Only Read Candidate</field>
+        </record>
+       <record id="group_detail_candidate" model="res.groups">
+        <field name="name">Detail Candidate</field>
+       </record>
+	<record id="group_crea8s_read_respartner" model="res.groups">
+        <field name="name">Only Read Customer</field>
+       </record>
+	<record id="group_crea8s_acc_respartner" model="res.groups">
+        <field name="name">Detail Customer</field>
+       </record>
+	</data>
+	
+</openerp>

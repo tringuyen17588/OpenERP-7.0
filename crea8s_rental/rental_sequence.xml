@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- Sequences for Rental -->
+        <record id="seq_crea8s_rental_type" model="ir.sequence.type">
+            <field name="name">Rental Type</field>
+            <field name="code">crea8s.rental</field>
+        </record>
+        
+        <record id="seq_crea8s_rental_sequence" model="ir.sequence">
+            <field name="name">Rental Sequence</field>
+            <field name="code">crea8s.rental</field>
+            <field name="prefix">RO</field>
+            <field name="padding">3</field>
+        </record>
+        
+        <!-- Sequences for Leasing -->
+        <record id="seq_crea8s_leasing_type" model="ir.sequence.type">
+            <field name="name">Leasing Type</field>
+            <field name="code">crea8s.leasing</field>
+        </record>
+        
+        <record id="seq_crea8s_leasing_sequence" model="ir.sequence">
+            <field name="name">Leasing Sequence</field>
+            <field name="code">crea8s.leasing</field>
+            <field name="prefix">LO</field>
+            <field name="padding">3</field>
+        </record>
+
+    </data>
+
+</openerp>

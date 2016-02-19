@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- Sequences for repair -->
+        <record id="seq_maintenance_sequence_type" model="ir.sequence.type">
+            <field name="name">Maintenance Sequence Type</field>
+            <field name="code">crea8s.maintenance.service</field>
+        </record>
+        
+        <record id="seq_maintenance_sequence" model="ir.sequence">
+            <field name="name">Maintenance Sequence</field>
+            <field name="code">crea8s.maintenance.service</field>
+            <field name="prefix">MS</field>
+            <field name="padding">4</field>
+        </record>
+        
+        <!-- Sequences for help desk -->
+        <record id="seq_helpdesk_sequence_type" model="ir.sequence.type">
+            <field name="name">Helpdesk Sequence Type</field>
+            <field name="code">crm.helpdesk</field>
+        </record>
+        
+        <record id="seq_help_desk_sequence" model="ir.sequence">
+            <field name="name">Helpdesk Sequence</field>
+            <field name="code">crm.helpdesk</field>
+            <field name="prefix"></field>
+            <field name="padding">4</field>
+        </record>
+        
+        <!-- Sequences for Service Agreement -->
+        <record id="seq_service_agreement_sequence_type" model="ir.sequence.type">
+            <field name="name">crea8s.service.agreement</field>
+            <field name="code">crea8s.service.agreement</field>
+        </record>
+        
+        <record id="seq_service_agreement_sequence" model="ir.sequence">
+            <field name="name">crea8s.service.agreement</field>
+            <field name="code">crea8s.service.agreement</field>
+            <field name="prefix">SRVAGR</field>
+            <field name="padding">4</field>
+        </record>
+        
+                <!-- Sequences for Sale Agreement -->
+        <record id="seq_sale_agreement_sequence_type" model="ir.sequence.type">
+            <field name="name">crea8s.sale.agreement</field>
+            <field name="code">crea8s.sale.agreement</field>
+        </record>
+        
+        <record id="seq_sale_agreement_sequence" model="ir.sequence">
+            <field name="name">crea8s.sale.agreement</field>
+            <field name="code">crea8s.sale.agreement</field>
+            <field name="prefix">SAGR</field>
+            <field name="padding">4</field>
+        </record>
+        
+		<!-- Sequences for Post Sale -->
+        <record id="seq_post_sale_sequence_type" model="ir.sequence.type">
+            <field name="name">crea8s.post.sale.system</field>
+            <field name="code">crea8s.post.sale.system</field>
+        </record>
+        
+        <record id="seq_post_sale_sequence" model="ir.sequence">
+            <field name="name">crea8s.post.sale.system</field>
+            <field name="code">crea8s.post.sale.system</field>
+            <field name="prefix">PSSR</field>
+            <field name="padding">4</field>
+        </record>
+
+	<!-- For district -->
+		<record id="distric_06" model="crm.district">
+            <field name="name">06</field>
+            <field name="code">A1</field>
+        </record>
+        <record id="distric_07" model="crm.district">
+            <field name="name">07</field>
+            <field name="code">A1</field>
+        </record>
+        <record id="distric_01" model="crm.district">
+            <field name="name">01</field>
+            <field name="code">A2</field>
+        </record>
+        <record id="distric_18" model="crm.district">
+            <field name="name">18</field>
+            <field name="code">A2</field>
+        </record>
+        <record id="distric_19" model="crm.district">
+            <field name="name">19</field>
+            <field name="code">A2</field>
+        </record>
+        <record id="distric_34" model="crm.district">
+            <field name="name">34</field>
+            <field name="code">A3</field>
+        </record>
+        <record id="distric_35" model="crm.district">
+            <field name="name">35</field>
+            <field name="code">A3</field>
+        </record>
+        <record id="distric_32" model="crm.district">
+            <field name="name">32</field>
+            <field name="code">A4</field>
+        </record>
+        <record id="distric_33" model="crm.district">
+            <field name="name">33</field>
+            <field name="code">A4</field>
+        </record>
+        <record id="distric_40" model="crm.district">
+            <field name="name">40</field>
+            <field name="code">C1</field>
+        </record>
+        <record id="distric_47" model="crm.district">
+            <field name="name">47</field>
+            <field name="code">C1</field>
+        </record>
+        <record id="distric_54" model="crm.district">
+            <field name="name">54</field>
+            <field name="code">C1</field>
+        </record>
+        <record id="distric_49" model="crm.district">
+            <field name="name">49</field>
+            <field name="code">C2</field>
+        </record>
+        <record id="distric_50" model="crm.district">
+            <field name="name">50</field>
+            <field name="code">C2</field>
+        </record>
+        <record id="distric_20" model="crm.district">
+            <field name="name">20</field>
+            <field name="code">C3</field>
+        </record>
+        <record id="distric_21" model="crm.district">
+            <field name="name">21</field>
+            <field name="code">C3</field>
+        </record>
+        <record id="distric_15" model="crm.district">
+            <field name="name">15</field>
+            <field name="code">C4</field>
+        </record>
+        <record id="distric_16" model="crm.district">
+            <field name="name">16</field>
+            <field name="code">C4</field>
+        </record>
+        <record id="distric_46" model="crm.district">
+            <field name="name">46</field>
+            <field name="code">C5</field>
+        </record>
+        <record id="distric_48" model="crm.district">
+            <field name="name">48</field>
+            <field name="code">C5</field>
+        </record>
+        <record id="distric_52" model="crm.district">
+            <field name="name">52</field>
+            <field name="code">C5</field>
+        </record>
+        <record id="distric_64" model="crm.district">
+            <field name="name">64</field>
+            <field name="code">F1</field>
+        </record>
+        <record id="distric_65" model="crm.district">
+            <field name="name">65</field>
+            <field name="code">F1</field>
+        </record>
+        <record id="distric_66" model="crm.district">
+            <field name="name">66</field>
+            <field name="code">F1</field>
+        </record>
+		<record id="distric_02" model="crm.district">
+            <field name="name">02</field>
+            <field name="code">E1</field>
+        </record>
+        <record id="distric_55" model="crm.district">
+            <field name="name">55</field>
+            <field name="code">E1</field>
+        </record>
+        <record id="distric_56" model="crm.district">
+            <field name="name">56</field>
+            <field name="code">E1</field>
+        </record>
+        <record id="distric_36" model="crm.district">
+            <field name="name">36</field>
+            <field name="code">E2</field>
+        </record>
+        <record id="distric_37" model="crm.district">
+            <field name="name">37</field>
+            <field name="code">E2</field>
+        </record>
+        <record id="distric_38" model="crm.district">
+            <field name="name">38</field>
+            <field name="code">E2</field>
+        </record>
+        <record id="distric_39" model="crm.district">
+            <field name="name">39</field>
+            <field name="code">E2</field>
+        </record>
+        <record id="distric_28" model="crm.district">
+            <field name="name">28</field>
+            <field name="code">E3</field>
+        </record>
+        <record id="distric_29" model="crm.district">
+            <field name="name">29</field>
+            <field name="code">E3</field>
+        </record>
+        <record id="distric_30" model="crm.district">
+            <field name="name">30</field>
+            <field name="code">E3</field>
+        </record>
+        <record id="distric_31" model="crm.district">
+            <field name="name">31</field>
+            <field name="code">E3</field>
+        </record>
+        <record id="distric_53" model="crm.district">
+            <field name="name">53</field>
+            <field name="code">E4</field>
+        </record>
+        <record id="distric_57" model="crm.district">
+            <field name="name">57</field>
+            <field name="code">E4</field>
+        </record>
+        <record id="distric_03" model="crm.district">
+            <field name="name">03</field>
+            <field name="code">E5</field>
+        </record>
+        <record id="distric_05" model="crm.district">
+            <field name="name">05</field>
+            <field name="code">E5</field>
+        </record>
+        <record id="distric_41" model="crm.district">
+            <field name="name">41</field>
+            <field name="code">E6</field>
+        </record>
+        <record id="distric_59" model="crm.district">
+            <field name="name">59</field>
+            <field name="code">E7</field>
+        </record>
+        <record id="distric_60" model="crm.district">
+            <field name="name">60</field>
+            <field name="code">E7</field>
+        </record>
+        <record id="distric_61" model="crm.district">
+            <field name="name">61</field>
+            <field name="code">E7</field>
+        </record>
+        <record id="distric_04" model="crm.district">
+            <field name="name">04</field>
+            <field name="code">Open1</field>
+        </record>
+        <record id="distric_08" model="crm.district">
+            <field name="name">08</field>
+            <field name="code">Open1</field>
+        </record>
+        <record id="distric_11" model="crm.district">
+            <field name="name">11</field>
+            <field name="code">Open2</field>
+        </record>
+        <record id="distric_12" model="crm.district">
+            <field name="name">12</field>
+            <field name="code">Open2</field>
+        </record>
+        <record id="distric_67" model="crm.district">
+            <field name="name">67</field>
+            <field name="code">Open3</field>
+        </record>
+        <record id="distric_68" model="crm.district">
+            <field name="name">68</field>
+            <field name="code">Open3</field>
+        </record>
+        <record id="distric_72" model="crm.district">
+            <field name="name">72</field>
+            <field name="code">Open3</field>
+        </record>
+        <record id="distric_77" model="crm.district">
+            <field name="name">77</field>
+            <field name="code">Open3</field>
+        </record>
+        <record id="distric_13" model="crm.district">
+            <field name="name">13</field>
+            <field name="code">Open4</field>
+        </record>
+        <record id="distric_14" model="crm.district">
+            <field name="name">14</field>
+            <field name="code">Open4</field>
+        </record>
+        <record id="distric_75" model="crm.district">
+            <field name="name">75</field>
+            <field name="code">Open5</field>
+        </record>
+        <record id="distric_83" model="crm.district">
+            <field name="name">83</field>
+            <field name="code">Open5</field>
+        </record>
+        <record id="distric_79" model="crm.district">
+            <field name="name">79</field>
+            <field name="code">Open5</field>
+        </record>
+        <record id="distric_51" model="crm.district">
+            <field name="name">51</field>
+            <field name="code">Open6</field>
+        </record>
+        <record id="distric_81" model="crm.district">
+            <field name="name">81</field>
+            <field name="code">Open6</field>
+        </record>
+        <record id="distric_82" model="crm.district">
+            <field name="name">82</field>
+            <field name="code">Open6</field>
+        </record>
+        <record id="distric_58" model="crm.district">
+            <field name="name">58</field>
+            <field name="code">Open7</field>
+        </record>
+        <record id="distric_62" model="crm.district">
+            <field name="name">62</field>
+            <field name="code">Open7</field>
+        </record>
+        <record id="distric_63" model="crm.district">
+            <field name="name">63</field>
+            <field name="code">Open7</field>
+        </record>
+        <record id="distric_76" model="crm.district">
+            <field name="name">76</field>
+            <field name="code">Open8</field>
+        </record>
+        <record id="distric_78" model="crm.district">
+            <field name="name">78</field>
+            <field name="code">Open8</field>
+        </record>
+        <record id="distric_80" model="crm.district">
+            <field name="name">80</field>
+            <field name="code">Open8</field>
+        </record>
+        <record id="distric_73" model="crm.district">
+            <field name="name">73</field>
+            <field name="code">Open9</field>
+        </record>
+        <record id="distric_74" model="crm.district">
+            <field name="name">74</field>
+            <field name="code">Open9</field>
+        </record>
+        <record id="distric_09" model="crm.district">
+            <field name="name">09</field>
+            <field name="code">Open10</field>
+        </record>
+        <record id="distric_10" model="crm.district">
+            <field name="name">10</field>
+            <field name="code">Open10</field>
+        </record>
+        <record id="distric_17" model="crm.district">
+            <field name="name">17</field>
+            <field name="code">Open10</field>
+        </record>
+        <record id="distric_25" model="crm.district">
+            <field name="name">25</field>
+            <field name="code">Open11</field>
+        </record>
+        <record id="distric_26" model="crm.district">
+            <field name="name">26</field>
+            <field name="code">Open11</field>
+        </record>
+        <record id="distric_27" model="crm.district">
+            <field name="name">27</field>
+            <field name="code">Open11</field>
+        </record>
+        <record id="distric_69" model="crm.district">
+            <field name="name">69</field>
+            <field name="code">Open12</field>
+        </record>
+        <record id="distric_70" model="crm.district">
+            <field name="name">70</field>
+            <field name="code">Open12</field>
+        </record>
+        <record id="distric_71" model="crm.district">
+            <field name="name">71</field>
+            <field name="code">Open12</field>
+        </record>
+        <record id="distric_42" model="crm.district">
+            <field name="name">42</field>
+            <field name="code">Open13</field>
+        </record>
+        <record id="distric_43" model="crm.district">
+            <field name="name">43</field>
+            <field name="code">Open13</field>
+        </record>
+        <record id="distric_44" model="crm.district">
+            <field name="name">44</field>
+            <field name="code">Open13</field>
+        </record>
+        <record id="distric_45" model="crm.district">
+            <field name="name">45</field>
+            <field name="code">Open13</field>
+        </record>
+        <record id="distric_22" model="crm.district">
+            <field name="name">22</field>
+            <field name="code">Open16</field>
+        </record>
+        <record id="distric_23" model="crm.district">
+            <field name="name">23</field>
+            <field name="code">Open16</field>
+        </record>
+        <record id="distric_24" model="crm.district">
+            <field name="name">24</field>
+            <field name="code">Open16</field>
+        </record>
+        
+        <!-- For Territory -->
+
+		<record id="territory_A1" model="crm.territory">
+            <field name="name">A1</field>
+            <field name="code">A1</field>
+        </record>
+        <record id="territory_A2" model="crm.territory">
+            <field name="name">A2</field>
+            <field name="code">A2</field>
+        </record>
+        <record id="territory_A3" model="crm.territory">
+            <field name="name">A3</field>
+            <field name="code">A3</field>
+        </record>
+        <record id="territory_A4" model="crm.territory">
+            <field name="name">A4</field>
+            <field name="code">A4</field>
+        </record>
+        <record id="territory_C1" model="crm.territory">
+            <field name="name">C1</field>
+            <field name="code">C1</field>
+        </record>
+        <record id="territory_C2" model="crm.territory">
+            <field name="name">C2</field>
+            <field name="code">C2</field>
+        </record>
+        <record id="distric_C3" model="crm.territory">
+            <field name="name">C3</field>
+            <field name="code">C3</field>
+        </record>
+        <record id="territory_C4" model="crm.territory">
+            <field name="name">C4</field>
+            <field name="code">C4</field>
+        </record>
+        <record id="territory_C5" model="crm.territory">
+            <field name="name">C5</field>
+            <field name="code">C5</field>
+        </record>
+        <record id="territory_F1" model="crm.territory">
+            <field name="name">F1</field>
+            <field name="code">F1</field>
+        </record>
+		<record id="territory_E1" model="crm.territory">
+            <field name="name">E1</field>
+            <field name="code">E1</field>
+        </record>
+        <record id="territory_E2" model="crm.territory">
+            <field name="name">E2</field>
+            <field name="code">E2</field>
+        </record>
+        <record id="territory_E3" model="crm.territory">
+            <field name="name">E3</field>
+            <field name="code">E3</field>
+        </record>
+        <record id="territory_E4" model="crm.territory">
+            <field name="name">E4</field>
+            <field name="code">E4</field>
+        </record>
+        <record id="territory_E5" model="crm.territory">
+            <field name="name">E5</field>
+            <field name="code">E5</field>
+        </record>
+        <record id="territory_E6" model="crm.territory">
+            <field name="name">E6</field>
+            <field name="code">E6</field>
+        </record>
+        <record id="territory_E7" model="crm.territory">
+            <field name="name">E7</field>
+            <field name="code">E7</field>
+        </record>
+        <record id="territory_o1" model="crm.territory">
+            <field name="name">Open1</field>
+            <field name="code">Open1</field>
+        </record>
+        <record id="territory_o2" model="crm.territory">
+            <field name="name">Open2</field>
+            <field name="code">Open2</field>
+        </record>
+        <record id="territory_o3" model="crm.territory">
+            <field name="name">Open3</field>
+            <field name="code">Open3</field>
+        </record>
+        <record id="territory_o4" model="crm.territory">
+            <field name="name">Open4</field>
+            <field name="code">Open4</field>
+        </record>
+        <record id="territory_o5" model="crm.territory">
+            <field name="name">Open5</field>
+            <field name="code">Open5</field>
+        </record>
+        <record id="territory_o6" model="crm.territory">
+            <field name="name">Open6</field>
+            <field name="code">Open6</field>
+        </record>
+        <record id="territory_o7" model="crm.territory">
+            <field name="name">Open7</field>
+            <field name="code">Open7</field>
+        </record>
+        <record id="territory_o8" model="crm.territory">
+            <field name="name">Open8</field>
+            <field name="code">Open8</field>
+        </record>
+        <record id="territory_o9" model="crm.territory">
+            <field name="name">Open9</field>
+            <field name="code">Open9</field>
+        </record>
+        <record id="territory_o10" model="crm.territory">
+            <field name="name">Open10</field>
+            <field name="code">Open10</field>
+        </record>
+        <record id="territory_o11" model="crm.territory">
+            <field name="name">Open11</field>
+            <field name="code">Open11</field>
+        </record>
+        <record id="territory_o12" model="crm.territory">
+            <field name="name">Open12</field>
+            <field name="code">Open12</field>
+        </record>
+        <record id="territory_o13" model="crm.territory">
+            <field name="name">Open13</field>
+            <field name="code">Open12</field>
+        </record>
+        <record id="territory_o16" model="crm.territory">
+            <field name="name">Open16</field>
+            <field name="code">Open16</field>
+        </record>
+
+		<record id="request_maintenance_serv" model="res.request.link">
+            <field name="name">Maintenance Service</field>
+            <field name="priority">5</field>
+            <field name="object">crea8s.maintenance.service</field>
+        </record>
+
+		<record id="request_post_sale_support" model="res.request.link">
+            <field name="name">Post Sale System Support</field>
+            <field name="priority">5</field>
+            <field name="object">crea8s.post.sale.system</field>
+        </record>
+
+    </data>
+
+</openerp>

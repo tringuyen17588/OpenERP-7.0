@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+    	<record id="crea8s_action_product_supplier_info" model="ir.actions.act_window">
+            <field name="name">Product Supplier</field>
+            <field name="res_model">product.supplierinfo</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">tree,form</field>
+        </record>
+		
+		<menuitem action="crea8s_action_product_supplier_info" id="menu_crea8s_action_product_supplier_info" parent="menu_traceability" sequence="10"/>
+
+    </data>
+</openerp>

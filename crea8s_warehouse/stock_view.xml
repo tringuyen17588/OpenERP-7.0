@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+    	<record id="crea8s_crm_opp_form_view_retal_inherit" model="ir.ui.view">
+            <field name="name">crea8s.crm.opp.form.view.rental.inherit</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='priority']" position="after">
+					<field name="ltype" />
+				</xpath>
+            </field>
+        </record>
+        
+        <record id="crea8s_view_sale_order_form_rental_inherit" model="ir.ui.view">
+            <field name="name">crea8s.crm.opp.form.view.rental.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_stock.view_order_form_inherit"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_policy']" position="after">
+					<field name="ltype" />
+				</xpath>
+				<xpath expr="/form/sheet/notebook/page[@string='Other Information']" position="after">
+					<page string="Rental/Leasing" attrs="{'invisible': ['|',('ltype', '=', 'Selling'),('ltype', '=', False)]}">
+						<group>
+							<field name="date_from" attrs="{'required': [('ltype', 'in', ['Leasing','Rental'])]}"/>
+							<field name="date_to" on_change="date_compute_rental(date_from,date_to,inter_unit)" attrs="{'required': [('ltype', 'in', ['Leasing','Rental'])]}"/>
+							<field name="date_inv" on_change="date_compute_rental(date_from,date_to,inter_unit)" attrs="{'required': [('ltype', 'in', ['Leasing','Rental'])]}"/>
+							<field name="inter_unit" attrs="{'required': [('ltype', 'in', ['Leasing','Rental'])]}"/>
+							<field name="number_time" attrs="{'required': [('ltype', 'in', ['Leasing','Rental'])]}"/>
+							<button type="object" string="Create Invoice Auto" name="create_auto_inv" />
+							<field name="invoice_ids" nolabel="1" colspan="4"/>
+						</group>
+					</page>
+					
+				</xpath>
+            </field>
+        </record>
+        
+        <record id="sale.action_quotations" model="ir.actions.act_window">
+            <field name="name">Quotations</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="sale.view_quotation_tree"/>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field name="context">{}</field>
+            <field name="domain">[('state','in',('draft','sent','cancel')),('ltype','=','Selling')]</field>
+            <field name="search_view_id" ref="sale.view_sales_order_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a quotation, the first step of a new sale.
+              </p><p>
+                OpenERP will help you handle efficiently the complete sale flow:
+                from the quotation to the sales order, the
+                delivery, the invoicing and the payment collection.
+              </p><p>
+                The social feature helps you organize discussions on each sales
+                order, and allow your customers to keep track of the evolution
+                of the sales order.
+              </p>
+            </field>
+        </record>
+        
+        <!-- For Rental -->
+        
+        <record id="crea8s_rental_action_quotations" model="ir.actions.act_window">
+            <field name="name">Rental</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="sale.view_quotation_tree"/>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field name="context">{}</field>
+            <field name="domain">[('ltype','=','Rental')]</field>
+            <field name="search_view_id" ref="sale.view_sales_order_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a Rental, the first step of a new Rental.
+              </p><p>
+                OpenERP will help you handle efficiently the complete Rental flow:
+                from the quotation to the Rental order, the
+                delivery, the invoicing and the payment collection.
+              </p><p>
+                The social feature helps you organize discussions on each rental
+                order, and allow your customers to keep track of the evolution
+                of the rentals order.
+              </p>
+            </field>
+        </record>
+
+		<menuitem id="menu_crea8s_rental_action_quotations"
+        action="crea8s_rental_action_quotations" parent="base.menu_sales"
+        sequence="4"/>
+        
+        <!-- For Leasing -->
+        
+        <record id="crea8s_leasing_action_quotations" model="ir.actions.act_window">
+            <field name="name">Leasing</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="sale.view_quotation_tree"/>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field name="context">{}</field>
+            <field name="domain">[('ltype','=','Leasing')]</field>
+            <field name="search_view_id" ref="sale.view_sales_order_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a leasing, the first step of a new Leasing.
+              </p><p>
+                OpenERP will help you handle efficiently the complete Leasing flow:
+                from the quotation to the Leasing order, the
+                delivery, the invoicing and the payment collection.
+              </p><p>
+                The social feature helps you organize discussions on each leasing
+                order, and allow your customers to keep track of the evolution
+                of the leasing order.
+              </p>
+            </field>
+        </record>
+
+		<menuitem id="menu_crea8s_leasing_action_quotations"
+        action="crea8s_leasing_action_quotations" parent="base.menu_sales"
+        sequence="4"/>
+		
+
+    </data>
+</openerp>

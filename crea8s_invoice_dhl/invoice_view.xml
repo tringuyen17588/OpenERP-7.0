@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        
+        <record id="view_crea8s_invoice_form_inherit" model="ir.ui.view">
+            <field name="name">crea8s.invoice.form.inherit</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook[@colspan='4']" position="inside">
+                	<page string="Deliver Information">
+                		<field name="is_dhl"/>
+                		<field name="dhl_id" attrs="{'invisible': [('is_dhl','=', True)]}" domain="[('is_dhl', '=', True)]"/>
+                		<field name="inv_ids" attrs="{'invisible': [('is_dhl','=', False)]}" domain="[('is_dhl', '=', False)]"/>
+                	</page>
+                	<page string="Deliver Information">
+                		<field name="url_image" colspan="4" on_change="onchange_url(url_image)"/>
+                		<field name="result_barcode" colspan="4"/>
+                		                		
+                		<field name="youtube_link" colspan="4" on_change="onchange_link(youtube_link)" widget="webcam" options='{"size": [80, 60]}'/>
+                		<button name="check_html" string="_Apply" type="object" class="oe_highlight" />
+                		<field name="youtube_show" nolabel="1" colspan="4" widget="html" class="oe_view_only" readonly="1"/>
+                	</page>
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="view_crea8s_invoice_supplier_form_inherit" model="ir.ui.view">
+            <field name="name">crea8s.invoice.supplier.form.inherit</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@string='Payments']" position="after">
+                	<page string="Deliver Information">
+                		<field name="is_dhl"/>
+                		<field name="dhl_id" attrs="{'invisible': [('is_dhl','=', True)]}" domain="[('is_dhl', '=', True)]"/>
+                		<field name="inv_ids" attrs="{'invisible': [('is_dhl','=', False)]}"/>
+                	</page>
+                </xpath>
+            </field>
+        </record>
+        
+        
+    </data>
+</openerp>

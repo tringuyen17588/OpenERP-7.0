@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		<report auto="False" id="crea8s_vector_quo01_id" model="sale.order" name="crea8s_vector_quo01"
+                rml="crea8s_vector_quo/report_folder/crea8s_vector_quo01.rml" string="Vector Quotation / Order"
+                usage="default"/>
+                
+		<report auto="False" id="crea8s_vector_quo02_id" model="sale.order" name="crea8s_vector_quo02"
+                rml="crea8s_vector_quo/report_folder/crea8s_vector_quo02.rml" string="Vector Bill of Material"
+                usage="default"/>
+				
+		<report auto="False" id="crea8s_vector_quo03_id" model="sale.order" name="crea8s_vector_quo03"
+                rml="crea8s_vector_quo/report_folder/crea8s_vector_quo03.rml" string="Cost Sheet"
+                usage="default"/>
+		
+    </data>
+</openerp>
+
+

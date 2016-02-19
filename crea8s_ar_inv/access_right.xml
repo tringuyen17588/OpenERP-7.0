@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <!-- Using for group -->
+    <data noupdate="0">
+        <record id="group_limit_so_inv" model="res.groups">
+            <field name="name">Limit Invoice and SO</field>
+        </record>
+		
+		<record id="group_all_so_inv" model="res.groups">
+            <field name="name">All Invoice and SO</field>
+        </record>
+        
+        <record id="group_own_so_inv" model="res.groups">
+            <field name="name">Own Invoice and SO</field>
+        </record>
+    </data>
+    <!-- Using for normally -->
+	<data>
+	
+	<!-- Using for invoice -->
+		<menuitem action="account.action_invoice_tree1" 
+		id="account.menu_action_invoice_tree1" 
+		parent="account.menu_finance_receivables" 
+		groups="group_all_so_inv"/>
+		
+		<record id="action_invoice_tree_limit" model="ir.actions.act_window">
+            <field name="name">Customer Invoices</field>
+            <field name="res_model">account.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('type','=','out_invoice'), ('user_id.id', '!=', 1), ('user_id.id', '!=', 4), ('user_id.id', '!=', 12), ('user_id.id', '!=', 20)]</field>
+            <field name="context">{'default_type':'out_invoice', 'type':'out_invoice', 'journal_type': 'sale'}</field>
+            <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a customer invoice.
+              </p><p>
+                OpenERP's electronic invoicing allows to ease and fasten the
+                collection of customer payments. Your customer receives the
+                invoice by email and he can pay online and/or import it
+                in his own system.
+              </p><p>
+                The discussions with your customer are automatically displayed at
+                the bottom of each invoice.
+              </p>
+            </field>
+        </record>
+		
+		<record id="action_invoice_tree1_view1_limit" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="act_window_id" ref="action_invoice_tree_limit"/>
+        </record>
+
+        <record id="action_invoice_tree1_view2_limit" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="account.invoice_form"/>
+            <field name="act_window_id" ref="action_invoice_tree_limit"/>
+        </record>
+
+        <menuitem action="action_invoice_tree_limit" 
+		id="menu_action_invoice_tree1_limit" 
+		parent="account.menu_finance_receivables" 
+		groups="group_limit_so_inv,group_own_so_inv" sequence="2"/>
+		
+	<!-- Using for Sale Order -->
+	<!-- Quotation -->
+		<menuitem id="sale.menu_sale_quotations" groups="group_all_so_inv"
+        action="sale.action_quotations" parent="base.menu_sales" sequence="4"/>
+        
+        <record id="action_quotations_limit" model="ir.actions.act_window">
+            <field name="name">Quotations</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="sale.view_quotation_tree"/>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field name="context">{}</field>
+            <field name="domain">[('state','in',('draft','sent','cancel')), ('user_id.id', '!=', 1), ('user_id.id', '!=', 4), ('user_id.id', '!=', 12), ('user_id.id', '!=', 20)]</field>
+            <field name="search_view_id" ref="sale.view_sales_order_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a quotation, the first step of a new sale.
+              </p><p>
+                OpenERP will help you handle efficiently the complete sale flow:
+                from the quotation to the sales order, the
+                delivery, the invoicing and the payment collection.
+              </p><p>
+                The social feature helps you organize discussions on each sales
+                order, and allow your customers to keep track of the evolution
+                of the sales order.
+              </p>
+            </field>
+        </record>
+
+		<menuitem id="menu_sale_quotations_limit" groups="group_limit_so_inv"
+        action="action_quotations_limit" parent="base.menu_sales"
+        sequence="4"/>
+        
+        <!-- Sales Orders -->
+        <menuitem action="sale.action_orders" id="sale.menu_sale_order" 
+        parent="base.menu_sales" sequence="5" 
+        groups="group_all_so_inv"/>        
+        
+        <record id="action_orders_limit" model="ir.actions.act_window">
+            <field name="name">Sales Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field name="search_view_id" ref="sale.view_sales_order_filter"/>
+            <field name="context">{}</field>
+            <field name="domain">[('state','not in',('draft','sent','cancel')),('user_id.id', '!=', 1), ('user_id.id', '!=', 4), ('user_id.id', '!=', 12), ('user_id.id', '!=', 20)]</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a quotation that can be converted into a sales
+                order.
+              </p><p>
+                OpenERP will help you efficiently handle the complete sales flow:
+                quotation, sales order, delivery, invoicing and payment.
+              </p>
+            </field>
+        </record>
+
+		<menuitem action="action_orders_limit" id="menu_sale_order_limit" 
+        parent="base.menu_sales" sequence="5" 
+        groups="group_limit_so_inv"/>
+		
+		<!-- For own user -->
+		<!--  -->
+		<!--  -->
+        
+        <record id="action_quotations_limit_own" model="ir.actions.act_window">
+            <field name="name">Quotations</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="sale.view_quotation_tree"/>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field name="context">{}</field>
+            <field name="domain">[('state','in',('draft','sent','cancel')), '|',('user_id','=',uid),('user_id','=',False)]</field>
+            <field name="search_view_id" ref="sale.view_sales_order_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a quotation, the first step of a new sale.
+              </p><p>
+                OpenERP will help you handle efficiently the complete sale flow:
+                from the quotation to the sales order, the
+                delivery, the invoicing and the payment collection.
+              </p><p>
+                The social feature helps you organize discussions on each sales
+                order, and allow your customers to keep track of the evolution
+                of the sales order.
+              </p>
+            </field>
+        </record>
+
+		<menuitem id="menu_sale_quotations_limit_own" groups="group_own_so_inv"
+        action="action_quotations_limit_own" parent="base.menu_sales"
+        sequence="4"/>
+        
+        <!-- Sales Orders -->
+        
+        <record id="action_orders_limit_own" model="ir.actions.act_window">
+            <field name="name">Sales Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field name="search_view_id" ref="sale.view_sales_order_filter"/>
+            <field name="context">{}</field>
+            <field name="domain">[('state','not in',('draft','sent','cancel')),'|',('user_id','=',uid),('user_id','=',False)]</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a quotation that can be converted into a sales
+                order.
+              </p><p>
+                OpenERP will help you efficiently handle the complete sales flow:
+                quotation, sales order, delivery, invoicing and payment.
+              </p>
+            </field>
+        </record>
+
+		<menuitem action="action_orders_limit_own" id="menu_sale_order_limit_own" 
+        parent="base.menu_sales" sequence="5" 
+        groups="group_own_so_inv"/>
+        
+    <!-- Rule for own lead -->
+<!--     	<record id="sale.sale_order_line_personal_rule" model="ir.rule"> -->
+<!-- 	        <field name="name">Personal Order Lines</field> -->
+<!-- 	        <field ref="model_sale_order_line" name="model_id"/> -->
+<!-- 	        <field name="domain_force">[('1','=','1')]</field> -->
+<!-- 	    </record> -->
+		
+    </data>
+</openerp>

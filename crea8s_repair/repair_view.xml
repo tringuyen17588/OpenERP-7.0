@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<menuitem id="root_repair" name="Repair"/>
+	    <menuitem id="menu_repair" name="Servicing" parent="root_repair"/>
+
+		<record id="view_crea8s_repair_tree" model="ir.ui.view">
+            <field name="name">crea8s.repair.tree</field>
+            <field name="model">crea8s.repair</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <tree string="Servicing" fonts="bold:message_unread==True">
+                    <field name="message_unread" invisible="1"/>
+                    <field name="date"/>
+                    <field name="name"/>
+                    <field name="type"/>
+                    <field name="block"/>
+                    <field name="unit_no"/>
+                    <field name="pos_code"/>
+                    <field name="customer_id" invisible="1"/>
+                    <field name="telephone1"/>
+                    <field name="tech_person"/>
+                    <field name="appointment_date"/>
+                    <field name="state"/>
+                    <field name="subtotal_charge" string="Amount" sum="Total Amount"/>
+                </tree>
+            </field>
+        </record>
+		
+		<record id="view_crea8s_repair_form" model="ir.ui.view">
+            <field name="name">crea8s.repair.form</field>
+            <field name="model">crea8s.repair</field>
+            <field name="arch" type="xml">
+                <form string="Servicing" version="7.0">
+                    <header>
+                    	<button name="action_open" states="draft" string="Open" type="object"/>
+                        <button name="action_confirm" states="draft,open" string="Confirm" type="object"/>
+                        <button name="action_cancel" states="open,confirm" string="Cancel" type="object"/>
+                        <button name="import_csv_file" string="Import" type="object"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,open,confirm"/>
+                	</header>
+                    <sheet>
+                    <group colspan="4" col="4">
+                        <group colspan="2" col="2">
+                            <field name="name" attrs="{'readonly': [('state','=', 'confirm')]}"/>
+                            <field name="cus_repair_id" context="{'is_repair':1}" domain="[('is_serving','=',True)]" attrs="{'readonly': [('state','=', 'confirm')]}" on_change="onchange_partner(cus_repair_id)"/>
+                            <field name="customer_id" domain="[('customer','=',True)]" context="{'search_default_customer':1, 'show_address': 1}" options='{"always_reload": True}' attrs="{'readonly': [('state','=', 'confirm')]}" invisible="1"/>
+                            <field name="tech_person" attrs="{'readonly': [('state','=', 'confirm')]}"/>
+                            <field name="dealer_id" attrs="{'readonly': [('state','=', 'confirm')]}"/>
+                            <field name="attend_by" attrs="{'readonly': [('state','=', 'confirm')]}"/>
+                           	<field name="telephone1" attrs="{'readonly': [('state','=', 'confirm')]}" string="Telephone"/>
+                           	<field name="telephone2" attrs="{'readonly': [('state','=', 'confirm')]}" string=" "/>
+                           	<field name="telephone3" attrs="{'readonly': [('state','=', 'confirm')]}" string=" " invisible="1"/>
+                            
+                        </group>
+                        <group colspan="2" col="2">
+                            <field name="type" attrs="{'readonly': [('state','=', 'confirm')]}"/>
+                            <field name="model_no" attrs="{'readonly': [('state','=', 'confirm')]}"/>
+                            <field name="date" attrs="{'readonly': [('state','=', 'confirm')]}"/>
+                            <field name="appointment_date" attrs="{'readonly': [('state','=', 'confirm')]}"/>
+                            <field name="purchase_date" attrs="{'readonly': [('state','=', 'confirm')]}"/>
+                            <field name="is_cash" attrs="{'readonly': [('state','=', 'confirm')]}"/>
+                            <field name="is_cheque" attrs="{'readonly': [('state','=', 'confirm')]}"/>
+                            <field name="cheque_num" attrs="{'readonly': [('state','=', 'confirm')]}"/>
+                            <field name="block" invisible="1"/>
+                            <field name="unit_no" invisible="1"/>
+                    		<field name="pos_code" invisible="1"/>
+                        </group>
+                        <group colspan="4" col="4">
+                            <field name="repair_line" nolabel="1" colspan="4" attrs="{'readonly': [('state','=', 'confirm')]}">
+                                <tree string="Repair Line" editable="bottom">
+                            		<field name="product_id" on_change="onchange_product_id(product_id)" required="1"/>
+		                            <field name="name"/>
+		                            <field name="qty" on_change="onchange_quantity(product_id,qty,unit_price)"/>
+		                            <field name="unit_price" on_change="onchange_quantity(product_id,qty,unit_price)"/>
+		                            <field name="amount"/>
+		                            <field name="repair_id" invisible="1"/>
+                            	</tree>
+                            	<form string="Repair Line">
+                            		<field name="product_id"/>
+		                            <field name="name"/>
+		                            <field name="qty"/>
+		                            <field name="unit_price"/>
+		                            <field name="amount"/>
+		                            <field name="repair_id"/>
+                            	</form>
+                            </field>
+                            </group>
+                            <group class="oe_subtotal_footer oe_right" colspan="4">
+                                <field name="trans_charge" widget='monetary' options="{'currency_field': 'currency_id'}" attrs="{'readonly': [('state','=', 'confirm')]}"/>
+                                <field name="labor_charge" widget='monetary' options="{'currency_field': 'currency_id'}" attrs="{'readonly': [('state','=', 'confirm')]}"/>
+                                <field name="amount_total" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+				    <div class="oe_subtotal_footer_separator oe_inline">
+                                    <label for="subtotal_charge" />
+                                    <button name="button_dummy"
+                                        states="draft,open" string="(update)" type="object" class="oe_edit_only oe_link"/>
+                                </div>
+                                <field name="subtotal_charge" readonly="0" nolabel="1" class="oe_subtotal_footer_separator" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                            </group>
+                            <newline/>
+                            <group colspan="4" col="4">
+	                            <separator string="Nature of fault" colspan="4" />
+	                            <field name="description" class="oe_inline" attrs="{'readonly': [('state','=', 'confirm')]}" placeholder="Description..." nolabel="1" colspan="4"/>
+	                            <newline/>
+	                            <separator string="Remarks" colspan="4"/>
+	                            <field name="remark" class="oe_inline" placeholder="Remark..." nolabel="1" colspan="4" attrs="{'readonly': [('state','=', 'confirm')]}"/>
+                        	</group>
+                        	<group colspan="4" col="4" groups="crea8s_repair.group_repair_office">
+	                            <separator string="Internal Remarks" colspan="4"/>
+	                            <field name="hide_remark" placeholder="Internal Remark..."  nolabel="1" colspan="4" attrs="{'readonly': [('state','=', 'confirm')]}"/>
+                        	</group>
+                    </group>
+	                </sheet>
+	                <div class="oe_chatter">
+	                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+	                </div>
+                </form>
+           </field>
+        </record>
+        
+        <record id="view_crea8s_repair__calendar" model="ir.ui.view">
+            <field name="name">crea8s.repair.calendar</field>
+            <field name="model">crea8s.repair</field>
+            <field name="arch" type="xml">
+                <calendar string="Servicing" color="tech_person" date_start="appointment_date" day_length="0">
+                    <field name="date" invisible="1"/>
+                    <field name="appointment_date"/>
+                    <field name="tech_person"/>
+                    <field name="subtotal_charge"/>
+                </calendar>
+            </field>
+        </record>
+        
+		<record id="view_crea8s_repair_filter" model="ir.ui.view">
+            <field name="name">crea8s.repair.select</field>
+            <field name="model">crea8s.repair</field>
+            <field name="arch" type="xml">
+                <search string="Search Warranty">
+                    <field name="block"/>
+                    <field name="pos_code"/>
+                    <field name="telephone1"/>                  
+               </search>
+            </field>
+        </record>
+
+        <record id="action_view_crea8s_repair_form" model="ir.actions.act_window">
+            <field name="name">Servicing</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crea8s.repair</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+	     <field name="search_view_id" ref="view_crea8s_repair_filter"/>
+            <field name="view_id" ref="view_crea8s_repair_tree"/>
+        </record>
+                
+        <menuitem id="menu_action_view_crea8s_repair_form" name="Serving Job" parent="menu_repair" action="action_view_crea8s_repair_form"/>
+        
+        
+        <!-- For Warranty -->
+        <record id="view_crea8s_warranty_tree" model="ir.ui.view">
+            <field name="name">crea8s.warranty.tree</field>
+            <field name="model">crea8s.warranty</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <tree string="Repair" fonts="bold:message_unread==True">
+                    <field name="message_unread" invisible="1"/>
+                    <field name="name"/>
+                    <field name="block"/>
+		      <field name="unit_no"/>
+                    <field name="pos_code"/>
+                    <field name="telephone"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+		
+		<record id="view_crea8s_warranty_form" model="ir.ui.view">
+            <field name="name">crea8s.warranty.form</field>
+            <field name="model">crea8s.warranty</field>
+            <field name="arch" type="xml">
+                <form string="Warranty" version="7.0">
+                    <header>
+                    	<button name="action_open" states="draft" string="Open" type="object"/>
+                        <button name="action_confirm" states="draft,open" string="Confirm" type="object"/>
+                        <button name="action_cancel" states="open,confirm" string="Cancel" type="object"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,open,confirm"/>
+                	</header>
+                    <sheet>
+                    <group colspan="4" col="2">
+                        <field name="pur_inv_no"/>
+                        <field name="name"/>
+                        <field name="cus_war_id" string="Block and Street" domain="[('is_warranty','=',True)]" context="{'is_warranty':1}" on_change="onchange_partner(cus_war_id)"/>
+                        <field name="cus_name" invisible="1"/>
+                        <field name="telephone"/>
+                        <field name="telephone2" string=" "/>
+                        <field name="contact_no1" invisible="1"/>
+                        <field name="contact_no2" invisible="1"/>
+                        <field name="contact_no3" invisible="1"/>
+                        <field name="email"/>
+                        <field name="block" string="Street Name"/>
+                        <field name="street" invisible="1"/>
+                        <field name="unit_no"/>
+                        <field name="pos_code"/>
+                        <field name="model_no"/>
+                        <field name="purchase_date"/>
+                        <field name="install_date"/>
+                        <field name="install_by"/>
+                        <field name="dealer_id"/>
+                        <field name="remark" colspan="4"/>
+                    </group>
+	                </sheet>
+	                <div class="oe_chatter">
+	                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+	                </div>
+                </form>
+           </field>
+        </record>
+        
+	 <record id="view_crea8s_warranty_filter" model="ir.ui.view">
+            <field name="name">crea8s.warranty.select</field>
+            <field name="model">crea8s.warranty</field>
+            <field name="arch" type="xml">
+                <search string="Search Warranty">
+                    <field name="block"/>
+                    <field name="pos_code"/>
+                    <field name="telephone"/>                  
+               </search>
+            </field>
+        </record>
+
+        <record id="action_view_crea8s_warranty_form" model="ir.actions.act_window">
+            <field name="name">Warranty</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crea8s.warranty</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_crea8s_warranty_tree"/>
+	     <field name="search_view_id" ref="view_crea8s_warranty_filter"/>
+        </record>
+                
+        <menuitem id="menu_action_view_crea8s_warranty_form" name="Warranty" parent="menu_repair" action="action_view_crea8s_warranty_form"/>
+        
+        <!-- crea8s.repair.user -->
+        
+                <record id="view_crea8s_repair_user_tree" model="ir.ui.view">
+            <field name="name">crea8s.repair.user.tree</field>
+            <field name="model">crea8s.repair.user</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <tree string="Repair User">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+		
+		<record id="view_crea8s_repair_user_form" model="ir.ui.view">
+            <field name="name">crea8s.repair.user.form</field>
+            <field name="model">crea8s.repair.user</field>
+            <field name="arch" type="xml">
+                <form string="Repair User" version="7.0">
+                    <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+	                </sheet>
+                </form>
+           </field>
+        </record>
+        
+        <record id="action_view_crea8s_repair_user_form" model="ir.actions.act_window">
+            <field name="name">Repair User</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crea8s.repair.user</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_crea8s_repair_user_tree"/>
+        </record>
+                
+        <menuitem id="menu_action_view_crea8s_repair_user_form" name="Repair User" parent="menu_repair" action="action_view_crea8s_repair_user_form"/>
+        
+        <!-- crea8s.repair.line -->
+        
+        <record id="view_crea8s_repair_line_tree" model="ir.ui.view">
+            <field name="name">crea8s.repair.line.tree</field>
+            <field name="model">crea8s.repair.line</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <tree string="Repair Line">
+                    <field name="name"/>
+                    <field name="product_id"/>
+                    <field name="qty"/>
+                    <field name="unit_price"/>
+                    <field name="amount"/>
+                    <field name="repair_id"/>
+                </tree>
+            </field>
+        </record>
+        		
+		<record id="view_crea8s_repair_line_form" model="ir.ui.view">
+            <field name="name">crea8s.repair.line.form</field>
+            <field name="model">crea8s.repair.line</field>
+            <field name="arch" type="xml">
+                <form string="Repair Line" version="7.0">
+                    <sheet>
+	                    <group>
+		                    <field name="name"/>
+		                    <field name="product_id"/>
+		                    <field name="qty"/>
+		                    <field name="unit_price"/>
+		                    <field name="amount"/>
+		                    <field name="repair_id"/>
+		                    <button name="import_csv_file" string="Import" type="object"/>
+	                    </group>
+	                </sheet>
+                </form>
+           </field>
+        </record>
+        
+        <record id="action_view_crea8s_repair_line_form" model="ir.actions.act_window">
+            <field name="name">Repair Line</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crea8s.repair.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_crea8s_repair_line_tree"/>
+        </record>
+                
+        <menuitem id="menu_action_view_crea8s_repair_line_form" name="Repair Line" parent="menu_repair" action="action_view_crea8s_repair_line_form"/>
+        
+    </data>
+</openerp>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+<!-- 	   	<record model='ir.ui.view' id='statement_form_invoice_lines_view_inherit_bank1'> -->
+<!-- 			<field name='name'>account.statement.from.invoice.lines.form.inherit.bank1</field> -->
+<!-- 			<field name='model'>account.statement.from.invoice.lines</field> -->
+<!-- 			<field name='inherit_id' ref='account_bank_voucher.statement_form_invoice_lines_view_inherit_bank'/> -->
+<!-- 			<field name='arch' type='xml'> -->
+<!--                 <xpath expr="//field[@name='line_ids']" position="before"> -->
+<!--                 	<field name="period_id" invisible="1"/> -->
+<!--                 </xpath> -->
+<!--                 <xpath expr="//field[@name='line_ids']" position="attributes"> -->
+<!--                 	<attribute name="domain">[('period_id', '=', period_id)]</attribute> -->
+<!--                 </xpath> -->
+<!-- 			</field> -->
+<!-- 		</record> -->
+        
+<!--         <record id="view_bank_statement_form_invoice" model="ir.ui.view"> -->
+<!--             <field name="name">account.bank.statement.invoice.form.inherit1</field> -->
+<!--             <field name="model">account.bank.statement</field> -->
+<!--             <field name="inherit_id" ref="account_voucher.view_bank_statement_form_invoice"/> -->
+<!--             <field name="arch" type="xml"> -->
+<!--                 <xpath expr="//button[@name='%(account_voucher.action_view_account_statement_from_invoice_lines)d']" position="replace"> -->
+<!--                     <button name="%(account_voucher.action_view_account_statement_from_invoice_lines)d" -->
+<!--                             string="Import Invoices" type="action" -->
+<!--                             attrs="{'invisible':[('state','=','confirm')]}" context="{'period_id': period_id}"/> -->
+<!--                 </xpath> -->
+<!--             </field> -->
+<!--         </record> -->
+        
+        
+	</data>
+</openerp>

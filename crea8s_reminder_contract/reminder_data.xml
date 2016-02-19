@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+		<record id="filter_renew_contract" model="ir.filters">
+            <field name="name">Renew Contract</field>
+            <field name="model_id">account.analytic.account</field>
+            <field name="domain">[('state','=','pending')]</field>
+            <field name="user_id" eval="False"/>
+        </record>
+	
+        <record id="action_email_reminder_contract" model="ir.actions.server">
+            <field name="name">Reminder to Customer</field>
+            <field name="model_id" ref="model_account_analytic_account"/>
+            <field name="condition">True</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">email</field>
+            <field name="email">object.partner_id.email</field>
+            <field name="subject">Reminder on Contracts: [[object.name or '']]</field>
+            <field name="message">Warning unprocessed incoming contract will be expiration 2 weeks later.
+Name: [[object.name ]]
+Description: [[object.description]]
+            </field>
+        </record>
+		
+		<record id="rule_set_reminder_contract" model="base.action.rule">
+            <field name="name">Set Auto Reminder on contracts which will be expiration 2 weeks later.</field>
+            <field name="model_id" ref="model_account_analytic_account"/>
+            <field name="sequence">1</field>
+            <field name="filter_id" ref="filter_renew_contract"/>
+            <field name="trg_date_id" ref="field_account_analytic_account_date"/>
+            <field name="trg_date_range">1</field>
+            <field name="trg_date_range_type">day</field>
+            <field name="server_action_ids" eval="[(6,0,[ref('action_email_reminder_contract')])]"/>
+        </record>
+		
+    </data>
+</openerp>

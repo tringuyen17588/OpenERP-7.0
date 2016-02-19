@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+	            <!-- Wizard to generate the PO -->
+        <record id="crea8s_view_fix_data_wizard1" model="ir.ui.view">
+            <field name="name"> Fix Data 1 </field>
+            <field name="model">crea8s.pos.fix.wz1</field>
+            <field name="arch" type="xml">
+                <form string="Fix Data" version="7.0">
+                	<sheet>
+	                        <field name="name"/>
+                	</sheet>
+                    <footer>
+                        <button name="fix_data" type="object" string="Fix Data" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        <record id="crea8s_fix_data_wizard_form_action1" model="ir.actions.act_window">
+            <field name="name">Fix Data 1</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crea8s.pos.fix.wz1</field>
+            <field name="view_type">form</field>
+            <field name="view_type">form</field>
+            <field name="target">new</field>
+        </record>
+                        		
+    </data>
+</openerp>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+	<!-- For Account Invoice -->        
+        <report
+            auto="False"
+            id="account.account_invoices"
+            model="account.invoice"
+            name="account.invoice.msmedia"
+            rml="crea8s_msmedia_fix/account_print_invoice.rml"
+            string="Invoices"
+            attachment_use="True"
+            usage="default"
+            />
+	
+	<record id="view_account_invoice_form_inherit" model="ir.ui.view">
+	            <field name="name">account.invoice.print.invoice.inherit</field>
+	            <field name="model">account.invoice</field>
+	            <field name="inherit_id" ref="account.invoice_form"/>
+	            <field name="arch" type="xml">
+	                <xpath expr="//button[@string='Print']" position="replace">
+			    <button name="%(account.account_invoices)d" string="Print Invoice" type="action" attrs="{'invisible':['|',('sent','=',True), ('state', '!=',  'open')]}"/>
+	                </xpath>
+			<xpath expr="//button[@string='Print Invoice']" position="replace">
+	                    <button name="%(account.account_invoices)d" string="Print Invoice" type="action" attrs="{'invisible':['|',('sent','=',False), ('state', '!=', 'open')]}" groups="base.group_user"/> 
+	                </xpath>
+			<xpath expr="/form/sheet/notebook/page/group/group/field[@name='name']" position="replace">
+                    		<field name="name" string="D.O Number"/>
+                	</xpath>
+	            </field>
+	        </record>
+
+		<record id="view_sale_order_form_inherit" model="ir.ui.view">
+	            <field name="name">sale.order.compagin.inherit</field>
+	            <field name="model">sale.order</field>
+	            <field name="inherit_id" ref="sale.view_order_form"/>
+	            <field name="arch" type="xml">
+	                <xpath expr="//field[@name='fiscal_position']" position="after">
+			    <field name="compaign"/>
+	                </xpath>
+	            </field>
+	        </record>
+
+
+<!--     For Sale Order -->
+    	<report auto="False" id="sale.report_sale_order" model="sale.order" name="crea8s.sale.order.msmedia"
+                rml="crea8s_msmedia_fix/sale_order.rml" string="Quotation / Order"
+                usage="default"/>
+<!--         <report auto="False" id="report_sale_order_without" model="sale.order" name="sale.order.jmd_pacific_without" -->
+<!--                 rml="crea8s_jmd_pacific_fix/sale_order_without.rml" string="Quotation / Order without discount" -->
+<!--                 usage="default"/> -->
+                 
+    </data>
+</openerp>

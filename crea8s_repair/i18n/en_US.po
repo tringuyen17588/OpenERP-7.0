@@ -1,0 +1,636 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# 	* crea8s_repair
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20130901-231054\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-07-21 09:37+0000\n"
+"PO-Revision-Date: 2014-07-21 16:39+0700\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: en_US\n"
+"X-Generator: Poedit 1.6.6\n"
+
+#. module: crea8s_repair
+#: model:ir.actions.act_window,name:crea8s_repair.action_view_res_partner_warranty_form
+#: model:ir.ui.menu,name:crea8s_repair.menu_action_view_res_partner_warranty_form
+msgid "Warranty Customer"
+msgstr "Khách hàng bảo hành"
+
+#. module: crea8s_repair
+#: field:res.partner.repair,is_warranty:0
+msgid "Is Warranty"
+msgstr "Bảo Hành"
+
+#. module: crea8s_repair
+#: model:res.groups,name:crea8s_repair.group_repair_office
+msgid "Repair Office"
+msgstr "Văn phòng sửa chữa"
+
+#. module: crea8s_repair
+#: report:report.repair.cr8s:0
+msgid "TRANSPORT CHARGE"
+msgstr "Phí vận chuyển"
+
+#. module: crea8s_repair
+#: field:crea8s.repair,message_unread:0 field:crea8s.warranty,message_unread:0
+#: field:res.partner.repair,message_unread:0
+#: field:res.partner.repair.type,message_unread:0
+msgid "Unread Messages"
+msgstr "Unread Messages"
+
+#. module: crea8s_repair
+#: field:crea8s.warranty,dealer_id:0
+msgid "Dealer's Name"
+msgstr "Dealer's Name"
+
+#. module: crea8s_repair
+#: report:report.repair.cr8s:0
+msgid "MODEL NO"
+msgstr "MODEL NO"
+
+#. module: crea8s_repair
+#: view:res.partner.repair.type:0
+msgid "Customer Type"
+msgstr "Customer Type"
+
+#. module: crea8s_repair
+#: field:crea8s.repair,block:0 view:crea8s.warranty:0
+#: field:crea8s.warranty,block:0 field:res.partner.repair,name:0
+msgid "Block and Street"
+msgstr "Block and Street"
+
+#. module: crea8s_repair
+#: view:crea8s.repair:0
+msgid "Remark..."
+msgstr "Remark..."
+
+#. module: crea8s_repair
+#: field:crea8s.repair,remark:0 field:crea8s.warranty,remark:0
+#: field:res.partner.repair,remark:0
+msgid "Remark"
+msgstr "Remark"
+
+#. module: crea8s_repair
+#: view:crea8s.repair:0
+msgid "Internal Remarks"
+msgstr "Internal Remarks"
+
+#. module: crea8s_repair
+#: field:crea8s.repair,model_no:0
+msgid "Model No"
+msgstr "Model No"
+
+#. module: crea8s_repair
+#: field:crea8s.repair,tech_person:0
+msgid "Technician"
+msgstr "Technician"
+
+#. module: crea8s_repair
+#: view:crea8s.repair:0 field:crea8s.repair.line,amount:0
+#: report:report.repair.cr8s:0
+msgid "Amount"
+msgstr "Amount"
+
+#. module: crea8s_repair
+#: report:report.repair.cr8s:0
+msgid "CUSTOMER NAME AND ADDRESS"
+msgstr "CUSTOMER NAME AND ADDRESS"
+
+#. module: crea8s_repair
+#: help:crea8s.repair,message_unread:0 help:crea8s.warranty,message_unread:0
+#: help:res.partner.repair,message_unread:0
+#: help:res.partner.repair.type,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "If checked new messages require your attention."
+
+#. module: crea8s_repair
+#: view:crea8s.repair:0
+msgid "Internal Remark..."
+msgstr "Internal Remark..."
+
+#. module: crea8s_repair
+#: model:ir.actions.act_window,name:crea8s_repair.action_view_crea8s_warranty_form
+#: model:ir.ui.menu,name:crea8s_repair.menu_action_view_crea8s_warranty_form
+msgid "Warranty"
+msgstr "Warranty"
+
+#. module: crea8s_repair
+#: model:ir.model,name:crea8s_repair.model_crea8s_repair_user
+msgid "crea8s.repair.user"
+msgstr "crea8s.repair.user"
+
+#. module: crea8s_repair
+#: model:ir.actions.act_window,name:crea8s_repair.action_view_res_partner_repair_form
+#: model:ir.ui.menu,name:crea8s_repair.menu_action_view_res_partner_repair_form
+#: view:res.partner.repair:0
+msgid "Serving Customer"
+msgstr "Serving Customer"
+
+#. module: crea8s_repair
+#: view:crea8s.repair:0 field:crea8s.repair,telephone1:0
+#: field:crea8s.warranty,telephone:0 view:res.partner.repair:0
+#: field:res.partner.repair,telephone1:0
+msgid "Telephone"
+msgstr "Telephone"
+
+#. module: crea8s_repair
+#: report:report.repair.cr8s:0
+msgid "APPOINTMENT DATE"
+msgstr "APPOINTMENT DATE"
+
+#. module: crea8s_repair
+#: help:crea8s.repair,message_summary:0 help:crea8s.warranty,message_summary:0
+#: help:res.partner.repair,message_summary:0
+#: help:res.partner.repair.type,message_summary:0
+msgid ""
+"Holds the Chatter summary (number of messages, ...). This summary is "
+"directly in html format in order to be inserted in kanban views."
+msgstr ""
+"Holds the Chatter summary (number of messages, ...). This summary is "
+"directly in html format in order to be inserted in kanban views."
+
+#. module: crea8s_repair
+#: field:crea8s.repair,name:0
+msgid "Job Number"
+msgstr "Job Number"
+
+#. module: crea8s_repair
+#: view:crea8s.repair:0
+msgid "(update)"
+msgstr "(update)"
+
+#. module: crea8s_repair
+#: report:report.repair.cr8s:0
+msgid "Payment Type"
+msgstr "Payment Type"
+
+#. module: crea8s_repair
+#: view:crea8s.repair:0 selection:crea8s.repair,state:0 view:crea8s.warranty:0
+#: selection:crea8s.warranty,state:0
+msgid "Confirm"
+msgstr "Confirm"
+
+#. module: crea8s_repair
+#: report:report.repair.cr8s:0
+msgid "LABOUR CHARGE"
+msgstr "LABOUR CHARGE"
+
+#. module: crea8s_repair
+#: field:crea8s.repair,appointment_date:0
+msgid "Appointment Date"
+msgstr "Appointment Date"
+
+#. module: crea8s_repair
+#: field:crea8s.repair,state:0 field:crea8s.warranty,state:0
+msgid "State"
+msgstr "State"
+
+#. module: crea8s_repair
+#: field:crea8s.repair,message_follower_ids:0
+#: field:crea8s.warranty,message_follower_ids:0
+#: field:res.partner.repair,message_follower_ids:0
+#: field:res.partner.repair.type,message_follower_ids:0
+msgid "Followers"
+msgstr "Followers"
+
+#. module: crea8s_repair
+#: field:crea8s.repair,is_cheque:0 report:report.repair.cr8s:0
+msgid "CHEQUE"
+msgstr "CHEQUE"
+
+#. module: crea8s_repair
+#: field:crea8s.warranty,unit_no:0
+msgid "Unit No."
+msgstr "Unit No."
+
+#. module: crea8s_repair
+#: field:crea8s.repair,type:0 field:res.partner.repair,type:0
+msgid "Type"
+msgstr "Type"
+
+#. module: crea8s_repair
+#: field:crea8s.warranty,email:0 field:res.partner.repair,email:0
+msgid "Email"
+msgstr "Email"
+
+#. module: crea8s_repair
+#: model:ir.ui.menu,name:crea8s_repair.menu_action_view_crea8s_repair_form
+msgid "Serving Job"
+msgstr "Serving Job"
+
+#. module: crea8s_repair
+#: view:crea8s.repair:0
+msgid "Repair Settings"
+msgstr "Repair Settings"
+
+#. module: crea8s_repair
+#: report:report.repair.cr8s:0
+msgid "CUSTOMER'S SIGNATURE"
+msgstr "CUSTOMER'S SIGNATURE"
+
+#. module: crea8s_repair
+#: report:report.repair.cr8s:0
+msgid "REMARKS:"
+msgstr "REMARKS:"
+
+#. module: crea8s_repair
+#: view:crea8s.repair:0 field:crea8s.repair,repair_line:0
+msgid "Repair Line"
+msgstr "Repair Line"
+
+#. module: crea8s_repair
+#: field:res.partner.repair,block:0
+msgid "Block"
+msgstr "Block"
+
+#. module: crea8s_repair
+#: view:crea8s.repair:0
+msgid "Delete"
+msgstr "Delete"
+
+#. module: crea8s_repair
+#: view:crea8s.repair:0
+msgid "Description..."
+msgstr "Description..."
+
+#. module: crea8s_repair
+#: sql_constraint:res.partner.repair:0
+msgid "The block and street and unit no must be unique !"
+msgstr "The block and street and unit no must be unique !"
+
+#. module: crea8s_repair
+#: report:report.repair.cr8s:0
+msgid "NATURE OF FAULT :"
+msgstr "NATURE OF FAULT :"
+
+#. module: crea8s_repair
+#: selection:crea8s.repair,type:0
+msgid "INSTALLING"
+msgstr "INSTALLING"
+
+#. module: crea8s_repair
+#: field:crea8s.warranty,cus_name:0
+msgid "Customer's Name"
+msgstr "Customer's Name"
+
+#. module: crea8s_repair
+#: selection:crea8s.repair,type:0
+msgid "SERVICING"
+msgstr "SERVICING"
+
+#. module: crea8s_repair
+#: field:crea8s.warranty,name:0
+msgid "Warranty No"
+msgstr "Warranty No"
+
+#. module: crea8s_repair
+#: field:crea8s.repair,dealer_id:0
+msgid "Dealer"
+msgstr "Dealer"
+
+#. module: crea8s_repair
+#: report:report.repair.cr8s:0
+msgid "PURCHASE DATE"
+msgstr "PURCHASE DATE"
+
+#. module: crea8s_repair
+#: report:report.repair.cr8s:0
+msgid "No"
+msgstr "No"
+
+#. module: crea8s_repair
+#: report:report.repair.cr8s:0
+msgid "THE ABOVE JOB HAS BEEN DONE TO MY SATISFACTION"
+msgstr "THE ABOVE JOB HAS BEEN DONE TO MY SATISFACTION"
+
+#. module: crea8s_repair
+#: view:res.partner.repair:0
+msgid "Add Constraint"
+msgstr "Add Constraint"
+
+#. module: crea8s_repair
+#: field:crea8s.repair,labor_charge:0
+msgid "Labour Charge"
+msgstr "Labour Charge"
+
+#. module: crea8s_repair
+#: report:report.repair.cr8s:0
+msgid "FANCO MANUFACTURING ENTERPRISE"
+msgstr "FANCO MANUFACTURING ENTERPRISE"
+
+#. module: crea8s_repair
+#: selection:crea8s.repair,state:0 selection:crea8s.warranty,state:0
+msgid "Draft"
+msgstr "Draft"
+
+#. module: crea8s_repair
+#: report:report.repair.cr8s:0
+msgid "SUB-TOTAL CHARGE"
+msgstr "SUB-TOTAL CHARGE"
+
+#. module: crea8s_repair
+#: report:report.repair.cr8s:0
+msgid "TECHNICIAN"
+msgstr "TECHNICIAN"
+
+#. module: crea8s_repair
+#: field:res.partner.repair,telephone3:0
+msgid "Telephone 3"
+msgstr "Telephone 3"
+
+#. module: crea8s_repair
+#: field:res.partner.repair,telephone2:0
+msgid "Telephone 2"
+msgstr "Telephone 2"
+
+#. module: crea8s_repair
+#: view:crea8s.repair:0
+msgid "í"
+msgstr "í"
+
+#. module: crea8s_repair
+#: view:crea8s.repair:0
+msgid "Total Amount"
+msgstr "Total Amount"
+
+#. module: crea8s_repair
+#: field:res.partner.repair,area:0
+msgid "Area"
+msgstr "Area"
+
+#. module: crea8s_repair
+#: field:crea8s.repair,is_cash:0 report:report.repair.cr8s:0
+msgid "CASH"
+msgstr "CASH"
+
+#. module: crea8s_repair
+#: view:crea8s.repair:0
+msgid "Nature of fault"
+msgstr "Nature of fault"
+
+#. module: crea8s_repair
+#: field:crea8s.repair,message_is_follower:0
+#: field:crea8s.warranty,message_is_follower:0
+#: field:res.partner.repair,message_is_follower:0
+#: field:res.partner.repair.type,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Is a Follower"
+
+#. module: crea8s_repair
+#: view:crea8s.repair:0
+#: model:ir.actions.act_window,name:crea8s_repair.action_view_crea8s_repair_form
+#: model:ir.ui.menu,name:crea8s_repair.menu_repair
+msgid "Servicing"
+msgstr "Servicing"
+
+#. module: crea8s_repair
+#: field:crea8s.repair,date:0
+msgid "Date"
+msgstr "Date"
+
+#. module: crea8s_repair
+#: model:ir.model,name:crea8s_repair.model_crea8s_repair_line
+msgid "crea8s.repair.line"
+msgstr "crea8s.repair.line"
+
+#. module: crea8s_repair
+#: report:report.repair.cr8s:0
+msgid "JOB SHEET / INVOICE"
+msgstr "JOB SHEET / INVOICE"
+
+#. module: crea8s_repair
+#: field:crea8s.repair,trans_charge:0
+msgid "Transport Charge"
+msgstr "Transport Charge"
+
+#. module: crea8s_repair
+#: field:crea8s.repair,message_summary:0
+#: field:crea8s.warranty,message_summary:0
+#: field:res.partner.repair,message_summary:0
+#: field:res.partner.repair.type,message_summary:0
+msgid "Summary"
+msgstr "Summary"
+
+#. module: crea8s_repair
+#: field:crea8s.repair,pos_code:0 field:crea8s.warranty,pos_code:0
+#: field:res.partner.repair,postal_code:0
+msgid "Postal Code"
+msgstr "Postal Code"
+
+#. module: crea8s_repair
+#: report:report.repair.cr8s:0
+msgid "DEALER"
+msgstr "DEALER"
+
+#. module: crea8s_repair
+#: field:crea8s.warranty,cus_war_id:0
+msgid "customer"
+msgstr "customer"
+
+#. module: crea8s_repair
+#: field:crea8s.repair.line,repair_id:0 view:crea8s.warranty:0
+#: model:ir.ui.menu,name:crea8s_repair.root_repair
+msgid "Repair"
+msgstr "Repair"
+
+#. module: crea8s_repair
+#: field:res.partner.repair.type,code:0
+msgid "Code"
+msgstr "Code"
+
+#. module: crea8s_repair
+#: report:report.repair.cr8s:0
+msgid "ATTENDED BY"
+msgstr "ATTENDED BY"
+
+#. module: crea8s_repair
+#: field:crea8s.repair.line,qty:0 report:report.repair.cr8s:0
+msgid "Qty"
+msgstr "Qty"
+
+#. module: crea8s_repair
+#: field:crea8s.repair,attend_by:0
+msgid "Attend By"
+msgstr "Attend By"
+
+#. module: crea8s_repair
+#: view:crea8s.repair:0 view:crea8s.warranty:0
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: crea8s_repair
+#: report:report.repair.cr8s:0
+msgid "TELL:"
+msgstr "TELL:"
+
+#. module: crea8s_repair
+#: view:crea8s.repair:0 selection:crea8s.repair,state:0 view:crea8s.warranty:0
+#: selection:crea8s.warranty,state:0
+msgid "Open"
+msgstr "Open"
+
+#. module: crea8s_repair
+#: field:crea8s.repair,purchase_date:0
+msgid "Purchase Date"
+msgstr "Purchase Date"
+
+#. module: crea8s_repair
+#: view:crea8s.repair:0 view:crea8s.warranty:0
+msgid "Search Warranty"
+msgstr "Search Warranty"
+
+#. module: crea8s_repair
+#: field:crea8s.repair,unit_no:0 field:res.partner.repair,unit_no:0
+msgid "Unit No"
+msgstr "Unit No"
+
+#. module: crea8s_repair
+#: report:report.repair.cr8s:0
+msgid "TECHNICIAN SIGNATURE / NAME"
+msgstr "TECHNICIAN SIGNATURE / NAME"
+
+#. module: crea8s_repair
+#: report:report.repair.cr8s:0
+msgid "DATE"
+msgstr "DATE"
+
+#. module: crea8s_repair
+#: field:crea8s.repair.line,unit_price:0 report:report.repair.cr8s:0
+msgid "Unit Price"
+msgstr "Unit Price"
+
+#. module: crea8s_repair
+#: model:ir.actions.report.xml,name:crea8s_repair.report_repair_cr8s
+msgid "Print Report"
+msgstr "Print Report"
+
+#. module: crea8s_repair
+#: field:crea8s.warranty,contact_no3:0
+msgid "Contact No.3"
+msgstr "Contact No.3"
+
+#. module: crea8s_repair
+#: field:crea8s.warranty,contact_no2:0
+msgid "Contact No.2"
+msgstr "Contact No.2"
+
+#. module: crea8s_repair
+#: field:crea8s.warranty,contact_no1:0
+msgid "Contact No.1"
+msgstr "Contact No.1"
+
+#. module: crea8s_repair
+#: field:crea8s.warranty,pur_inv_no:0
+msgid "Purchase Invoice No"
+msgstr "Purchase Invoice No"
+
+#. module: crea8s_repair
+#: field:crea8s.repair.line,product_id:0
+msgid "Product"
+msgstr "Product"
+
+#. module: crea8s_repair
+#: report:report.repair.cr8s:0
+msgid "TEL.  :"
+msgstr "TEL.  :"
+
+#. module: crea8s_repair
+#: field:crea8s.repair,description:0 field:crea8s.repair.line,name:0
+#: report:report.repair.cr8s:0
+msgid "Description"
+msgstr "Description"
+
+#. module: crea8s_repair
+#: field:crea8s.warranty,install_by:0
+msgid "Installed By"
+msgstr "Installed By"
+
+#. module: crea8s_repair
+#: field:crea8s.repair,subtotal_charge:0
+msgid "Sub-Total Charge"
+msgstr "Sub-Total Charge"
+
+#. module: crea8s_repair
+#: view:crea8s.repair:0
+msgid "Remarks"
+msgstr "Remarks"
+
+#. module: crea8s_repair
+#: field:crea8s.repair,cus_repair_id:0 field:crea8s.repair,customer_id:0
+msgid "Customer"
+msgstr "Customer"
+
+#. module: crea8s_repair
+#: field:crea8s.warranty,install_date:0
+msgid "Date of Installation"
+msgstr "Date of Installation"
+
+#. module: crea8s_repair
+#: field:crea8s.repair.user,name:0 field:res.partner.repair,stress:0
+#: field:res.partner.repair.type,name:0
+msgid "Name"
+msgstr "Name"
+
+#. module: crea8s_repair
+#: field:res.partner.repair,is_serving:0
+msgid "Is Serving"
+msgstr "Is Serving"
+
+#. module: crea8s_repair
+#: field:crea8s.warranty,purchase_date:0
+msgid "Date of Purchase"
+msgstr "Date of Purchase"
+
+#. module: crea8s_repair
+#: field:crea8s.repair,message_ids:0 field:crea8s.warranty,message_ids:0
+#: field:res.partner.repair,message_ids:0
+#: field:res.partner.repair.type,message_ids:0
+msgid "Messages"
+msgstr "Messages"
+
+#. module: crea8s_repair
+#: help:crea8s.repair,message_ids:0 help:crea8s.warranty,message_ids:0
+#: help:res.partner.repair,message_ids:0
+#: help:res.partner.repair.type,message_ids:0
+msgid "Messages and communication history"
+msgstr "Messages and communication history"
+
+#. module: crea8s_repair
+#: view:crea8s.warranty:0 field:crea8s.warranty,street:0
+msgid "Street Name"
+msgstr "Street Name"
+
+#. module: crea8s_repair
+#: field:crea8s.warranty,model_no:0
+msgid "Model No."
+msgstr "Model No."
+
+#. module: crea8s_repair
+#: field:crea8s.repair,cheque_num:0
+msgid "Cheque Number"
+msgstr "Cheque Number"
+
+#. module: crea8s_repair
+#: model:ir.model,name:crea8s_repair.model_crea8s_repair
+#: model:ir.model,name:crea8s_repair.model_crea8s_warranty
+#: model:ir.model,name:crea8s_repair.model_res_partner_repair
+#: model:ir.model,name:crea8s_repair.model_res_partner_repair_type
+msgid "Email Thread"
+msgstr "Email Thread"
+
+#. module: crea8s_repair
+#: field:crea8s.repair,hide_remark:0
+msgid "Internal Remark"
+msgstr "Internal Remark"
+
+#. module: crea8s_repair
+#: field:crea8s.repair,amount_total:0
+msgid "Total"
+msgstr "Total"

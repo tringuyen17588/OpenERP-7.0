@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<record id="view_res_partner_repair_type_tree" model="ir.ui.view">
+            <field name="name">res.partner.repair.type.tree</field>
+            <field name="model">res.partner.repair.type</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <form string="Customer Type" version="7.0">
+                    <sheet>
+                    <group colspan="4" col="4">
+                        <group>
+                            <field name="name"/>
+		                    <field name="code"/>
+                        </group>
+                    </group>
+	                </sheet>
+                </form>
+            </field>
+        </record>
+
+		<record id="view_res_partner_repair_tree" model="ir.ui.view">
+            <field name="name">res.partner.repair.tree</field>
+            <field name="model">res.partner.repair</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <tree string="Serving Customer" fonts="bold:message_unread==True">
+                    <field name="message_unread" invisible="1"/>
+                    <field name="stress" invisible="1"/>
+                    <field name="name"/>
+                    <field name="block" invisible="1"/>
+                    <field name="unit_no"/>
+                    <field name="telephone1"/>
+                    <field name="email"/>
+                    <field name="postal_code" invisible="1"/>
+                    <field name="remark" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+		
+		<record id="view_res_partner_repair_form" model="ir.ui.view">
+            <field name="name">view.res.partner.repair.form</field>
+            <field name="model">res.partner.repair</field>
+            <field name="arch" type="xml">
+                <form string="Serving Customer" version="7.0">
+                    <sheet>
+                    <group colspan="4" col="4">
+                        <group colspan="4" col="2">
+                            <field name="block" invisible="1"/>
+                            <field name="name"/>
+		                    <field name="unit_no"/>
+		                    <field name="area"/>
+		                    <field name="postal_code"/>
+		                    <field name="type"/>
+		               		<field name="telephone1" string="Telephone"/>
+		                    <field name="telephone2" string=" "/>
+		                    <field name="telephone3" string=" " invisible="1"/>
+		                    <field name="email"/>
+		                    <field name="stress" invisible="1"/>
+		                    <field name="remark"/>
+		                    <field name="is_serving"/>
+		                    <field name="is_warranty"/>
+                        </group>
+                    </group>
+	                </sheet>
+	                <div class="oe_chatter">
+	                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+	                </div>
+                </form>
+           </field>
+        </record>
+        
+        <record id="action_view_res_partner_repair_form" model="ir.actions.act_window">
+            <field name="name">Serving Customer</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner.repair</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{"search_default_is_serving":1}</field>
+            <field name="domain">[('is_serving','=',True)]</field>
+            <field name="view_id" ref="view_res_partner_repair_tree"/>
+        </record>
+                
+        <menuitem id="menu_action_view_res_partner_repair_form" name="Serving Customer" parent="menu_repair" action="action_view_res_partner_repair_form"/>
+        
+        <record id="action_view_res_partner_warranty_form" model="ir.actions.act_window">
+            <field name="name">Warranty Customer</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner.repair</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{"search_default_is_warranty":1}</field>
+            <field name="domain">[('is_warranty','=',True)]</field>
+            <field name="view_id" ref="view_res_partner_repair_tree"/>
+        </record>
+                
+        <menuitem id="menu_action_view_res_partner_warranty_form" name="Warranty Customer" parent="menu_repair" action="action_view_res_partner_warranty_form"/>
+        
+        
+        
+        
+        
+    </data>
+</openerp>

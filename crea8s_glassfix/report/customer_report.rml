@@ -1,0 +1,1026 @@
+<?xml version="1.0"?>
+<document filename="Customer.pdf">
+  <template title="Invoices" author="CREA8S(info@crea8s.com)" allowSplitting="20">
+    <pageTemplate id="first">
+      <frame id="first" x1="30.0" y1="28.0" width="530" height="786"/>
+    </pageTemplate>
+  </template>
+  <stylesheet>
+    <blockTableStyle id="Standard_Outline">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Header1">
+      <blockAlignment value="CENTER"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table1">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+	<blockTableStyle id="Particular">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+	  <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+    </blockTableStyle>
+	<blockTableStyle id="GRM_Table">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+	  <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="6,-1" stop="6,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="8,-1" stop="8,-1"/>
+    </blockTableStyle>
+	<blockTableStyle id="Particular2c">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+	  <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table2">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table3">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#e6e6e6" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="3,-1" stop="3,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table4">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBELOW" colorName="#CCCCCC" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#CCCCCC" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#CCCCCC" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#CCCCCC" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#CCCCCC" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#CCCCCC" start="5,-1" stop="5,-1"/>
+	  <lineStyle kind="LINEABOVE" colorName="#CCCCCC" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#CCCCCC" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#CCCCCC" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#CCCCCC" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#CCCCCC" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#CCCCCC" start="5,-1" stop="5,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#CCCCCC" start="0,0" stop="0,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#CCCCCC" start="1,0" stop="1,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#CCCCCC" start="2,0" stop="2,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#CCCCCC" start="3,0" stop="3,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#CCCCCC" start="4,0" stop="4,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#CCCCCC" start="4,0" stop="5,-1"/>
+	  <lineStyle kind="LINEAFTER" colorName="#CCCCCC" start="4,0" stop="5,-1"/>
+    </blockTableStyle>
+	    <blockTableStyle id="TableCate">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+	  <blockBackground colorName="gray"/>
+      <lineStyle kind="LINEBELOW" colorName="#CCCCCC" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#CCCCCC" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#CCCCCC" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#CCCCCC" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#CCCCCC" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#CCCCCC" start="5,-1" stop="5,-1"/>
+	  <lineStyle kind="LINEABOVE" colorName="#CCCCCC" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#CCCCCC" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#CCCCCC" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#CCCCCC" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#CCCCCC" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#CCCCCC" start="5,-1" stop="5,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#CCCCCC" start="0,0" stop="0,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#CCCCCC" start="1,0" stop="1,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#CCCCCC" start="2,0" stop="2,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#CCCCCC" start="3,0" stop="3,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#CCCCCC" start="4,0" stop="4,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#CCCCCC" start="4,0" stop="5,-1"/>
+	  <lineStyle kind="LINEAFTER" colorName="#CCCCCC" start="4,0" stop="5,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="underline">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      
+    </blockTableStyle>
+    <blockTableStyle id="Table_split">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEAFTER" colorName="#CCCCCC" start="0,0" stop="0,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table7">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <initialize>
+      <paraStyle name="all" alignment="justify"/>
+    </initialize>
+    <paraStyle name="terp_header" fontSize="15.0" leading="19" alignment="LEFT" spaceBefore="12.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_default_8" fontSize="8.0" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Bold_9" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_9" fontSize="5.5" leading="2.0" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_default_cate" fontName="Helvetica-Bold" fontSize="5.5" leading="2" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_default_p" fontSize="9.0" leading="8" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_default_px" fontSize="9.0" leading="0" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_default_ct" fontSize="9.0" leading="8" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_default_p_cb" fontSize="10.0" leading="10" alignment="CENTER" spaceBefore="0.0" spaceAfter="1.50"/>
+    <paraStyle name="terp_title" fontSize="15" leading="11" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_title_lba" fontSize="7.0" leading="4" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_title_vl" fontSize="12.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_title_above" fontSize="5" leading="11" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_title_vla" fontSize="7.0" leading="4" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_product_name" fontSize="5.5" leading="2" alignment="CENTER,TOP" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_product_namel" fontSize="7" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_product_namer" fontSize="5.5" leading="2" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_tblheader_General_Centre" fontSize="8.0" leading="10" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_default_Centre_8" fontSize="8.0" leading="10" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_tblheader_Details" fontSize="8.0" leading="11" alignment="LEFT" spaceBefore="0" spaceAfter="0"/>
+    <paraStyle name="terp_tblheader_Details_Centre" fontSize="7.0" leading="10" alignment="CENTER" spaceBefore="0" spaceAfter="0"/>
+    <paraStyle name="terp_tblheader_Details_Right" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_default_Centre_9" fontSize="9.0" leading="11" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Right_9" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_1" fontSize="2.0" leading="3" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Right_9_Bold" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <images/>
+  </stylesheet>
+  <story>
+  <pto>
+  <para style="terp_default_8">[[repeatIn(objects,'o')]]</para>
+  <para style="terp_default_8">[[ o.partner_id and setLang(o.partner_id.lang) or removeParentNode('para') ]]</para>
+    <blockTable colWidths="520" style="Table1">
+	<tr>
+		<td>
+			<para style="terp_title"><b> GLASS-FIX CUSTOMER'S WARRANTY RECORDS </b></para>			
+		</td>		
+      </tr>
+    </blockTable>
+	<spacer length="0.5cm"/>
+	<blockTable colWidths="255.0,135.0,130.0"  style="Table2">
+	  <tr>
+        <td>
+          <para style="terp_default_p"> Appointment (Date/Time): [[ o.date_appoint and get_date(o.date_appoint) or ' ' ]]</para>
+        </td>
+        <td>
+			<blockTable colWidths="55.0,5,30,45" style="Table2">
+			<tr>
+			  <td>
+				<para style="terp_default_p"><b> Mobile </b></para>
+			  </td>
+			  <td>
+				<para style="terp_default_p">  </para>
+			  </td>
+			  <td>
+                            <blockTable colWidths="20.0" rowHeights="0.5cm" style="Table4">
+				  <tr>
+					<td>
+						<para style="terp_default_px"> [[ o.is_mobile and 'X' or '' ]] </para>					
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_p">   </para>
+			  </td>
+			</tr>
+		  </blockTable>
+        </td>
+		<td>
+			<blockTable colWidths="55.0,5,15,60" style="Table2">
+			<tr>
+			  <td>
+				<para style="terp_default_p"><b> Drive-in </b></para>
+			  </td>
+			  <td>
+				<para style="terp_default_p">  </para>
+			  </td>
+			  <td>
+				<blockTable colWidths="20" rowHeights="0.5cm" style="Table4">
+					<tr>
+						<td>
+							<para style="terp_default_p"> [[ o.is_drive and 'X' or '' ]] </para>
+						</td>
+					</tr>
+				</blockTable>
+			  </td>
+			  <td>
+				<para style="terp_default_p">   </para>
+			  </td>
+			</tr>
+		  </blockTable>
+        </td>
+      </tr>
+	</blockTable>
+	<blockTable colWidths="70,190,60,200"  style="Table2">
+	  <tr>
+        <td>
+          <para style="terp_default_p"> Workshop: </para>
+		  <spacer length="0.25cm"/>
+		  <para style="terp_default_p"> Technician: </para>
+        </td>
+		<td>
+          <para style="terp_default_p"><b> [[ o.wk_shop and o.wk_shop or ' ' ]] </b></para>
+		  <spacer length="0.25cm"/>
+		  <para style="terp_default_p"><b> [[ o.technician and o.technician.name or ' ' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_p">  </para>
+        </td>
+		<td>
+          <para style="terp_default_p"> </para>
+        </td>
+      </tr>
+	</blockTable>
+	<spacer length="0.35cm"/>
+	<blockTable colWidths="520.0" style="Table2">
+      <tr>
+        <td>
+          <para style="terp_title_vl"> CUSTOMER'S PARTICULARS </para>
+			<spacer length="0.25cm"/>
+<!-- Line 1 Particular -->
+			<blockTable colWidths="45,175,40,110,40,100" style="Particular">
+			  <tr>
+				<td>
+				  <para style="terp_default_p"> Name: </para>
+				</td>
+				<td>
+				  <para style="terp_default_p"><b> [[ o.name and o.name or '' ]]  </b></para>
+				</td>
+				<td>
+				  <para style="terp_default_p"> NRIC: </para>
+				</td>
+				<td>
+				  <para style="terp_default_p"><b> [[ o.nric and o.nric or '' ]] </b></para>
+				</td>
+				<td>
+				  <para style="terp_default_p"> DOB: </para>
+				</td>
+				<td>
+				  <para style="terp_default_p"><b> [[ o.dob and formatLang(o.dob, date=True) or '' ]] </b></para>
+				</td>
+			  </tr>
+			</blockTable>
+<!-- Line 2 Particular -->
+			<spacer length="0.15cm"/>
+			<blockTable colWidths="115,105,50,100,50,90" style="Particular">
+			  <tr>
+				<td>
+				  <para style="terp_default_p"> Contact No.: (Mobile): </para>
+				</td>
+				<td>
+				  <para style="terp_default_p"><b> [[ o.mobile and o.mobile or (o.vcl_mobile and o.vcl_mobile or '') ]]  </b></para>
+				</td>
+				<td>
+				  <para style="terp_default_p"> (Home) </para>
+				</td>
+				<td>
+				  <para style="terp_default_p"><b> [[ o.phone and o.phone or (o.vcl_phone and o.vcl_phone or '') ]] </b></para>
+				</td>
+				<td>
+				  <para style="terp_default_p"> (Office) </para>
+				</td>
+				<td>
+				  <para style="terp_default_p"><b> [[ o.phone and o.phone or (o.vcl_phone and o.vcl_phone or '') ]] </b></para>
+				</td>
+			  </tr>
+			</blockTable>
+<!-- Line 3 Paticular -->
+			<spacer length="0.15cm"/>
+			<blockTable colWidths="55,205,75,175" style="Particular2c">
+			  <tr>
+				<td>
+				  <para style="terp_default_p"> Address: </para>
+				</td>
+				<td>
+				  <para style="terp_default_p"><b> [[ o.street and o.street or (o.vcl_street and o.vcl_street or '') ]] [[ o.street2 and o.street2 or (o.vcl_street2 and o.vcl_street2 or '') ]] [[ o.state_id and ', '+ o.state_id.name or (o.vcl_state_id and ', ' + o.vcl_state_id.name or '') ]] </b></para>
+				</td>
+				<td>
+				  <para style="terp_default_p"> Postal Code:  </para>
+				</td>
+				<td>
+				  <para style="terp_default_p"><b> [[ o.zip and o.zip or (o.vcl_zip and o.vcl_zip or '') ]] </b></para>
+				</td>
+			  </tr>
+			</blockTable>
+<!-- Line 4 Partivular -->
+			<spacer length="0.15cm"/>
+			<blockTable colWidths="45,215,70,180" style="Particular2c">
+			  <tr>
+				<td>
+				  <para style="terp_default_p"> Email: </para>
+				</td>
+				<td>
+				  <para style="terp_default_p"><b> [[ o.email and o.email or (o.vcl_email and o.vcl_email or '') ]] </b></para>
+				</td>
+				<td>
+				  <para style="terp_default_p"> Occupation:  </para>
+				</td>
+				<td>
+				  <para style="terp_default_p"><b>  [[ o.occupation and o.occupation or (o.vcl_occupation and o.vcl_occupation or ' ') ]] </b></para>
+				</td>
+			  </tr>
+			</blockTable>
+        </td>
+      </tr>
+    </blockTable>
+<!-- VEHICLE DETAIL -->
+	<spacer length="0.35cm"/>
+	<blockTable colWidths="520.0" style="Table2">
+      <tr>
+        <td>
+          <para style="terp_title_vl"> VEHICLE DETAILS </para>
+			<spacer length="0.25cm"/>
+			<blockTable colWidths="90,170,80,170" style="Particular2c">
+			  <tr>
+				<td>
+				  <para style="terp_default_p"> Registration No.:  </para>
+				</td>
+				<td>
+				  <para style="terp_default_p"><b> [[ o.regis_no and o.regis_no or '' ]] </b></para>
+				</td>
+				<td>
+				  <para style="terp_default_p"> Brand/Model:  </para>
+				</td>
+				<td>
+				  <para style="terp_default_p"><b> [[ o.brand_id and o.brand_id.name or '' ]] </b></para>
+				</td>
+			  </tr>
+			</blockTable>
+			<blockTable colWidths="110,150,70,180" style="Particular2c">
+			  <tr>
+				<td>
+				  <para style="terp_default_p"> Insurance Company: </para>
+				</td>
+				<td>
+				  <para style="terp_default_p"><b> [[ o.insurance_com and o.insurance_com.name or '' ]] </b></para>
+				</td>
+				<td>
+				  <para style="terp_default_p"> Policy No:  </para>
+				</td>
+				<td>
+				  <para style="terp_default_p"><b> [[ o.policy_no and o.policy_no or '' ]] </b></para>
+				</td>
+			  </tr>
+			</blockTable>
+			<blockTable colWidths="60,200,140,110" style="Particular2c">
+			  <tr>
+				<td>
+				  <para style="terp_default_p"> Claim No:  </para>
+				</td>
+				<td>
+				  <para style="terp_default_p"><b> [[ o.claim_no and o.claim_no or '' ]] </b></para>
+				</td>
+				<td>
+				  <para style="terp_default_p"> Reported By/Checked With:  </para>
+				</td>
+				<td>
+				  <para style="terp_default_p"><b> [[ o.check_report and o.check_report or '' ]] </b></para>
+				</td>
+			  </tr>
+			</blockTable>
+			<blockTable colWidths="130,130,140,110" style="Particular2c">
+			  <tr>
+				<td>
+				  <para style="terp_default_p"> Date &amp; time of Accident: </para>
+				</td>
+				<td>
+				  <para style="terp_default_p"><b> [[ o.date_accident and get_date(o.date_accident) or ' ' ]] </b></para>
+				</td>
+				<td>
+				  <para style="terp_default_p"> Place &amp; Cause of Accident:  </para>
+				</td>
+				<td>
+				  <para style="terp_default_p"><b> [[ o.place_accident and o.place_accident or '' ]] </b></para>
+				</td>
+			  </tr>
+			</blockTable>
+			<blockTable colWidths="80,180,120,130" style="Particular2c">
+			  <tr>
+				<td>
+				  <para style="terp_default_p"> Chassis No:  </para>
+				</td>
+				<td>
+				  <para style="terp_default_p"><b> [[ o.chassis_no and o.chassis_no or ' ' ]] </b></para>
+				</td>
+				<td>
+				  <para style="terp_default_p"> Year of Manufacture: </para>
+				</td>
+				<td>
+				  <para style="terp_default_p"><b> [[ o.year_manufacture and o.year_manufacture or '' ]] </b></para>
+				</td>
+			  </tr>
+			</blockTable>
+			<blockTable colWidths="80,180,250" style="Particular2c">
+			  <tr>
+				<td>
+				  <para style="terp_default_p"> Rain Sensor:  </para>
+				</td>
+				<td>
+				  <para style="terp_default_p"><b>  [[ o.rain_sensor and o.rain_sensor or '' ]] </b></para>
+				</td>
+				<td>
+				  <para style="terp_default_p"> </para>
+				</td>
+			  </tr>
+			</blockTable>
+        </td>
+      </tr>
+    </blockTable>
+	<spacer length="0.35cm"/>
+       <para style="terp_default_p"> Remarks: </para>
+       <spacer length="0.1cm"/>
+	<blockTable colWidths="520.0" rowHeights="2.2cm" style="Table4">
+      <tr>
+        <td>
+			<para style="terp_default_p"><b> [[ o.description_crack and o.description_crack or '' ]] </b></para>
+		</td>
+	  </tr>
+	</blockTable>
+	<spacer length="0.35cm"/>
+	<blockTable colWidths="520.0" style="Table2">
+      <tr>
+        <td>
+			<blockTable colWidths="115.0,125.0,140.0,120.0" rowHeights="1.5cm" style="Table2">
+			  <tr>
+				<td>
+				  <blockTable colWidths="25.0,90.0" style="Table2">
+					<tr>
+						<td>
+							<blockTable colWidths="22.0" rowHeights="0.7cm" style="Table4">
+								<tr>
+									<td>
+										<para style="terp_default_p"> [[ o.image_nric and 'X' or '' ]]  </para>
+									</td>
+								</tr>
+							</blockTable>
+						</td>
+						<td>
+							<para style="terp_default_p"> NRIC/ </para>
+							<para style="terp_default_p"> Driving License </para>
+						</td>
+					</tr>
+				  </blockTable>
+				</td>
+				<td>
+				  <blockTable colWidths="25.0,90.0" style="Table2">
+					<tr>
+						<td>
+							<blockTable colWidths="22.0" rowHeights="0.7cm" style="Table4">
+								<tr>
+									<td>
+										<para style="terp_default_p"> [[ o.image_cer and 'X' or '' ]] </para>
+									</td>
+								</tr>
+							</blockTable>
+						</td>
+						<td>
+							<para style="terp_default_p"> Certificate of </para>
+							<para style="terp_default_p"> Insurance </para>
+						</td>
+					</tr>
+				  </blockTable>
+				</td>
+				<td>
+				  <blockTable colWidths="60.0,30.0,60.0" style="Table2">
+					<tr>
+						<td>
+							<para style="terp_default_p"> Photos: </para>
+						</td>
+						<td>
+							<blockTable colWidths="22.0" rowHeights="0.7cm" style="Table4">
+								<tr>
+									<td>
+										<para style="terp_default_p"> [[ o.image_bef and 'X' or '' ]] </para>
+									</td>
+								</tr>
+							</blockTable>
+						</td>
+						<td>
+							<para style="terp_default_p"> Before </para>
+						</td>
+					</tr>
+				  </blockTable>
+				</td>
+				<td>
+				  <blockTable colWidths="30,70.0" style="Table2">
+					<tr>
+						<td>
+							<blockTable colWidths="22" rowHeights="0.7cm" style="Table4">
+								<tr>
+									<td>
+										<para style="terp_default_p"> [[ o.image_aft and 'X' or '' ]] </para>
+									</td>
+								</tr>
+							</blockTable>
+						</td>
+						<td>
+							<para style="terp_default_p"> After </para>
+						</td>
+					</tr>
+				  </blockTable>
+				</td>
+			  </tr>
+			</blockTable>
+		</td>
+	  </tr>
+	</blockTable>
+	<blockTable colWidths="520.0" rowHeights="9.5cm" style="Table2">
+      <tr>
+        <td>
+			<para style="terp_title_vl"> FOR OFFICIAL USE </para>
+			<spacer length="0.25cm"/>
+				<para style="terp_default_p"> Incentive for repair (Cheque No.): [[ o.incent_repair and o.incent_repair or '' ]] </para>
+			<spacer length="0.1cm"/>
+				<para style="terp_default_p"> Solar Film claim: [[ o.solar_film and o.solar_film or '' ]] </para>
+			<spacer length="0.1cm"/>
+			<blockTable colWidths="250.0,270.0" style="Table2">
+			  <tr>
+				<td>
+				  <blockTable colWidths="50.0,70.0,130.0" style="Table2">
+					<tr>
+					  <td>
+						<para style="terp_default_p">  </para>
+					  </td>
+					  <td>
+						<para style="terp_default_p"><b> Repair  </b></para>
+					  </td>
+					  <td>
+						<blockTable colWidths="20.0" rowHeights="0.5cm" style="Table4">
+							<tr>
+								<td>
+									<para style="terp_default_p_cb"> [[ o.is_repair and 'X' or '' ]] </para>
+								</td>
+							</tr>
+						</blockTable>
+					  </td>
+					</tr>
+				  </blockTable>
+				</td>
+				<td>
+				  <blockTable colWidths="50.0,100.0,120.0" style="Table2">
+					<tr>
+					  <td>
+						<para style="terp_default_p">  </para>
+					  </td>
+					  <td>
+						<para style="terp_default_p"><b> Replacement </b></para>
+					  </td>
+					  <td>
+						<blockTable colWidths="20.0" rowHeights="0.5cm" style="Table4">
+							<tr>
+								<td>
+									<para style="terp_default_p_cb"> [[ o.is_replacement and 'X' or '' ]] </para>
+								</td>
+							</tr>
+						</blockTable>
+					  </td>
+					</tr>
+				  </blockTable>
+				</td>
+			  </tr>
+			</blockTable>
+
+			<blockTable colWidths="250,270" style="Table2">
+			  <tr>
+			    <td>
+				<blockTable colWidths="100,100" style="Particular">
+			         <tr>
+				    <td>
+				      <spacer length="0.15cm"/>
+				      <para style="terp_default_p"> No. of Crack(s): </para>
+				    </td>
+				    <td>
+				    <spacer length="0.15cm"/>
+				    <para style="terp_default_p"><b> [[ o.no_crack and o.no_crack.name or '' ]] </b></para>
+				  </td>
+				  </tr>
+				</blockTable>
+				<blockTable colWidths="100,100" style="Particular">
+			         <tr>
+				    <td>
+				      <spacer length="0.15cm"/>
+				      <para style="terp_default_p"> No. of Chip(s): </para>
+				    </td>
+				    <td>
+				    <spacer length="0.15cm"/>
+				    <para style="terp_default_p"><b>  [[ o.no_chip and o.no_chip.name or '' ]] </b></para>
+				  </td>
+				  </tr>
+				</blockTable>
+				</td>
+				  <td>
+				  <blockTable colWidths="20.0,25.0,5.0,170.0" style="Table2">
+					<tr>
+					  <td>
+						<para style="terp_default_p">  </para>
+					  </td>
+					  <td>
+						<blockTable colWidths="20.0" rowHeights="0.5cm" style="Table4">
+							<tr>
+								<td>
+									<para style="terp_default_p"> [[ o.is_frontws and 'X' or '' ]] </para>
+								</td>
+							</tr>
+						</blockTable>
+					  </td>
+					  <td>
+						<para style="terp_default_p">  </para>
+					  </td>
+					  <td>
+						<para style="terp_default_p"> Front Windscreen  </para>
+					  </td>
+					</tr>
+				  </blockTable>
+				</td>
+			  </tr>
+			</blockTable>
+			<!-- Glass Supplier By -->
+			<blockTable colWidths="230,290" style="Table2">
+			<tr>
+			  <td>
+				<para style="terp_default_p">  </para>
+			  </td>
+			  <td>
+				<blockTable colWidths="135.0,135.0" style="Table2">
+					<tr>
+					  <td>
+						<para style="terp_default_p"><b> Passenger Side </b></para>
+						<spacer length="0.25cm"/>
+						<blockTable colWidths="25.0,5.0,105.0" style="Table2">
+							<tr>
+							  <td>
+								<blockTable colWidths="20.0" rowHeights="0.5cm" style="Table4">
+									<tr>
+										<td>
+											<para style="terp_default_p"> [[ o.is_fdg_s and 'X' or '' ]] </para>
+										</td>
+									</tr>
+								</blockTable>
+							  </td>
+							  <td>
+								<para style="terp_default_p">  </para>
+							  </td>
+							  <td>
+								<para style="terp_default_p"> Front Door Glass  </para>
+							  </td>
+							</tr>
+						  </blockTable>
+						  <blockTable colWidths="25.0,5.0,105.0" style="Table2">
+							<tr>
+							  <td>
+								<blockTable colWidths="20.0" rowHeights="0.5cm" style="Table4">
+									<tr>
+										<td>
+											<para style="terp_default_p"> [[ o.is_rdg_s and 'X' or '' ]] </para>
+										</td>
+									</tr>
+								</blockTable>
+							  </td>
+							  <td>
+								<para style="terp_default_p">  </para>
+							  </td>
+							  <td>
+								<para style="terp_default_p"> Rear Door Glass  </para>
+							  </td>
+							</tr>
+						  </blockTable>
+						  <!-- Fender -->
+						  <blockTable colWidths="25.0,5.0,105.0" style="Table2">
+							<tr>
+							  <td>
+								<blockTable colWidths="20.0" rowHeights="0.5cm" style="Table4">
+									<tr>
+										<td>
+											<para style="terp_default_p"> [[ o.is_fender_l and 'X' or '' ]] </para>
+										</td>
+									</tr>
+								</blockTable>
+							  </td>
+							  <td>
+								<para style="terp_default_p">  </para>
+							  </td>
+							  <td>
+								<para style="terp_default_p"> Fender </para>
+							  </td>
+							</tr>
+						  </blockTable>
+						  <!-- Quarter -->
+						  <blockTable colWidths="25.0,5.0,105.0" style="Table2">
+							<tr>
+							  <td>
+								<blockTable colWidths="20.0" rowHeights="0.5cm" style="Table4">
+									<tr>
+										<td>
+											<para style="terp_default_p"> [[ o.is_quarter_l and 'X' or '' ]] </para>
+										</td>
+									</tr>
+								</blockTable>
+							  </td>
+							  <td>
+								<para style="terp_default_p">  </para>
+							  </td>
+							  <td>
+								<para style="terp_default_p"> Quarter </para>
+							  </td>
+							</tr>
+						  </blockTable>
+					  </td>
+					  <td>
+						<para style="terp_default_p"><b> Driver's Side  </b></para>
+						<spacer length="0.25cm"/>
+						<blockTable colWidths="25.0,5.0,105.0" style="Table2">
+							<tr>
+							  <td>
+								<blockTable colWidths="20.0" rowHeights="0.5cm" style="Table4">
+									<tr>
+										<td>
+											<para style="terp_default_p"> [[ o.is_fdg_d and 'X' or '' ]] </para>
+										</td>
+									</tr>
+								</blockTable>
+							  </td>
+							  <td>
+								<para style="terp_default_p">  </para>
+							  </td>
+							  <td>
+								<para style="terp_default_p"> Front Door Glass  </para>
+							  </td>
+							</tr>
+						  </blockTable>
+						  <blockTable colWidths="25.0,5.0,105.0" style="Table2">
+							<tr>
+							  <td>
+								<blockTable colWidths="20.0" rowHeights="0.5cm" style="Table4">
+									<tr>
+										<td>
+											<para style="terp_default_p"> [[ o.is_rdg_d and 'X' or '' ]] </para>
+										</td>
+									</tr>
+								</blockTable>
+							  </td>
+							  <td>
+								<para style="terp_default_p">  </para>
+							  </td>
+							  <td>
+								<para style="terp_default_p"> Rear Door Glass  </para>
+							  </td>
+							</tr>
+						  </blockTable>
+						  <!-- Fender -->
+						  <blockTable colWidths="25.0,5.0,105.0" style="Table2">
+							<tr>
+							  <td>
+								<blockTable colWidths="20.0" rowHeights="0.5cm" style="Table4">
+									<tr>
+										<td>
+											<para style="terp_default_p"> [[ o.is_fender_r and 'X' or '' ]] </para>
+										</td>
+									</tr>
+								</blockTable>
+							  </td>
+							  <td>
+								<para style="terp_default_p">  </para>
+							  </td>
+							  <td>
+								<para style="terp_default_p"> Fender </para>
+							  </td>
+							</tr>
+						  </blockTable>
+						  <!-- Quarter -->
+						  <blockTable colWidths="25.0,5.0,105.0" style="Table2">
+							<tr>
+							  <td>
+								<blockTable colWidths="20.0" rowHeights="0.5cm" style="Table4">
+									<tr>
+										<td>
+											<para style="terp_default_p"> [[ o.is_quarter_r and 'X' or '' ]] </para>
+										</td>
+									</tr>
+								</blockTable>
+							  </td>
+							  <td>
+								<para style="terp_default_p">  </para>
+							  </td>
+							  <td>
+								<para style="terp_default_p"> Quarter </para>
+							  </td>
+							</tr>
+						  </blockTable>
+					  </td>
+					</tr>
+				  </blockTable>
+				  
+				  <blockTable colWidths="20.0,25.0,5.0,170.0" style="Table2">
+					<tr>
+					  <td>
+						<para style="terp_default_p">  </para>
+					  </td>
+					  <td>
+						<blockTable colWidths="20.0" rowHeights="0.5cm" style="Table4">
+							<tr>
+								<td>
+									<para style="terp_default_p"> [[ o.is_rw and 'X' or '' ]] </para>
+								</td>
+							</tr>
+						</blockTable>
+					  </td>
+					  <td>
+						<para style="terp_default_p">  </para>
+					  </td>
+					  <td>
+						<para style="terp_default_p"> Rear Windscreen  </para>
+					  </td>
+					</tr>
+				  </blockTable>
+				<blockTable colWidths="290.0" rowHeights="0.5cm" style="Table2">
+					<tr>
+						<td>
+							<para style="terp_default_ct"><b> Glass Supplied by: </b></para>
+							<spacer length="0.15cm"/>
+							<blockTable colWidths="100,65,65,65" style="Table2">
+								<tr>
+								  <td>
+									<para style="terp_default_p_cb">  </para>
+								  </td>
+								  <td>
+									<para style="terp_default_p_cb"> Glass </para>
+								  </td>
+								  <td>
+									<para style="terp_default_p_cb"> Rubber </para>
+								  </td>
+								  <td>
+									<para style="terp_default_p_cb"> Misc </para>
+								  </td>
+								</tr>
+							</blockTable>
+							
+							<blockTable colWidths="20,25,5,60,50,20,50,20,50" rowHeights="0.5cm" style="GRM_Table">
+								<tr>
+								  <td>
+										<para style="terp_default_p"> 1 </para>
+								  </td>
+								  <td>
+									<blockTable colWidths="20.0" rowHeights="0.5cm" style="Table4">
+										<tr>
+											<td>
+												<para style="terp_default_p_cb"> [[ o.is_he_xing and 'X' or ' ' ]] </para>
+											</td>
+										</tr>
+									</blockTable>
+								  </td>
+								  <td>
+									<para style="terp_default_p">  </para>
+								  </td>
+								  <td>
+									<para style="terp_default_p"> He Xing </para>
+								  </td>
+								  <td>
+									<para style="terp_default_p"> [[ o.he_xing1 and o.he_xing1 or '' ]] </para>
+								  </td>
+								  <td>
+									<para style="terp_default_p"> + </para>
+								  </td>
+								  <td>
+									<para style="terp_default_p"> [[ o.he_xing2 and o.he_xing2 or '' ]]  </para>
+								  </td>
+								  <td>
+									<para style="terp_default_p"> + </para>
+								  </td>
+								  <td>
+									<para style="terp_default_p"> [[ o.he_xing3 and o.he_xing3 or '' ]]  </para>
+								  </td>
+								</tr>
+							  </blockTable>
+							  
+							  <blockTable colWidths="20,25,5,60,50,20,50,20,50" rowHeights="0.5cm" style="GRM_Table">
+								<tr>
+								  <td>
+										<para style="terp_default_p"> 2 </para>
+								  </td>
+								  <td>
+									<blockTable colWidths="20.0" rowHeights="0.5cm" style="Table4">
+										<tr>
+											<td>
+												<para style="terp_default_p_cb"> [[ o.is_jae and 'X' or ' ' ]] </para>
+											</td>
+										</tr>
+									</blockTable>
+								  </td>
+								  <td>
+									<para style="terp_default_p">  </para>
+								  </td>
+								  <td>
+									<para style="terp_default_p"> JAE </para>
+								  </td>
+								  <td>
+									<para style="terp_default_p"> [[ o.jae1 and o.jae1 or '' ]] </para>
+								  </td>
+								  <td>
+									<para style="terp_default_ct"> + </para>
+								  </td>
+								  <td>
+									<para style="terp_default_p"> [[ o.jae2 and o.jae2 or '' ]]  </para>
+								  </td>
+								  <td>
+									<para style="terp_default_ct"> + </para>
+								  </td>
+								  <td>
+									<para style="terp_default_p"> [[ o.jae3 and o.jae3 or '' ]]  </para>
+								  </td>
+								</tr>
+							  </blockTable>
+							  
+							  <blockTable colWidths="20,25,5,60,50,20,50,20,50" rowHeights="0.5cm" style="GRM_Table">
+								<tr>
+								  <td>
+										<para style="terp_default_p"> 3 </para>
+								  </td>
+								  <td>
+									<blockTable colWidths="20.0" rowHeights="0.5cm" style="Table4">
+										<tr>
+											<td>
+												<para style="terp_default_p_cb"> [[ o.is_fong_tat and 'X' or ' ' ]] </para>
+											</td>
+										</tr>
+									</blockTable>
+								  </td>
+								  <td>
+									<para style="terp_default_p">  </para>
+								  </td>
+								  <td>
+									<para style="terp_default_p"> Fong Tat  </para>
+								  </td>
+								  <td>
+									<para style="terp_default_p"> [[ o.fong_tat1 and o.fong_tat1 or '' ]] </para>
+								  </td>
+								  <td>
+									<para style="terp_default_ct"> + </para>
+								  </td>
+								  <td>
+									<para style="terp_default_p"> [[ o.fong_tat2 and o.fong_tat2 or '' ]]  </para>
+								  </td>
+								  <td>
+									<para style="terp_default_ct"> + </para>
+								  </td>
+								  <td>
+									<para style="terp_default_p"> [[ o.fong_tat3 and o.fong_tat3 or '' ]]  </para>
+								  </td>
+								</tr>
+							  </blockTable>
+							  
+							  <blockTable colWidths="20,25,5,60,50,20,50,20,50" rowHeights="0.5cm" style="GRM_Table">
+								<tr>
+								  <td>
+										<para style="terp_default_p"> 4 </para>
+								  </td>
+								  <td>
+									<blockTable colWidths="20.0" rowHeights="0.5cm" style="Table4">
+										<tr>
+											<td>
+												<para style="terp_default_p_cb"> [[ o.is_race_tat and 'X' or ' ' ]] </para>
+											</td>
+										</tr>
+									</blockTable>
+								  </td>
+								  <td>
+									<para style="terp_default_p">  </para>
+								  </td>
+								  <td>
+									<para style="terp_default_p"> Race Tech </para>
+								  </td>
+								  <td>
+									<para style="terp_default_p"> [[ o.race_tat1 and o.race_tat1 or '' ]]  </para>
+								  </td>
+								  <td>
+									<para style="terp_default_ct"> + </para>
+								  </td>
+								  <td>
+									<para style="terp_default_p"> [[ o.race_tat2 and o.race_tat2 or '' ]] </para>
+								  </td>
+								  <td>
+									<para style="terp_default_ct"> + </para>
+								  </td>
+								  <td>
+									<para style="terp_default_p"> [[ o.race_tat3 and o.race_tat3 or '' ]]  </para>
+								  </td>
+								</tr>
+							  </blockTable>
+						</td>
+					</tr>
+				</blockTable>
+			  </td>
+			</tr>
+		  </blockTable>
+		</td>
+	  </tr>
+	</blockTable>
+  </pto>
+  </story>
+</document>

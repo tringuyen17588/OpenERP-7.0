@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<record id="view_crea8s_candidate_tree" model="ir.ui.view">
+            <field name="name">crea8s.job.candidate.tree</field>
+            <field name="model">crea8s.job.candidate</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <tree string="Candidate" fonts="bold:message_unread==True">
+                    <field name="message_unread" invisible="1"/>
+                    <field name="date"/>
+                    <field name="job_pos"/>
+                    <field name="name"/>
+                    <field name="mobile"/>
+                    <field name="sa_exp" invisible="1"/>
+                    <field name="wk_exp" invisible="1"/>
+                    <field name="qualification"/>
+                    <field name="remark"/>
+                    <field name="res_user"/>
+                    <field name="attach_resume" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+						
+		<record id="view_crea8s_candidate_form" model="ir.ui.view">
+            <field name="name">crea8s.job.candidate.form</field>
+            <field name="model">crea8s.job.candidate</field>
+            <field name="arch" type="xml">
+                <form string="Candidate" version="7.0">
+                    
+                    <sheet>
+                    <group colspan="4" col="4">
+                        <group colspan="4" col="2">
+                            <field name="date"/>
+		                    <field name="job_pos"/>
+		                    <field name="name"/>
+				      <field name="mobile"/>
+		                    <field name="sa_exp"/>
+		                    <field name="wk_exp"/>
+		                    <field name="qualification"/>
+		                    <field name="remark"/>
+                                  <field name="res_user"/>
+                                  <field name="wk_his"/>
+		                    <field name="attach_resume" invisible="1"/>
+                        </group>
+                    </group>
+
+	                </sheet>
+	                <div class="oe_chatter">
+	                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+	                </div>
+                </form>
+           </field>
+        </record>
+                
+        <record id="view_crea8s_job_candidate_filter" model="ir.ui.view">
+	        <field name="name">Candidate</field>
+	        <field name="model">crea8s.job.candidate</field>
+	        <field name="arch" type="xml">
+	            <search string="Search Candidate">
+	                <field name="name"/>
+                    <field name="job_pos"/>
+                    <field name="sa_exp"/>
+                    <field name="wk_exp"/>
+                    <field name="qualification"/>
+                    <field name="remark"/>
+	               <group expand="0" string="Group By...">
+	                   <filter string="Position" domain="[]" context="{'group_by':'job_pos'}"/>
+	                   <filter string="Expected Salary " domain="[]" context="{'group_by':'sa_exp'}"/>
+	                   <filter string="Work Experience" domain="[]" context="{'group_by':'wk_exp'}"/>
+	               </group>
+	           </search>
+	        </field>
+	    </record>
+                
+        <record id="action_view_view_crea8s_candidate_form" model="ir.actions.act_window">
+            <field name="name">Candidate</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crea8s.job.candidate</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+       
+        <menuitem id="menu_action_view_view_crea8s_candidate_form" name="Candidate" sequence="5" parent="base.menu_sales" action="action_view_view_crea8s_candidate_form"/>
+
+	<record id="action_view_view_crea8s_candidate_onlytree" model="ir.actions.act_window">
+            <field name="name">Candidate</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crea8s.job.candidate</field>
+            <field name="view_type">tree</field>
+	     <field name="view_id" ref="view_crea8s_candidate_tree"/>
+            <field name="view_mode">tree</field>
+        </record>
+       
+        <menuitem id="menu_action_view_view_crea8s_candidate_onlytree" name="Candidate" sequence="5" parent="base.menu_sales" action="action_view_view_crea8s_candidate_onlytree"/>
+                
+    </data>
+</openerp>

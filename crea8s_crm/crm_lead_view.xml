@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+	
+        <record id="crea8s_crm_case_form_view_leads_inherit" model="ir.ui.view">
+            <field name="name">crea8s.crm.case.form.view.leads.inherit</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='type']" position="before">
+                	<field name="district_id" />
+                	<field name="territory_id" />
+			<field name="commercial_partner_id" invisible="1"/>
+                </xpath>
+		  <xpath expr="//button[@name='%(crm.action_crm_lead2opportunity_partner)d']" position="before">
+		  			<button name="approve_by" string="Approve" type="object" groups="base.group_sale_manager" class="oe_highlight"/>
+		  		</xpath>
+		  		<xpath expr="//group[@string='Misc']" position="after">
+		  	<group string="Cross Territory">
+                        <field name="approve_by" readonly="1"/>
+                        <field name="date_approve" readonly="1"/>
+                        <field name="sale_man_app" string="Sale Partner"/>
+                    </group>
+		  		</xpath>
+		  		<xpath expr="//field[@name='zip']" position="attributes">
+		  			<attribute name="on_change">onchange_zip(zip)</attribute>
+		  		</xpath>
+            </field>
+        </record>
+                
+	<record id="crea8s_crm_case_form_view_leads_inherit1" model="ir.ui.view">
+            <field name="name">crea8s.crm.case.form.view.leads.inherit1</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+            <field name="arch" type="xml">
+		  <xpath expr="//field[@name='section_id']" position="replace"/>
+                <xpath expr="//label[@for='section_id']" position="replace">
+			<field name="section_id" />
+			<field name="district_id" />
+			<field name="territory_id" />
+			<field name="commercial_partner_id" invisible="1"/>
+		  </xpath>
+		  <xpath expr="//group[@string='Misc']" position="after">
+		  	<group string="Cross Territory">
+                        <field name="approve_by" readonly="1"/>
+                        <field name="date_approve" readonly="1"/>
+			   <field name="sale_man_app" string="Sale Partner"/>
+                    </group>
+		  		</xpath>
+		  <xpath expr="//button[@name='case_mark_won']" position="before">
+		  	<button name="approve_by" string="Approve" type="object" groups="base.group_sale_manager" class="oe_highlight"/>
+		  </xpath>
+
+            </field>
+        </record>
+
+		<record id="crea8s_view_partner_form_inherit" model="ir.ui.view">
+            <field name="name">crea8s.view.partner.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form[@string='Partners']" position="inside">
+                	
+                		<header>
+                			<button name="add_constrain" string="Add Constraint" type="object"/>
+                		</header>
+                </xpath>
+            </field>
+        </record>
+	<!-- Territory -->
+		<record id="crea8s_view_territory_form" model="ir.ui.view">
+            <field name="name">crea8s.view.territory.form</field>
+            <field name="model">crm.territory</field>
+            <field name="arch" type="xml">
+                <form string="Territory" version="7.0">
+                    <sheet>
+                    	<group>
+                    		<field name="name"/>
+                        	<field name="code" invisible="1"/>
+                    	</group>
+                    	<group>
+                    		<field name="user_id"/>
+                        	<field name="district_id"/>
+                        	<field name="road_name"/>
+                    	</group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="crea8s_view_territory_tree" model="ir.ui.view">
+            <field name="name">crea8s.view.territory.tree</field>
+            <field name="model">crm.territory</field>
+            <field name="arch" type="xml">
+                <tree string="Territory">
+                    <field name="name" string="Area"/>
+                    <field name="code" invisible="1"/>
+                    <field name="user_id"/>
+                    <field name="district_id"/>
+                    <field name="road_name"/>
+                </tree>
+            </field>
+        </record>
+		
+		<record id="crea8s_view_territory_filter" model="ir.ui.view">
+            <field name="name">Territory</field>
+            <field name="model">crm.territory</field>
+            <field name="arch" type="xml">
+                <search string="Territory">
+                    <field name="name" string="Area"/>
+                    <field name="user_id"/>
+                    <field name="district_id"/>
+                    <field name="road_name"/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Area" domain="[]" context="{'group_by':'name'}"/>
+                        <filter string="Sale Man" icon="terp-personal" domain="[]" context="{'group_by':'user_id'}"/>
+                        <filter string="District" icon="terp-go-home" domain="[]" context="{'group_by':'district_id'}"/>
+                        
+                    </group>
+                </search>
+             </field>
+         </record>
+		
+		<record id="crea8s_territory_action" model="ir.actions.act_window">
+            <field name="name">Territory</field>
+            <field name="res_model">crm.territory</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <menuitem id="menu_crea8s_territory_action" 
+        name="Territory" parent="base.menu_base_config" action="crea8s_territory_action"/>
+        
+    	<!-- District -->
+		<record id="crea8s_view_district_form" model="ir.ui.view">
+            <field name="name">crea8s.view.district.form</field>
+            <field name="model">crm.district</field>
+            <field name="arch" type="xml">
+                <form string="District" version="7.0">
+                    <sheet>
+                    	<group>
+                    		<field name="name"/>
+                        	<field name="code" invisible="1"/>
+                    	</group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="crea8s_view_district_tree" model="ir.ui.view">
+            <field name="name">crea8s.view.district.tree</field>
+            <field name="model">crm.district</field>
+            <field name="arch" type="xml">
+                <tree string="Territory">
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+		
+		<record id="crea8s_district_action" model="ir.actions.act_window">
+            <field name="name">District</field>
+            <field name="res_model">crm.district</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        		
+    </data>
+</openerp>

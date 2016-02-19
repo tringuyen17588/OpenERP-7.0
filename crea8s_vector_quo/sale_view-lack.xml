@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+     	<!-- Sale Order -->
+        <record id="view_order_form_inherit_profit_margin_percent" model="ir.ui.view">
+            <field name="name">crea8s.sale.order.form.inherited</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_margin.sale_margin_sale_order"/>
+            <field name="arch" type="xml">
+				 <xpath expr="//field[@name='margin']" position="after">
+                    <field name="crea8s_profit_margin_percent"></field>
+                </xpath> 
+            </field>
+        </record> 
+        
+        
+        <!-- SO lines -->
+	    <record model="ir.ui.view" id="view_order_form_inherit_lines_form">
+	        <field name="name">crea8s.sale.order.line.margin.view.form</field>
+	        <field name="model">sale.order</field>
+	        <field name="inherit_id" ref="sale_margin.sale_margin_sale_order"/>
+	        <field name="arch" type="xml">
+	            <xpath expr="//field[@name='order_line']/form//field[@name='price_unit']" position="after">
+	                <field 	name="crea8s_profit_margin_percent" 
+	                		on_change="onchange_profit_unit_price(1, price_unit, purchase_price, crea8s_profit_margin_percent, discount, context)"  />
+	            </xpath>
+	            
+	        </field>
+	    </record>
+		
+    </data>
+</openerp>

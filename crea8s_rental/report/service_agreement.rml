@@ -1,0 +1,634 @@
+<?xml version="1.0"?>
+<document filename="Delivery Order.pdf">
+  <template pageSize="(595.0,842.0)" title="Delivery Order" author="Crea8s(info@crea8s.com)" allowSplitting="20">
+	<pageTemplate id="first">
+      <frame id="first" x1="20.0" y1="7.0" width="538" height="828"/>
+		<header>
+	    <pageGraphics>
+			<stylesheet>
+				<paraStyle name="main_footer" fontSize="7.0" alignment="CENTER"/>
+				<paraStyle name="left_footer" fontSize="5.0" alignment="LEFT"/>
+			</stylesheet>
+			<lines>1cm 27.7cm 20.2cm 27.7cm</lines>
+			<place x="1.3cm" y="0cm" height="1.25cm" width="19.0cm">
+                <para style="main_footer"> Fuji Xerox Singapore Pte Ltd (Reg. No. 198500962E) 80 Anson Road #01-01 Fuji Xerox Towers Singapore 079907 </para>                
+            </place>
+			<place x="1cm" y="0cm" height="1.8cm" width="19.0cm">
+                <para style="left_footer"> [[ objects[0].ref and objects[0].ref or ' ' ]] </para>                
+            </place>
+		</pageGraphics>
+	  </header>
+	</pageTemplate>
+  </template>
+  <stylesheet>
+    <blockTableStyle id="Standard_Outline">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table_Address_detail">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="0,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table_Title_String">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Header_Order_Reference_Tbl">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,0" stop="4,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="4,0" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,0" stop="4,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Content_Order_Reference_Table">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,0" stop="4,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Move_Line_Header">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Move_Line_Contect_Assign_State">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table1">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+	  <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="3,-1"/>
+    </blockTableStyle>
+	<blockTableStyle id="Table1b">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+	  <lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="3,0"/>
+	  <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="3,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="1,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="0,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,0" stop="2,-1"/>
+    </blockTableStyle>
+	<blockTableStyle id="Table1bll">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,0" stop="2,-1"/>
+    </blockTableStyle>
+	<blockTableStyle id="Table1bb">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+	  <lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="4,0"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,0" stop="2,-1"/>
+    </blockTableStyle>
+	<blockTableStyle id="Table1r">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,0" stop="2,-1"/>
+    </blockTableStyle>
+	<blockTableStyle id="Table1rul">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+	  <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="1,-1"/>
+    </blockTableStyle>
+	<blockTableStyle id="Table1bb1">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+	  <lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="4,0"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="1,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="0,-1"/>
+    </blockTableStyle>
+	<blockTableStyle id="Table1bb2">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+	  <lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="4,0"/>
+    </blockTableStyle>
+	<blockTableStyle id="Table1ab2">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+	  <lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="4,0"/>
+    </blockTableStyle>
+	<blockTableStyle id="Table_noline">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table2">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,0" stop="2,0"/>
+    </blockTableStyle>
+    <initialize>
+      <paraStyle name="all" alignment="justify"/>
+    </initialize>
+    <paraStyle name="Standard" fontName="Helvetica"/>
+    <paraStyle name="Heading" fontName="Helvetica" fontSize="14.0" leading="17" spaceBefore="12.0" spaceAfter="6.0"/>
+    <paraStyle name="Text body" fontName="Helvetica" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="List" fontName="Helvetica" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="Caption" fontName="Helvetica-Oblique" fontSize="12.0" leading="15" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="Index" fontName="Helvetica"/>
+    <paraStyle name="terp_header" fontName="Helvetica-Bold" fontSize="12.0" leading="15" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_header_Centre" fontName="Helvetica-Bold" fontSize="12.0" leading="15" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_8" fontName="Helvetica" fontSize="7.0" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="note" fontName="Helvetica" fontSize="5.5" leading="7" alignment="JUSTIFY" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Bold_8" fontName="Helvetica-Bold" fontSize="8.0" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_tblheader_Details" fontName="Helvetica-Bold" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_tblheader_Details_Centre" fontName="Helvetica" fontSize="9.0" leading="11" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Centre_8" fontName="Helvetica" fontSize="8.0" leading="10" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_tblheader_General_Centre" fontName="Helvetica" fontSize="8.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_tblheader_General_Rightbl" fontName="Helvetica" fontSize="8.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_tblheader_General" fontName="Helvetica" fontSize="8.0" leading="10" alignment="JUSTIFY" spaceBefore="6.0" spaceAfter="6.0"/>
+	
+    <paraStyle name="terp_tblheader_General_Right" fontName="Helvetica" fontSize="10.0" leading="10" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="Table Contents" fontName="Helvetica"/>
+    <paraStyle name="Footer" fontName="Helvetica"/>
+    <paraStyle name="Table Heading" fontName="Helvetica" alignment="CENTER"/>
+    <paraStyle name="Horizontal Line" fontName="Helvetica" fontSize="6.0" leading="8" spaceBefore="0.0" spaceAfter="14.0"/>
+    <paraStyle name="Heading 9" fontName="Helvetica-Bold" fontSize="75%" leading="NaN" spaceBefore="12.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_tblheader_Details_Right" fontName="Helvetica-Bold" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Right_8" fontName="Helvetica" fontSize="8.0" leading="10" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_header_Right" fontName="Helvetica-Bold" fontSize="15.0" leading="19" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_address" fontName="Helvetica" fontSize="10.0" leading="13" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_9" fontName="Helvetica" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Bold_9" fontName="Helvetica-Bold" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Right_9" fontName="Helvetica" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_2" fontName="Helvetica" fontSize="2.0" leading="3" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_5cm_Above_Space" fontName="Helvetica" fontSize="8.0" leading="10" alignment="LEFT" spaceBefore="6.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_1cm_above_space" fontName="Helvetica" fontSize="8.0" leading="10" alignment="LEFT" spaceBefore="3.0" spaceAfter="0.0"/>
+    <images/>
+  </stylesheet>
+  <story>
+  <pto>
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    
+	<blockTable colWidths="358,180" rowHeights="1.5cm" style="Table_Title_String">
+	  <tr>
+        <td>
+          <para style="Heading"><b> SERVICE AGREEMENT </b></para>
+        </td>
+		<td>
+          <image x="0" y="0" height="1.5cm" width="170"> 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 </image>
+        </td>
+      </tr>
+	</blockTable>
+
+	<blockTable colWidths="538" style="Table_Title_String">
+	  <tr>
+        <td>
+          <para style="terp_tblheader_General_Right"> Agreement No.: [[ o.name and o.name or '__________________' ]]</para>
+        </td>
+      </tr>
+	</blockTable>
+	<spacer length="0.25cm"/>
+	<para style="terp_tblheader_General"> This Agreement is made on [[ o.date and formatLang(o.date, date=True) or '' ]] between Fuji Xerox Singapore Pte Ltd ("FXS") a company incorporated in Singapore and having its office at 80 Anson Road #01-01 Fuji Xerox Towers Singapore 079907 AND </para>
+    <spacer length="0.25cm"/>
+	<blockTable colWidths="538" rowHeights="0.75cm" style="Table1">
+	  <tr>
+        <td>
+          <para style="terp_default_8"> Customer Name: </para>
+		  <para style="terp_default_8"> [[ o.customer_bill_id and o.customer_bill_id.name or ' ' ]] </para>
+        </td>
+      </tr>
+	</blockTable>
+    <blockTable colWidths="338,200" rowHeights="1.85cm" style="Table1">
+	  <tr>
+        <td>
+          <para style="terp_default_8"> Customer 's Billing Address: </para>
+		  <para style="terp_default_8"> [[ o.customer_bill_id and display_address(o.customer_bill_id) or ' ' ]] </para>
+        </td>
+	<td>
+          <para style="terp_default_8"> Tel: [[ o.customer_bill_id and o.customer_bill_id.phone or ' ' ]] </para>
+	   <spacer length="0.15cm"/>
+	   <para style="terp_default_8"> Fax No: [[ o.customer_bill_id and o.customer_bill_id.fax or ' ' ]] </para>
+        </td>
+      </tr>
+	</blockTable>
+	<blockTable colWidths="338,200" rowHeights="1.85cm" style="Table1">
+	  <tr>
+        <td>
+          <para style="terp_default_8"> Customer 's Address for Installation: </para>
+		  <para style="terp_default_8"> [[ o.customer_install_id and display_address(o.customer_install_id) or ' ' ]] </para>
+        </td>
+        <td>
+          <para style="terp_default_8"> Tel: [[ o.customer_install_id and o.customer_install_id.phone or ' ' ]] </para>
+	 </td>
+      </tr>
+	</blockTable>
+	<para style="terp_default_8"> ("Customer")</para>
+	<spacer length="0.25cm"/>
+	<para style="terp_tblheader_General"> FXS agrees to provide services ("Services") for the Equipment and Software described in the schedule ("Schedule") set forth below, subject to the terms and conditions found overleaf in this Agreement. Each item of Equipment, and FXS Licensed Software and Non-FXS Software (collectively "Software"), and any and all materials comprising any part of the same, shall be referred to as "Item" and collectively as "Items". </para>
+	
+	<blockTable colWidths="538" style="Table_Title_String">
+	  <tr>
+        <td>
+          <para style="terp_tblheader_General_Centre"><b> SCHEDULE </b></para>
+        </td>
+      </tr>
+	</blockTable>
+	
+	<blockTable colWidths="305,245" style="Content_Order_Reference_Table">
+	  <tr>
+        <td>
+          <blockTable colWidths="526" style="Table1bb2">
+			  <tr>
+				<td>
+					<para style="terp_default_8"> </para>
+				</td>
+			  </tr>
+		  </blockTable>
+		  <blockTable colWidths="294" style="Table1bb1">
+			  <tr>
+				<td>
+					<para style="terp_default_8"><b> Equipment </b></para>
+				</td>
+			  </tr>
+		  </blockTable>
+			<blockTable colWidths="147,147" style="Table1b">
+			  <tr>
+				<td>
+					<para style="terp_default_8"> FXS Equipment  </para>
+				</td>
+				<td>
+					<para style="terp_default_8"> Serial Number </para>
+				</td>
+			  </tr>
+			</blockTable>
+			<section>
+			<para style="terp_default_8"> [[ repeatIn(get_equipment(o.line_ids),'l') ]] </para>
+			<blockTable colWidths="147,147" rowHeights="0.5cm" style="Table1b">
+			  <tr>
+				<td>
+					<para style="terp_default_8"> [[ l['name'] or ' ']] </para>
+				</td>
+				<td>
+					<para style="terp_default_8"> [[ l['serial'] and l['serial'] or ' ' ]] </para>
+				</td>
+			  </tr>
+			</blockTable>
+			</section>
+			<blockTable colWidths="147,147" style="Table1b">
+			  <tr>
+				<td>
+					<para style="terp_default_8"> Non-FXS Equipment  </para>
+				</td>
+				<td>
+					<para style="terp_default_8">   </para>
+				</td>
+			  </tr>
+			</blockTable>
+			<section>
+			<para style="terp_default_8"> [[ repeatIn(get_equipment_non(o.line_ids),'k') ]] </para>
+			<blockTable colWidths="147,147" rowHeights="0.5cm" style="Table1b">
+			  <tr>
+				<td>
+					<para style="terp_default_8"> [[ k['name'] or ' ']] </para>
+				</td>
+				<td>
+					<para style="terp_default_8"> [[ k['serial'] and k['serial'] or ' ' ]] </para>
+				</td>
+			  </tr>
+			</blockTable>
+			</section>				
+		    <blockTable colWidths="294" style="Table1b">
+			  <tr>
+				<td>
+					<para style="terp_default_8"><b> Software </b></para>
+				</td>
+			  </tr>
+			</blockTable>
+			<blockTable colWidths="147,147" style="Table1b">
+			  <tr>
+				<td>
+					<para style="terp_default_8"> FXS Licensed Software  </para>
+				</td>
+				<td>
+					<para style="terp_default_8"> Serial Number </para>
+				</td>
+			  </tr>
+			</blockTable>
+				<section>
+				<para style="terp_default_8"> [[ repeatIn(get_software(o.line_ids),'p') ]] </para>
+				<blockTable colWidths="147,147" rowHeights="0.5cm" style="Table1b">
+				  <tr>
+					<td>
+						<para style="terp_default_8"> [[ p['name'] or ' ']] </para>
+					</td>
+					<td>
+						<para style="terp_default_8"> [[ p['serial'] and p['serial'] or ' ' ]] </para>
+					</td>
+				  </tr>
+				</blockTable>
+				</section>
+			<blockTable colWidths="147,147" style="Table1b">
+			  <tr>
+				<td>
+				<para style="terp_default_8"> Non-FXS Software  </para>
+				</td>
+				<td>
+				<para style="terp_default_8">   </para>
+				</td>
+			  </tr>
+			</blockTable>
+			<section>
+			<para style="terp_default_8"> [[ repeatIn(get_software_non(o.line_ids),'t') ]] </para>
+			<blockTable colWidths="147,147" rowHeights="0.5cm" style="Table1b">
+			  <tr>
+				<td>
+					<para style="terp_default_8"> [[ t['name'] or ' ']] </para>
+				</td>
+				<td>
+					<para style="terp_default_8"> [[ t['serial'] and t['serial'] or ' ' ]] </para>
+				</td>
+			  </tr>
+			</blockTable>
+			</section>
+			<blockTable colWidths="294" style="Table1b">
+			  <tr>
+				<td>
+					<para style="terp_default_8"><b> The Equipment and Software stated above are strictly for use in Singapore only. </b></para>
+				</td>
+			  </tr>
+			</blockTable>
+						
+		<blockTable colWidths="535" rowHeights="1.0cm" style="Table1b">
+		  <tr>
+			<td>
+			  <para style="terp_default_8"> Remarks: </para>
+			</td>
+		  </tr>
+		</blockTable>
+
+        </td>
+		<td>
+			<blockTable colWidths="230" style="Table1bb2">
+			  <tr>
+				<td>
+					<para style="terp_default_8"> </para>
+				</td>
+			  </tr>
+		  </blockTable>
+            <blockTable colWidths="176,54" rowHeights="0.75cm" style="Table1bb">
+			  <tr>
+				<td>
+					<para style="terp_default_8"> Service Commencement Date:  </para>
+				</td>
+				<td>
+					<para style="terp_default_8"> [[ o.ser_date and formatLang(o.ser_date,date=True) or '__________' ]] </para>
+				</td>
+			  </tr>
+			</blockTable>
+			<blockTable colWidths="200,30" rowHeights="0.75cm" style="Table1r">
+			  <tr>
+				<td>
+					<para style="terp_default_8"><b> Equipment </b></para>
+				</td>
+				<td>
+					<para style="terp_default_8"> </para>
+				</td>
+			  </tr>
+			</blockTable>
+			<blockTable colWidths="156,74" rowHeights="0.75cm" style="Table1r">
+			  <tr>
+				<td>
+					<para style="terp_default_8"> Equipment Minimum Period:  </para>
+				</td>
+				<td>
+				  <blockTable colWidths="68" rowHeights="0.45cm" style="Table1rul">
+					  <tr>
+					    <td>
+						  <para style="terp_default_8"> [[ o.mini_equip and o.mini_equip or '' ]] months </para>
+						</td>
+					  </tr>
+				  </blockTable>
+				</td>
+			  </tr>
+			</blockTable>
+			<blockTable colWidths="156,74" rowHeights="1.75cm" style="Table1r">
+			  <tr>
+				<td>
+				    <para style="terp_default_8"> Minimum Monthly Equipment  </para>
+					<para style="terp_default_8"> Maintenance Charge:  </para>
+					<para style="terp_default_8"> (based on committed number of copies)  </para>
+				</td>
+				<td>
+					<spacer length="0.75cm"/>
+					<blockTable colWidths="68" rowHeights="0.45cm" style="Table1rul">
+					  <tr>
+					    <td>
+						  <para style="terp_default_8"> S$ [[ o.main_charge and o.main_charge or '' ]] </para>
+						</td>
+					  </tr>
+					</blockTable>
+				</td>
+			  </tr>
+			</blockTable>
+			<blockTable colWidths="156,74" rowHeights="1.5cm" style="Table1r">
+			  <tr>
+				<td>
+					<para style="terp_default_8"> Committed Number of Copies:  </para>
+					<spacer length="1.25cm"/>
+				</td>
+				<td>
+				   <blockTable colWidths="68" rowHeights="0.45cm" style="Table1rul">
+					  <tr>
+					    <td>
+						  <para style="terp_default_8"> [[ o.comited_copy1 and o.comited_copy1 or '' ]] </para>
+						</td>
+				      </tr>
+					</blockTable>
+					<spacer length="0.15cm"/>
+					<blockTable colWidths="68" rowHeights="0.45cm" style="Table1rul">
+					  <tr>
+					    <td>
+						  <para style="terp_default_8"> [[ o.comited_copy2 and o.comited_copy2 or '' ]] </para>
+						</td>
+					  </tr>
+					</blockTable>
+				</td>
+			  </tr>
+			</blockTable>
+			<blockTable colWidths="156,74" rowHeights="1.5cm" style="Table1r">
+			  <tr>
+				<td>
+					<para style="terp_default_8"> Price Per Copy:  </para>
+					<para style="terp_default_8"> (in excess of committed number of copies)  </para>
+				</td>
+				<td>
+					<spacer length="0.55cm"/>
+					<blockTable colWidths="68" rowHeights="0.45cm" style="Table1rul">
+					  <tr>
+					    <td>
+						  <para style="terp_default_8"> [[ o.price_copy and o.price_copy or '' ]] cents </para>
+						</td>
+					  </tr>
+					</blockTable>
+				</td>
+			  </tr>
+			</blockTable>
+			<blockTable colWidths="200,30" rowHeights="0.75cm" style="Table1r">
+			  <tr>
+				<td>
+					<para style="terp_default_8"><b> Software </b></para>
+				</td>
+				<td>
+					<para style="terp_default_8"> </para>
+				</td>
+			  </tr>
+			</blockTable>
+			<blockTable colWidths="156,74" rowHeights="0.75cm" style="Table1r">
+			  <tr>
+				<td>
+					<para style="terp_default_8"> Software Minimum Period:  </para>
+				</td>
+				<td>
+					<blockTable colWidths="68" rowHeights="0.45cm" style="Table1rul">
+					  <tr>
+					    <td>
+							<para style="terp_default_8"> [[ o.mini_soft and o.mini_soft or '' ]] months </para>
+						</td>
+					  </tr>
+					</blockTable>
+				</td>
+			  </tr>
+			</blockTable>
+			<blockTable colWidths="156,74" rowHeights="1.80cm" style="Table1bll">
+			  <tr>
+				<td>
+					<para style="terp_default_8"> Yearly Software Maintenance Charge:  </para>
+				</td>
+				<td>
+				  <blockTable colWidths="68" rowHeights="0.45cm" style="Table1rul">
+					  <tr>
+					    <td>
+						  <para style="terp_default_8"> S$ [[ o.year_charge_soft and o.year_charge_soft or ' ' ]] </para>
+						</td>
+				      </tr>
+				  </blockTable>
+				</td>
+			  </tr>
+			</blockTable>
+        </td>
+      </tr>
+	</blockTable>
+	
+	<spacer length="0.15cm"/>
+	<blockTable colWidths="550" style="Table_Title_String">
+	  <tr>
+        <td>
+		<blockTable colWidths="267,267" style="Header_Order_Reference_Tbl">
+		  <tr>
+			<td>
+			  <para style="terp_tblheader_General_Centre"><b> SIGNED FOR AND ON BEHALF OF </b></para>
+			  <para style="terp_tblheader_General_Centre"><b> FUJI XEROX SINGAPORE PTE LTD </b></para>
+			  <spacer length="0.25cm"/>
+			  <para style="terp_tblheader_General_Centre"> Signed:    _________________________________ </para>
+			  <spacer length="0.25cm"/>
+			  <para style="terp_tblheader_General_Centre"> Name:    _________________________________ </para>
+			  <spacer length="0.25cm"/>
+			  <para style="terp_tblheader_General_Centre"> Title:    _________________________________ </para>
+			</td>
+			<td>
+			  <para style="terp_tblheader_General_Centre"><b> SIGNED FOR AND ON BEHALF OF </b></para>
+			  <para style="terp_tblheader_General_Centre"><b> THE CUSTOMER </b></para>
+					  <spacer length="0.25cm"/>
+			  <para style="terp_tblheader_General_Centre"> Signed:    _________________________________ </para>
+			  <spacer length="0.25cm"/>
+			  <para style="terp_tblheader_General_Centre"> Name:    _________________________________ </para>
+			  <spacer length="0.25cm"/>
+			  <para style="terp_tblheader_General_Centre"> Title:    _________________________________ </para>
+			  <spacer length="0.25cm"/>
+			  <para style="terp_tblheader_General_Centre"> Customer Stamps: </para>
+			</td>
+		  </tr>
+		</blockTable>
+		</td>
+		</tr>
+	  </blockTable>
+		<para style="terp_tblheader_General_Rightbl"><b> Agreement Terms &amp; Conditions overleaf. </b></para>
+  </pto>
+  </story>
+
+  <story>
+  <pto>
+    <spacer length="1.8cm"/>
+    <para style="note"> 1.  Services will commence on the Service Commencement Date and will continue: (a) in the case of the Equipment, for the Equipment Minimum Period; and (b) in the case of the Software, for the Software Minimum Period. Service for the Equipment and the Software shall continue after their respective stated minimum period, unless terminated by 30 days prior written notice expiring on a date after the relevant minimum period.</para>
+	<spacer length="0.08cm"/>
+	<para style="note">2.  FXS will (a) replace parts necessary for the efficient working of the Equipment (replacement parts will be of serviceable quality, may either be new or refurbished and will remain the property of FXS); (b) service (i.e. inspect, adjust and repair) the Equipment; (c) provide xerographic supplies necessary for the operation of the FXS Equipment other than colour toners (unless otherwise specified in the Schedule) and output copy material; and (d) provide any patches or bug fixes ("Relevant Patch") for the Software as and when available (to be determined by FXS). An upgrade, new release or new version of the Software does not fall within the scope of this Agreement and will only be available to Customer on payment of FXS prevailing standard rates for its license and installation. </para>
+	<spacer length="0.08cm"/>
+	<para style="note">3.  Services will be performed during FXS's normal service hours, between 9.00 am to 5.00 pm on Mondays to Fridays. Services will also be performed for the FXS Equipment between 9.00 am and 12.00 noon on Saturdays. Public holidays are excluded. FXS will attend only at the Installation Address described in the Schedule and is not obliged to attend at any premises outside of Singapore. If FXS agrees to provide any Services outside of the normal service hours, Customer shall pay to FXS additional charges at FXS prevailing standard rates (the reference to which throughout means rates for time and materials). </para>
+	<spacer length="0.08cm"/>
+	<para style="note">3.1  Technical Support Services for Software shall be provided in the following manner: </para>
+	<spacer length="0.08cm"/>
+	<para style="note">3.1.1  Level One Support:In the first instance, technical support will be provided via the telephone. If there is any suspected problem in the Software, Customer shall notify FXS of the relevant problem ("Software Problem") via telephone. Customer must have used reasonable efforts to check that the method of use or operation of the Software is in accordance with any operating instructions or manuals provided. FXS will use best efforts to diagnose the Software Problem via telephone and Customer will implement the diagnosis in accordance with the instructions of FXS. Customer is obliged to provide a reasonably skilled and competent in-house or contracted system or network administrator for implementation of the diagnosis andinstructions of FXS. </para>
+	<spacer length="0.08cm"/>
+	<para style="note">3.1.2 Level Two Support:In the second instance, FXS will attend on site and diagnose the Software Problem. Level Two Support will not be undertaken unless the procedures and requirements for Level One Support have been implemented and Customer has discharged its obligations for purposes of Level One Support. </para>
+	<spacer length="0.1cm"/>
+	<para style="note">3.2  Technical Support Services for FXS Equipment shall be provided in the following manner: If any suspected problem arises in the FXS Equipment, Customer shall notify FXS of the relevant problem ("Equipment Problem") via telephone. Customer must have used reasonable efforts to check that the method of use or operation of the FXS Equipment is in accordance with any operating or user instructions or manuals provided. Subject thereto, FXS will attend on site to diagnose the Equipment Problem. </para>
+	<spacer length="0.08cm"/>
+	<para style="note">3.3  FXS may require the Customer to pay additional charges, at FXS prevailing standard rates, if FXS performs any Services or attends on site in relation to any Software Problem or Equipment Problem where it is a matter that (a) FXS can subsequently show that such services are not within the scope of this Agreement; (b) a reasonably skilled and competent in-house or contracted systems or network administrator would have been competent to resolve; or (c) for Technical Support Services for Software, Customer ought to have been able to resolve at Level One Support but failed to do so. </para>
+	<spacer length="0.08cm"/>
+	<para style="note">3.4  It is hereby agreed that FXS shall not be liable to the Customer and shall not be bound by its obligations under Clauses 2 and 3 herein in the event FXS is being prevented from discharging such obligations by circumstances beyond its control, whether or not such circumstances would amount to Acts of God, Force Majeure or other frustrating events in law. </para>
+	<spacer length="0.08cm"/>
+	<para style="note">4.  Customer undertakes: (a) not to make any modifications to any Item; (b) to use each Item only in Singapore and in accordancewith any operating instructions or manuals furnished by, and any reasonable requirements of FXS; (c) not to use any inappropriate hardware, software or through-put materials with any Item; (d)not to use consumables not supplied by FXS on any Equipment; (e) not to move any Equipment from any position, which it is from time to time installed, without the prior written consent of FXS or with the assistance of any person not expressly authorised by FXS; (f) not to install any Software in any equipment other than in the Equipment in which installation is first made by FXS; (g) to keep each Item in its safe custody and control and free from any encumbrance and adverse claims; (h) to ensure that each Item is not lost or stolen, improperly or negligently used or used by any unauthorised person; (i) to provide all relevant facilities and render all assistance in order that FXS may properly and effectively undertake the Services; (j) to give FXS full access to any Item, any premises where they may found and to other equipment and software that FXS may require to perform the Services; and (k) to maintain an operating environment which conforms with the written specifications (if any) provided by FXS. </para>
+	<spacer length="0.08cm"/>
+	<para style="note">4.1  The provision of the Services, other than xerographic services, does not include services occasioned by or attributable to any: (a) maintenance, servicing, repairs or modifications to any Item by persons other than the authorised personnel of FXS or without the prior written consent of FXS; (b) disuse, insufficiency or infrequency of use of the FXS Equipment; (c) conditions extraneous to any Item, or the operating environment; (d) any installation of the Software in any equipment other than equipment in which it was first installed by FXS; (e) harm, damage or destruction incurred by any Item; (f) breach or default by Customer of its obligations under this Agreement; or (g) failure to use in substitution for any previous version of the Software any upgrade within the period as notified by FXS. The Services does not include rectification of lost or corrupted data, or harm, damage or destruction of the FXS Equipment or Software caused by viruses and other adverse programming processes, or correction of any error, defect or bug in the Software (other than by means of a Relevant Patch, as and when available).</para>
+	<spacer length="0.1cm"/>
+	<para style="note">4.2  If services are requested for by Customer and are provided by FXS but are outside, or are precluded by, this Agreement, Customer will pay for such said services at FXS prevailing standard rates for such services. </para>
+	<spacer length="0.08cm"/>
+	<para style="note">5.  Customer irrevocably commits by the execution of this Agreement to pay the Maintenance Charges (for both Equipment and Software) for the whole Minimum Period. Maintenance Charges shall be payable monthly, as invoiced by FXS. If this Agreement terminates before the end of the Equipment Minimum Period, Maintenance Charges (for both Equipment and Software) due or becoming due for the balance of any applicable minimum period shall be payable immediately. The amount of Maintenance Charges for the Equipment is (a) the Minimum Monthly Equipment Maintenance Charge added to (b) the Price Per Copy in Excess of Committed Number of Copies multiplied by the number by which the Meter reading forany calendar month is in excess of the Committed Number of Copies. Component (b) above shall be disregarded in the event of termination before the end of the Equipment Minimum Period for the period after termination. </para>
+	<spacer length="0.08cm"/>
+	<para style="note">6.  A Meter is affixed to one or more of the FXS Equipment for measuring output copy material. Customer shall notify FXS of the output copy material consumption as reflected on the Meter on or before the 25th day of each month and FXS shall render an invoice for the month's Maintenance Charges. In the event of a discrepancy between any output copy material consumption as notified by Customer and any Meter reading done by FXS for the same period, the Meter reading done by FXS shall be binding and conclusive for purposes of computation of any charges payable by Customer to FXS. Customer shall ensure that the Meter is not removed or tampered with, damaged or destroyed. If any such event arises, Customer shall notify FXS immediately. FXS will estimate the level of output copy material consumption for the relevant period if Customer fails to notify FXS of the output copy material consumption as stated above, or if the Meter has been removed or tampered with or is damaged or destroyed. FXS's estimation will be binding and conclusive for purposes of computation of any charges payable by Customer to FXS. </para>
+	<spacer length="0.08cm"/>
+	<para style="note">6.1  The Maintenance Charges and all other amounts payable to FXS under this Agreement are collectively referred to as "FXS Payments". Customer shall pay all FXS Payments immediately upon receipt by Customer of the relevant invoice issued by FXS. All FXS Payments must be paid to FXS free from any withholding, deduction, set off, defence, deferment and counterclaim, whether on account of taxes or otherwise. The obligations of Customer to pay the FXS Payments are absolute and shall not be affected by any matter, event or contingency whatsoever, whether such matter, event or contingency, results in the damage, destruction loss of use of the Items or any of them or otherwise. </para>
+	<spacer length="0.08cm"/>
+	<para style="note">6.2  FXS reserves the right to increase the monthly Maintenance Charges payable at any time upon 30 days prior notice to Customer. Such increase is effected by increasing the Minimum Monthly Equipment Maintenance Charge, the Software Monthly Maintenance Charge and/or the Price per Copy in Excess of Committed Number of Copies, save that any increase to each of the aforesaid shall not in any year exceed 15% of the value applicable on 1st January for that year. </para>
+	<spacer length="0.08cm"/>
+	<para style="note">7.  Customer agrees to pay all goods and services tax and other taxes and charges that may arise in connection with the transactions and any payments contemplated by this Agreement. In the event that Customer defaults in payment of the amount due under any invoice issued by FXS ("FXS' Invoice") Customer shall pay interest at the rate of 15% per annum (which rate will apply before as well as after judgment) from the due date of the FXS' Invoice until the date of full payment of the amount due. </para>
+	<spacer length="0.08cm"/>
+	<para style="note">8.  Customer shall not assign its rights under this Agreement without FXS's prior written consent. If consent is given, FXS may impose an administrative fee due to such assignment at FXS prevailing standard rates. FXS may assign any or all of its rights and/or obligations under this Agreement to a related company of FXS without prior consent of the Customer. In the event of an assignment of any obligations by FXS, Customer shall accept the performance by the relevant assignee in lieu of the performance by FXS. </para>
+	<spacer length="0.08cm"/>
+	<para style="note">9.  In the event FXS is under any circumstance liable for any defect or deficiency in the services or any performance of or lackof or delay in performance with respect to the services to be provided under this agreement, FXS's only liability shall be (at the election of FXS in its sole discretion) to repeat the performance of the services to the best of its ability or to replace or repair the item on which the services were performed or required to be performed within a reasonable time. Save as expressly set forth above, FXSshall not be liable to customer for any loss or damage arising out of or in connection with any breach by FXS of this agreement (including any warranty), or in tort (including negligence) or breachof statutory duties, or arising out of or in connection with the performance of or lack of or the delay in the performance of any services or the state, condition, use, application and/or exploitation of any item or any matter whatsoever, save for death or personal injury resulting from the negligence of FXS. Notwithstanding anything to the contrary herein, FXS shall in any event not be liable for any consequential or indirect loss or damage (including without limitation loss of profits, loss of business or loss of goodwill) arising out of or in connection with the matters aforesaid orany matter whatsoever. </para>
+	<spacer length="0.08cm"/>
+	<para style="note">10.  This Agreement cannot be terminated except as expressly set forth in this Agreement.</para>
+	<spacer length="0.08cm"/>
+	<para style="note">10.1  FXS may terminate this Agreement by giving notice in writing if (a) Customer breaches any term of this Agreement; (b) any proceeding is commenced or an order is made or a resolution is passed for the dissolution, or winding up of Customer, or for the appointment of a liquidator, receiver, judicial manager, administrator, trustee or similar officer of Customer or any part or all of its assets or business; (c) Customer stops or suspends payments to or enters into any composition with creditors, or is unable to pay its debts, or shall transfer or otherwise dispose of any material part of its assets or undertaking; or (d) Customer abandons any of the Equipment. </para>
+	<spacer length="0.08cm"/>
+	<para style="note">10.2  Customer may terminate this Agreement by giving notice in writing if FXS is in breach of its obligations under Clauses 2 and 3 above and such breach remains unremedied for thirty (30) days following notice by Customer to FXS specifying such breach. </para>
+	<spacer length="0.08cm"/>
+	<para style="note">10.3 Upon termination pursuant to Clause 10.1 or otherwise howsoever arising, FXS is entitled to: (i) declare all sums and amounts due or to become due under this Agreement for the balance of the Minimum Period immediately due and payable; and/or (ii) exercise any right or remedy that may be available to FXS under applicable laws. </para>
+	<spacer length="0.08cm"/>
+	<para style="note">10.4  Customer shall further be liable for all costs and expenses incurred by FXS (including solicitors and clients costs on a full indemnity basis) as a result of the breach by Customer of this Agreement and/or the termination and/or the exercise by FXS of its rights and remedies under this Agreement. </para>
+	<spacer length="0.08cm"/>
+	<para style="note">10.5  Any termination of this Agreement pursuant to this clause shall not affect any accrued rights or liabilities of either party nor the coming into or continuance in force of any provision hereof which is expressly or by implication intended to come into or continue in force on or after termination. </para>
+	<spacer length="0.08cm"/>
+	<para style="note">11.  This Agreement constitutes the entire agreement between the Customer and FXS. No representation, statement, warranty not contained in the Agreement shall be binding on FXS and no waiver, alteration or modification of the terms of this Agreement shall be binding unless recorded in writing and signed by a Director or General Manager of FXS and by a person authorised by the Customer.</para>
+	<spacer length="0.08cm"/>
+	<para style="note">12.  This Agreement shall be governed by and construed in accordance with the laws of Singapore and the parties hereby submit tothe non-exclusive jurisdiction of the courts in Singapore. </para>
+	
+  </pto>
+  </story>
+</document>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+	<!-- Fix for view parts of product -->
+	
+		<record id="product_normal_form_inherit_part" model="ir.ui.view">
+	           <field name="name">product.normal.form.inherit.part</field>
+	           <field name="model">product.product</field>
+	           <field name="inherit_id" ref="product.product_normal_form_view"/>
+	           <field name="arch" type="xml">
+	               <xpath expr="//field[@name='default_code']" position="after">
+	               	<field name="is_part" />
+	               </xpath>
+			</field>
+		</record>
+	
+		
+
+    </data>
+</openerp>

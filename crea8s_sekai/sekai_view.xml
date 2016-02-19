@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+
+    <data noupdate="0">
+        <record id="group_select_tab" model="res.groups">
+            <field name="name">Select line</field>
+        </record>
+    </data>
+
+    <data>
+    
+    <record id="crea8s_view_change_qty_wizard" model="ir.ui.view">
+            <field name="name"> Change Qty </field>
+            <field name="model">change.mrp.production</field>
+            <field name="arch" type="xml">
+                <form string="Change Qty in MRP" version="7.0">
+                	<sheet>
+                		<group>
+                            <label string="Please key in new qty here"/>
+	                        <field name="name"/>
+	                    </group>
+                	</sheet>
+                    <footer>
+                        <button name="ok_fnc" type="object" string="OK" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+    
+    
+    
+        
+        <!-- Wizard to generate the PO -->
+        <record id="crea8s_view_mrp_generate_purchase_order_wizard" model="ir.ui.view">
+            <field name="name"> Generate Request for Quotation </field>
+            <field name="model">purchase.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Generate Request for Quotation" version="7.0">
+                	<sheet>
+                		<group>
+                                <label string="Are you sure?"/>
+	                        <field name="name" invisible="1"/>
+	                        <field name="mrp_id" attrs="{'invisible': [('mrp_id','&lt;&gt;',False)]}"/>
+	                        <field name="partner_id" invisible="1"/>
+	                        <field name="line_id" colspan="4" nolabel="1" invisible="1"> 
+	                        <tree editable="top">
+	                        	<field name="name"/>
+	                        	<field name="product_id"/>
+	                        	<field name="sup_id" />
+	                        	<field name="wh_id" />
+	                        	<field name="qty"/>
+	                        	<field name="uom_id"/>
+	                        	<field name="date_order"/>
+	                        	<field name="parent_id" invisible="1"/>
+	                        </tree>
+	                        </field>
+	                    </group>
+                	</sheet>
+                    <footer>
+                        <button name="generate_purchase" type="object" string="OK" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        
+        
+       
+        
+
+	<record id="crea8s_view_po_form" model="ir.ui.view">
+            <field name="name"> Purchase Order </field>
+            <field name="model">purchase.order</field>
+            <field name="arch" type="xml">
+		<form string="Purchase Order" version="7.0">
+                <header>
+                    <button name="wkf_send_rfq" states="draft" string="Send by Email" type="object" context="{'send_rfq':True}" class="oe_highlight"/>
+                    <button name="wkf_send_rfq" states="sent" string="Send by Email" type="object" context="{'send_rfq':True}"/>
+                    <button name="print_quotation" string="Print" type="object" states="draft,sent" class="oe_highlight" groups="base.group_user"/>
+                    <button name="%(purchase.report_purchase_order)d" string="Print" type="action" states="confirmed,approved,except_picking,except_invoice,approved,done" groups="base.group_user"/>
+                    <button name="purchase_confirm" states="draft" string="Confirm Order"/>
+                    <button name="purchase_confirm" states="sent" string="Confirm Order" class="oe_highlight"/>
+                    <button name="wkf_send_rfq" states="confirmed" string="Resend Purchase Order" type="object" class="oe_highlight"/>
+                    <button name="action_cancel" states="approved,except_picking,except_invoice" string="Cancel Order" type="object"/>
+                    <button name="purchase_approve" states="confirmed" string="Approve Order" class="oe_highlight" groups="purchase.group_purchase_manager"/>
+                    <button name="view_picking" string="Receive Products" type="object" attrs="{'invisible': ['|', ('shipped','=',True), ('state','!=', 'approved')]}" class="oe_highlight"/>
+                    <button name="action_cancel_draft" states="cancel,sent,confirmed" string="Set to Draft" type="object"/>
+                    <button name="purchase_cancel" states="draft,confirmed,sent" string="Cancel Order"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,sent,approved,done" statusbar_colors="{&quot;except_picking&quot;:&quot;red&quot;,&quot;except_invoice&quot;:&quot;red&quot;,&quot;confirmed&quot;:&quot;blue&quot;}" readonly="1"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <label string="Request for Quotation " attrs="{'invisible': [('state','not in',('draft','sent'))]}"/>
+                            <label string="Purchase Order " attrs="{'invisible': [('state','in',('draft','sent'))]}"/>
+                            <field name="name" class="oe_inline" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="partner_id" on_change="onchange_partner_id(partner_id)" context="{'search_default_supplier':1,'default_supplier':1,'default_customer':0}" domain="[('supplier','=',True)]"/>
+                            <field name="partner_ref"/>
+                            <field domain="[('type','=','purchase')]" name="pricelist_id" groups="product.group_purchase_pricelist" on_change="onchange_pricelist(pricelist_id, context)"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="journal_id" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="date_order"/>
+                            <field name="origin" attr="{'invisible': [('origin','=',False)]}"/>
+                            <field name="warehouse_id" on_change="onchange_warehouse_id(warehouse_id)" widget="selection" groups="stock.group_locations"/>
+                            <field name="company_id" groups="base.group_multi_company" widget="selection"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Purchase Order">
+                            <field name="order_line">
+                                <tree string="Purchase Order Lines" editable="bottom">
+                                    <field name="product_id" on_change="onchange_product_id(parent.pricelist_id,product_id,0,product_uom,parent.partner_id, parent.date_order,parent.fiscal_position,date_planned,name,price_unit,context)"/>
+                                    <field name="name"/>
+                                    <field name="date_planned"/>
+                                    <field name="company_id" groups="base.group_multi_company" widget="selection"/>
+                                    <field name="account_analytic_id" groups="purchase.group_analytic_accounting" domain="[('type','not in',('view','template'))]"/>
+                                    <field name="product_qty" on_change="onchange_product_id(parent.pricelist_id,product_id,product_qty,product_uom,parent.partner_id,parent.date_order,parent.fiscal_position,date_planned,name,price_unit,context)"/>
+                                    <field name="product_uom" groups="product.group_uom" on_change="onchange_product_uom(parent.pricelist_id,product_id,product_qty,product_uom,parent.partner_id, parent.date_order,parent.fiscal_position,date_planned,name,price_unit,context)"/>
+                                    <field name="price_unit"/>
+                                    <field name="taxes_id" widget="many2many_tags" domain="[('parent_id','=',False),('type_tax_use','!=','sale')]"/>
+                                    <field name="price_subtotal"/>
+                                </tree>
+                            </field>
+                            <group class="oe_subtotal_footer oe_right">
+                                <field name="amount_untaxed" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                <field name="amount_tax" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                <div class="oe_subtotal_footer_separator oe_inline">
+                                    <label for="amount_total"/>
+                                    <button name="button_dummy" states="draft" string="(update)" type="object" class="oe_edit_only oe_link"/>
+                                </div>
+                                <field name="amount_total" nolabel="1" class="oe_subtotal_footer_separator" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            </group>
+                            <div class="oe_clear"/>
+                            <field name="notes" class="oe_inline" placeholder="Terms and conditions..."/>
+                        </page>
+                        <page string="Incoming Shipments &amp; Invoices">
+                            <group>
+                                <group>
+                                    <field name="dest_address_id" string="Customer Address" on_change="onchange_dest_address_id(dest_address_id)" groups="stock.group_locations"/>
+                                    <field name="minimum_planned_date"/>
+                                    <field name="location_id" groups="stock.group_locations"/>
+                                    <field name="shipped" groups="base.group_no_one"/>
+                                </group>
+                                <group>
+                                    <field name="invoice_method"/>
+                                    <field name="invoiced"/>
+                                    <field name="payment_term_id" widget="selection"/>
+                                    <field name="fiscal_position" attrs="{'readonly': [('invoiced','=', True)]}"/>
+                                    <!-- We do not need these fields anymore, the information is in open chatter -->
+                                    <field name="validator" groups="base.group_no_one"/>
+                                    <field name="date_approve" groups="base.group_no_one"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="mrp_purchase_wizard_form_action" model="ir.actions.act_window">
+            <field name="name">Generate Request for Quotation</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purchase.wizard</field>
+            <field name="view_type">form</field>
+            <field name="target">new</field>
+        </record>    
+    	<!-- Add Warehouse into BOM -->
+    	<record id="crea8s_product_bom_form_view_inherit" model="ir.ui.view">
+            <field name="name">crea8s.product.bom.form.view.inherit</field>
+            <field name="model">mrp.bom</field>
+            <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form[@string='Bill of Material']" position="replace">
+		    <form string="Bill of Material" version="7.0">
+		    <header>
+                        <button name="generate_po" string="Request For Quotation" class="oe_highlight" type="object" 
+confirm="Step 1. Click Ok to create RFQ. Step 2. Click on Request For Quotation Tab to view RFQ"
+context="{'bom_id': active_id}"/>
+						<button name="generate_order_picking" string="Incoming Shipment" class="oe_highlight" type="object" 
+confirm="Step 1. Click Ok to create Incoming Shipment. Step 2. Click on Incoming Shipment Tab to view RFQ"
+context="{'bom_id': active_id}"/>
+
+		    </header>
+                    <group>
+                        <group>
+                            <field name="product_id" on_change="onchange_product_id(product_id, name, context)" context="{'default_supply_method':'produce'}" class="oe_inline"/>
+                            <label for="product_qty" string="Quantity"/>
+                            <div>
+                                <field name="product_qty" class="oe_inline"/>
+                                <field name="product_uom" class="oe_inline" on_change="onchange_uom(product_id, product_uom)" groups="product.group_uom"/>
+                            </div>
+                            <label for="product_uos_qty" groups="product.group_uos"/>
+                            <div groups="product.group_uos" >
+                                <field name="product_uos_qty"
+                                    class="oe_inline"/>
+                                <label string="-" attrs="{'invisible':[('product_uos','=',False)]}" class="oe_inline"/>
+                                <field name="product_uos" class="oe_inline"/>
+                            </div>
+                            <!--label for="routing_id" class="oe_inline" groups="mrp.group_mrp_routings"/>
+                            <div groups="mrp.group_mrp_routings">
+                            	<field name="routing_id" class="oe_inline"/>
+                            </div-->
+								<field name="is_use"  groups="crea8s_sekai.group_select_tab" string="Accept Change"/>
+								<field name="chk_all"/>
+                        </group>
+                        <group>
+                            <field name="name" groups="base.group_no_one"/>
+                            
+                            <field name="type" invisible="1"/>
+                            <field name="company_id" groups="base.group_multi_company" widget="selection"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Components">
+                            <field name="bom_lines" widget="one2many_list" on_change="onchange_bom_compo(bom_lines,context)" attrs="{'readonly': [('is_use','=', True)]}" options='{"always_reload": True}' context="{'chk_all':chk_all}">
+                                <tree string="Components" editable="bottom">
+                                    <field name="is_use"/>
+                                    <field name="product_id" context="{'default_supply_method':'produce', 'default_purchase_ok': True, 'default_sale_ok': False}" string="Material" on_change="onchange_product_id(product_id, name)" attrs="{'readonly': [('is_use','=', True)]}"/>
+                                    <field name="product_qty" attrs="{'readonly': [('is_use','=', True)]}" string="Material Quantity"/>
+                                    <field name="product_uom" on_change="onchange_uom(product_id, product_uom)" groups="product.group_uom" attrs="{'readonly': [('is_use','=', True)]}" string="Material Unit of Measure"/>
+                                    <field name="name" invisible="1"/>
+                                    <field name="date_start" string="Date Ordered" attrs="{'readonly': [('is_use','=', True)]}" invisible="1"/>
+                                    <field name="date_stop" string="Date Required" attrs="{'readonly': [('is_use','=', True)]}" required="1"/>
+				    				<field name="sup_id" attrs="{'readonly': [('is_use','=', True)]}" required="1" domain="['|',('supplier','=',True), ('customer','=',True)]"/>
+				    				<field name="des_wh" attrs="{'readonly': [('is_use','=', True)]}" required="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Request for Quotation">
+                            <field name="po_ids" nolable="1" colspan="4" context="{'form_view_ref':'crea8s_view_po_form'}">
+                <tree fonts="bold:message_unread==True" colors="grey:state=='cancel';blue:state in ('wait','confirmed');red:state in ('except_invoice','except_picking')" string="Request for Quotation">
+                    <field name="message_unread" invisible="1"/>
+                    <field name="name" string="Reference"/>
+                    <field name="date_order"/>
+                    <field name="partner_id"/>
+                    <field name="company_id" groups="base.group_multi_company" widget="selection"/>
+                    <field name="minimum_planned_date" invisible="context.get('quotation_only', False)"/>
+                    <field name="origin"/>
+                    <field name="warehouse_id"/>
+                    <field name="amount_total" sum="Total amount"/>
+                    <field name="state"/>
+                </tree>
+                            </field>
+                        </page>
+                        
+                        <page string="Incoming Shipment">
+                            <field name="incoming_ids" nolable="1" colspan="4"><!--  context="{'form_view_ref':'crea8s_view_po_form'}"-->
+                            </field>
+                        </page>
+                        
+                        <page string="Properties" groups="product.group_mrp_properties">
+                            <group>
+                                <group>
+                                    <field name="position"/>
+                                    <field name="bom_id"/>
+                                    <field name="sequence"/>
+                                    <field name="active"/>
+                                </group>
+                                <group>
+                                    <field name="date_start"/>
+                                    <field name="date_stop"/>
+                                    <field name="product_rounding"/>
+                                    <field name="product_efficiency"/>
+                                </group>
+                            </group>
+                            <separator string="Properties"/>
+                            <field name="property_ids" widget="many2many_tags"/>
+                        </page>
+			<page string="Note">
+                            <field name="note" nolable="1" colspan="4"/>
+                        </page>
+                    </notebook>
+                    <div class="oe_chatter">
+                         <field name="message_follower_ids" widget="mail_followers"/>
+                         <field name="message_ids" colspan="4" widget="mail_thread" nolabel="1"/>
+                    </div>
+                </form>
+				</xpath>
+            </field>
+        </record>
+        <!-- Add Warehouse into Purchase -->
+    	<record id="crea8s_purchase_order_form_view_inherit" model="ir.ui.view">
+            <field name="name">crea8s.purchase.order.form.view.inherit</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line']/tree/field[@name='price_subtotal']" position="after">
+					<field name="des_wh" />
+				</xpath>
+                <xpath expr="//field[@name='partner_ref']" position="after">
+					<field name="mrp_id" invisible="1"/>
+                                        <field name="reason" attrs="{'required': [('mrp_id', '=', False)]}"/>
+				</xpath>
+            </field>
+        </record>
+        
+        <record id="crea8s_mrp_production_tree_view_inherit" model="ir.ui.view">
+            <field name="name">crea8s.mrp.production.tree.view.inherit</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_planned']" position="after">
+			<field name="partner_id"/>
+		</xpath>
+                <xpath expr="//field[@name='name']" position="attributes">
+			<attribute name="string">Job Order</attribute>
+		</xpath>
+                <xpath expr="//field[@name='date_planned']" position="attributes">
+			<attribute name="string">Date Ordered</attribute>
+		</xpath>
+                <xpath expr="//field[@name='origin']" position="attributes">
+			<attribute name="invisible">1</attribute>
+		</xpath>
+                <xpath expr="//field[@name='cycle_total']" position="replace">
+			<field name="sale_revenue" string="Job Value (S$)"/>
+		</xpath>
+            </field>
+        </record>
+        <!-- Add context value into BOM to change component when change BOM -->
+    	<record id="crea8s_mrp_production_form_view_inherit" model="ir.ui.view">
+            <field name="name">crea8s.mrp.production.form.view.inherit</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='bom_id']" position="replace">
+					<field name="bom_id" domain="[('product_id','=',product_id)]" context="{'default_product_id': product_id,'mrp_id':active_id, 'mrp_name': name, 'qty_bom': product_qty}" on_change="bom_id_change(bom_id)" required="1"/>
+				</xpath>
+                <xpath expr="//div[@class='oe_title']" position="replace">
+                    <div class="oe_title">
+                        <h1>Job Order <field name="name" class="oe_inline"/></h1>
+                    </div>
+                </xpath>
+				<xpath expr="//tree/field[@name='cycle']" position="attributes">
+					<attribute name="invisible">1</attribute>
+				</xpath>
+                <xpath expr="//field[@name='date_planned']" position="attributes">
+			<attribute name="string">Date Ordered</attribute>
+		</xpath>
+                <xpath expr="//field[@name='name']" position="replace">
+					<field name="name" readonly="0"/>
+				</xpath>
+                <xpath expr="//page[@string='Extra Information']" position="after">
+					<page string="Note">
+                        <field name="note" nolable="1" colspan="4"/>
+                    </page>
+				</xpath>
+		        <xpath expr="//button[@name='force_production']" position="replace">
+		        	<button name="change_qty" string="Change QTY" type="object"/>
+					<button name="force_production" states="confirmed,picking_except" string="Start Production" type="object"/>
+				</xpath>
+				<xpath expr="//button[@name='button_confirm']" position="replace">
+					<button name="button_confirm" states="draft,bom_created" string="Confirm Production" class="oe_highlight"/>
+				</xpath>
+				<xpath expr="//button[@string='Cancel Production']" position="replace">
+					 <button name="button_cancel" states="draft,ready,in_production,picking_except" string="Job Cancelled"/>
+				</xpath>
+				<xpath expr="//button[@string='Produce']" position="replace">
+					<button name="%(mrp.act_mrp_product_produce)d" states="ready,in_production" 
+					string="Delivered" type="action" class="oe_highlight" context="{'mode_df': state}"/>
+				</xpath>
+				<xpath expr="//field[@name='product_id']" position="after">
+					<field name="partner_id" domain="['|',('supplier','=',True), ('customer','=',True)]"/>
+                               </xpath>
+				<xpath expr="//field[@name='date_planned']" position="after">
+					<field name="date_required"/>
+					<field name="sale_revenue" string="Job Value (S$)"/>
+					<field name="standard_price" string="Sale Price / pc"/>
+				</xpath>
+				<xpath expr="//field[@name='state']" position="replace">
+					<field name="state" widget="statusbar" statusbar_visible="draft,bom_created,ready,in_production,done" 
+					statusbar_colors="{&quot;picking_except&quot;:&quot;red&quot;,&quot;confirmed&quot;:&quot;blue&quot;}"/>
+				</xpath>
+                                <xpath expr="//field[@name='routing_id']" position="replace">
+					<field name="routing_id" context="{'mrp_id': active_id, 'mrp_name': name}" class="oe_inline" groups="mrp.group_mrp_routings" attrs="{'readonly': [('state','&lt;&gt;', 'bom_created'),('state','&lt;&gt;', 'draft')]}"/>
+				</xpath>
+                                <xpath expr="//field[@name='product_id']" position="replace">
+					<field name="product_id" on_change="product_id_change(product_id)" domain="[('bom_ids','!=',False),('bom_ids.bom_id','=',False)]" class="oe_inline" context="{&quot;default_supply_method&quot;:&quot;produce&quot;, &quot;default_type&quot;: &quot;product&quot;, 'default_purchase_ok': False}"/>
+                                </xpath>
+                                <xpath expr="//group[@string='Products to Consume']" position="replace">
+			            <group string="Material in Workshop">
+                                    <field name="move_lines" nolabel="1" options="{'reload_on_button': true}">
+                                        <tree colors="blue:state == 'draft';black:state in ('picking_except','confirmed','ready','in_production');gray:state in ('cancel','done') " string="Products to Consume">
+                                            <field name="product_id"/>
+                                            <field name="product_qty"  string="Quantity"/>
+                                            <field name="product_uom" string="Unit of Measure" groups="product.group_uom"/>
+                                            <field name="prodlot_id" groups="stock.group_production_lot" context="{'product_id': product_id}"/>
+                                            <field name="state" invisible="1"/>
+                                            <button name="%(stock.move_consume)d"
+                                                string="Consume Products" type="action"
+                                                icon="gtk-go-forward" context="{'consume': True}"
+                                                states="draft,waiting,confirmed,assigned"/>
+                                            <button
+                                                   name="%(stock.track_line)d"
+                                                   string="Split in Serial Numbers"
+                                                   type="action" icon="gtk-justify-fill"
+                                                   states="draft,waiting,confirmed,assigned" 
+                                                   groups="stock.group_production_lot"/>
+                                            <button name="%(stock.move_scrap)d"
+                                                string="Scrap Products" type="action"
+                                                icon="terp-gtk-jump-to-ltr" context="{'scrap': True}"
+                                                states="draft,waiting,confirmed,assigned"/>
+                                        </tree>
+                                    </field>
+                                </group>
+		              </xpath>
+                                <xpath expr="//group[@string='Consumed Products']" position="replace">
+                                <group string="Material Used">
+                                    <field name="move_lines2" nolabel="1" options="{'reload_on_button': true}">
+                                       <tree colors="red:scrapped==True;blue:state == 'draft';black:state in('picking_except','confirmed','ready','in_production');gray:state == 'cancel' " string="Consumed Products" editable="bottom">
+                                           <field name="product_id" readonly="1"/>
+                                           <field name="product_qty" readonly="1"/>
+                                           <field name="product_uom" readonly="1" string="Unit of Measure" groups="product.group_uom"/>
+                                           <field name="prodlot_id" context="{'product_id': product_id}" groups="stock.group_production_lot"/>
+                                           <field name="state" invisible="1"/>
+                                           <field name="scrapped" invisible="1"/>
+                                       </tree>
+                                    </field>
+                                </group>
+		              </xpath>
+            </field>
+        </record>
+
+     <record model="ir.ui.view" id="mrp_operations.mrp_production_workcenter_tree_view_inherit">
+        <field name="name">mrp.production.workcenter.line.tree</field>
+        <field name="model">mrp.production.workcenter.line</field>
+        <field name="inherit_id" eval="False"/>
+        <field name="arch" type="xml">
+            <tree string="Work Process" colors="gray:state in ('done','cancel');black:state in ('draft','startworking') and date_planned&gt;=current_date;red:date_planned&lt;current_date and state in ('draft', 'confirmed', 'ready')">
+                <field name="production_id" string="Job Order"/>
+                <field name="date_planned"/>
+                <field name="product"/>
+                <field name="qty"/>
+                <field name="uom"/>
+                <field name="name"/>
+                <field name="workcenter_id" widget="selection"/>
+                <field name="cycle"/>
+                <field name="hour"/>
+                <field name="state" />
+            </tree>
+        </field>
+     </record>
+
+	<record model="ir.ui.view" id="mrp_operations.mrp_production_workcenter_form_view_inherit">
+        <field name="name">mrp.production.workcenter.line.form</field>
+        <field name="model">mrp.production.workcenter.line</field>
+        <field name="inherit_id" eval="False"/>
+        <field name="arch" type="xml">
+            <form string="Production Workcenter" version="7.0">
+            <header>
+                <button name="button_start_working" string="Start" states="draft" class="oe_highlight"/>
+                <button name="button_resume" string="Resume" states="pause" class="oe_highlight"/>
+                <button name="button_done" string="Finished" states="startworking" class="oe_highlight"/>
+                <button name="button_pause" string="Pending" states="startworking"/>
+                <button name="button_draft" string="Set Draft" states="cancel"/>
+                <button name="button_cancel" string="Cancel" states="draft,startworking"/>
+                <field name="state" widget="statusbar" statusbar_visible="draft,startworking"/>
+            </header>
+            <sheet string="Work Orders">
+                <group col="4">
+                    <field colspan="2" name="name" invisible="1"/>
+                    <field name="workcenter_id" invisible="1"/>
+                    <field name="production_id" on_change="onchange_production_id(production_id)" string="Job Number"/>
+                    <field name="production_state"/>
+                    <field name="sequence"/>
+                </group>
+                <notebook>
+                <page string="Information">
+                    <group>
+                        <group string="Planned Production Hours">
+                            <field name="date_planned"/>
+                            <field name="date_planned_end"/>
+                        </group>
+
+                        <group string="Duration">
+                            <field name="cycle"/>
+                            <field name="hour" widget="float_time"/>
+                        </group>
+                        <group string="Actual Production Hours" >
+                            <field name="date_start" readonly="1" invisible="1"/>
+                            <field name="date_finished" readonly="1" invisible="1"/>
+                            <field name="delay" widget="float_time" invisible="1"/>
+                            <field name="time_comp" widget="float_time"/>
+                        </group>
+                        <group string="Product to Produce">
+                            <field name="product"/>
+                            <field name="qty"/>
+                            <field name="uom" widget="selection"/>
+                        </group>
+                    </group>
+                </page>
+                <page string="Note">
+                    <field name="note" nolable="1" colspan="4"/>
+                </page>
+                </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+        
+        <!-- Add MO into picking in -->
+    	<record id="crea8s_po_picking_in_form_view_inherit" model="ir.ui.view">
+            <field name="name">crea8s.po.picking.in.form.view.inherit</field>
+            <field name="model">stock.picking.in</field>
+            <field name="inherit_id" ref="stock.view_picking_in_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+					<field name="mrp_id"/>
+				</xpath>
+
+            </field>
+        </record>
+
+       <!-- Add MO into picking in -->
+    	<record id="crea8s_mrp_workcenter_view_inherit" model="ir.ui.view">
+            <field name="name">crea8s.mrp.workcenter.view.inherit</field>
+            <field name="model">mrp.workcenter</field>
+            <field name="inherit_id" ref="mrp.mrp_workcenter_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form[@string='Work Center']" position="replace">
+                   	 <form string="Work Center" version="7.0">
+                    <group col="4">
+                        <group>
+                            <field name="name"/>
+                            <field name="resource_type"/>
+                            <field name="calendar_id" widget="selection"/>
+                        </group>
+                        <group>
+                            <field name="code"/>
+			    			<field name="product_id" on_change="on_change_product_cost(product_id)"/>
+                            <field name="costs_hour"/>
+                            <field name="company_id" groups="base.group_multi_company" widget="selection"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                            <group>
+                                <group string="">
+                                    <field name="time_efficiency" invisible="1"/>
+                                    <field name="capacity_per_cycle" invisible="1"/>
+                                    <field name="time_cycle" widget="float_time" invisible="1"/>
+                                    <field name="time_start" widget="float_time" invisible="1"/>
+                                    <field name="time_stop" widget="float_time"  invisible="1"/>
+                                </group>
+                                <group string="">
+                                    
+                                    <field name="costs_hour_account_id" groups="analytic.group_analytic_accounting" invisible="1"/>
+                                    <field name="costs_cycle" invisible="1"/>
+                                    <field name="costs_cycle_account_id" groups="analytic.group_analytic_accounting" invisible="1"/>
+                                    <field name="costs_journal_id" attrs="{'required':['|',('costs_hour_account_id', '=', True),('costs_cycle_account_id', '=', True)]}" groups="analytic.group_analytic_accounting" invisible="1"/>
+                                    <field name="costs_general_account_id" attrs="{ 'required':['|',('costs_cycle_account_id', '=', True),('costs_hour_account_id', '=', True)]}" groups="analytic.group_analytic_accounting" invisible="1"/>
+                                </group>
+                            </group>
+                            <label for="note"/>
+                            <field name="note"/>
+                </form>
+                </xpath>
+            </field>
+        </record>
+
+	<record id="crea8s_view_mrp_product_produce_wizard_inherit" model="ir.ui.view">
+            <field name="name">crea8s.mrp.view.mrp.product.produce.wizard.inherit</field>
+            <field name="model">mrp.product.produce</field>
+            <field name="inherit_id" ref="mrp.view_mrp_product_produce_wizard"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form[@string='Produce']" position="replace">
+					                <form string="Produce" version="7.0">
+                    <group string="Produce">
+                        <field name="mode"/>
+                        <field name="product_qty" colspan="2"/>
+                    </group>    
+                    <footer>
+                        <button name="do_produce" type="object" string="Confirm" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+		</xpath>                
+            </field>
+        </record>
+
+	     <record id="crea8s_mrp_routing_form_view_inherit" model="ir.ui.view">
+            <field name="name">crea8s.mrp.routing.form.view.inherit</field>
+            <field name="model">mrp.routing</field>
+            <field name="inherit_id" ref="mrp.mrp_routing_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='location_id']" position="attributes">
+					<attribute name="invisible">1</attribute>
+				</xpath>
+				<xpath expr="//field[@name='code']" position="attributes">
+					<attribute name="invisible">1</attribute>
+				</xpath>
+				<xpath expr="//field[@name='workcenter_lines']" position="attributes">
+					 <attribute name="string">Work Process</attribute>
+				</xpath>
+            </field>
+        </record>
+        
+         <record id="crea8s_mrp_routing_tree_view_inherit" model="ir.ui.view">
+             <field name="name">crea8s.mrp.routing.tree.view.inherit</field>
+             <field name="model">mrp.routing.workcenter</field>
+             <field name="inherit_id" ref="mrp.mrp_routing_workcenter_tree_view"/>
+             <field name="arch" type="xml">
+                 <xpath expr="//field[@name='name']" position="after"> 
+ 			<field name="note" string="Material"/>
+ 		</xpath>                 
+             </field> 
+         </record> 
+        
+        <record id="crea8s_stock_picking_in_tree_view_inherit" model="ir.ui.view">
+            <field name="name">crea8s.stock.view_picking_in_tree.tree.view.inherit</field>
+            <field name="model">stock.picking.in</field>
+            <field name="inherit_id" ref="stock.view_picking_in_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='backorder_id']" position="replace">
+					 <field name="backorder_id" invisible="1"/>
+					  <field name="mrp_id" string="Job No"/>
+				</xpath>
+				<xpath expr="//field[@name='state']" position="replace">
+                                          <field name="indicate_total"/>
+					  <field name="state"/>
+
+				</xpath>
+		                <xpath expr="//field[@name='name']" position="replace">
+					<field name="name" invisible="1"/>
+					<field name="purchase_id"/>
+				</xpath>
+		                <xpath expr="//field[@name='invoice_state']" position="attributes">
+					<attribute name="invisible">1</attribute>
+				</xpath>
+		                <xpath expr="//field[@name='stock_journal_id']" position="attributes">
+					<attribute name="invisible">1</attribute>
+				</xpath>
+            </field>
+        </record>
+        
+	<!-- Configuration to default for finished product location in MO-->
+	<record id="crea8s_stock_location_form_view_inherit" model="ir.ui.view">
+            <field name="name">crea8s.stock.location.form.view.inherit</field>
+            <field name="model">stock.location</field>
+            <field name="inherit_id" ref="stock.view_location_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='active']" position="after">
+		    <field name="is_finish_prod"/>
+		    <field name="is_raw_material"/>
+		</xpath>
+            </field>
+        </record>
+        
+     
+     <record id="crea8s_stock_move_tree_view_inherit" model="ir.ui.view">
+            <field name="name">crea8s.stock.move.tree.view.inherit</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_tree_reception_picking"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='origin']" position="after">
+		    <field name="warehouse_id"/>
+		</xpath>
+            </field>
+        </record>
+
+         <record id="crea8s_purchase_order_tree_view_inherit" model="ir.ui.view">
+            <field name="name">crea8s.purchase.order.tree.view.inherit</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='amount_untaxed']" position="attributes">
+		    <attribute name="invisible">1</attribute>
+		</xpath>
+                <xpath expr="//field[@name='amount_untaxed']" position="before">
+                    <field name="warehouse_id"/>
+                </xpath>
+            </field>
+        </record>
+        
+        <!-- Change workflow for mrp -->
+        
+        <record id="prod_act_bom_created" model="workflow.activity">
+            <field name="wkf_id" ref="mrp.wkf_prod"/>
+            <field name="name">bom_created_act</field>
+            <field name="kind">function</field>
+            <field name="action">chk_bom_created()</field>
+        </record>
+        <record id="prod_trans_draft_bom_created" model="workflow.transition">
+            <field name="act_from" ref="mrp.prod_act_draft"/>
+            <field name="act_to" ref="prod_act_bom_created"/>
+            <field name="signal">bom_created</field>
+            <field name="condition">chk_bom_created()</field>
+        </record>
+        <record id="mrp.prod_trans_draft_picking" model="workflow.transition">
+            <field name="act_from" ref="prod_act_bom_created"/>
+            <field name="act_to" ref="mrp.prod_act_picking"/>
+            <field name="signal">button_confirm</field>
+            <field name="condition">test_if_product()</field>
+        </record>
+        <record id="mrp.prod_trans_draft_ready" model="workflow.transition">
+            <field name="act_from" ref="prod_act_bom_created"/>
+            <field name="act_to" ref="mrp.prod_act_ready"/>
+            <field name="signal">button_confirm</field>
+            <field name="condition">not test_if_product()</field>
+        </record>
+        
+<!--         <report auto="False" id="purchase.report_purchase_quotation" model="purchase.order"  -->
+<!--                 name="purchase.quotation" rml="purchase/report/request_quotation.rml" -->
+<!--                 string="Request for Quotation"/> -->
+        <report auto="False" id="purchase.report_purchase_order" model="purchase.order"
+                name="crea8s.purchase.order.sekai" rml="crea8s_sekai/order.rml"
+                usage="default" string="Purchase Order"/>
+
+        <report auto="False" id="crea8s_routing_workcenter" model="mrp.routing.workcenter"
+                name="crea8s.workcenter.sekai" rml="crea8s_sekai/workcenter.rml"
+                usage="default" string="Work Process"/>
+
+	<record id="crea8s_view_mrp_routing_workcenter_form_inherit" model="ir.ui.view">
+            <field name="name">crea8s.view.mrp.routing.workcenter.form.inherit</field>
+            <field name="model">mrp.routing.workcenter</field>
+            <field name="inherit_id" ref="mrp.mrp_routing_workcenter_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//label[@for='note']" position="replace">
+		<b><label string="Material"/></b>
+		</xpath>
+                <xpath expr="//field[@name='note']" position="replace">
+		    <field name="note" widget="html" string="Material"/>
+<!--attribute name="widget">html</attribute>
+                    <attribute name="string">Material</attribute-->
+		</xpath>
+                <xpath expr="//field[@name='name']" position="attributes">
+		    <attribute name="string">Job Description</attribute>
+		</xpath>
+<!--                 <xpath expr="//group[@string='General Information']" position="before"> -->
+<!-- 		    <button string="Print" name="%(crea8s_routing_workcenter)d" type="action"/> -->
+<!-- 		</xpath>  -->
+            </field>
+        </record>
+
+	<record id="crea8s_view_mrp_product_sale_price_form_inherit" model="ir.ui.view">
+            <field name="name">crea8s.view.mrp.product.sale.price.form.inherit</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="mrp.product_product_normal_form_supply_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='list_price']" position="attributes">
+		    <attribute name="string">Sale Price Per Unit</attribute>
+		</xpath>
+            </field>
+        </record>
+
+        <record id="mrp.mrp_production_action" model="ir.actions.act_window">
+            <field name="name">Job Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mrp.production</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar,graph,gantt</field>
+            <field name="view_id" eval="False"/>
+            <field name="search_view_id" ref="mrp.view_mrp_production_filter"/>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a manufacturing order. 
+              </p><p>
+                A manufacuring order, based on a bill of materials, will
+                consume raw materials and produce finished products.
+              </p><p>
+                Manufacturing orders are usually proposed automatically based
+                on customer requirements or automated rules like the minimum
+                stock rule.
+              </p>
+            </field>
+        </record>
+        <menuitem action="mrp.mrp_production_action" id="mrp.menu_mrp_production_action"
+            parent="mrp.menu_mrp_manufacturing" sequence="1"/>
+        <record id="mrp.mrp_workcenter_action" model="ir.actions.act_window">
+            <field name="name">Work Process</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mrp.workcenter</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="mrp.mrp_workcenter_tree_view"/>
+            <field name="search_view_id" ref="mrp.view_mrp_workcenter_search"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a work center.
+              </p><p>
+                Work Centers allow you to create and manage manufacturing
+                units. They consist of workers and/or machines, which are
+                considered as units for task assignation as well as capacity
+                and planning forecast.
+              </p>
+            </field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="crea8s_view_change_product_quantity_inherit" model="ir.ui.view">
+            <field name="name">Change Product Quantity Inherit</field>
+            <field name="model">stock.change.product.qty</field>
+            <field name="inherit_id" ref="stock.view_change_product_quantity"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='change_product_qty']" position="replace">
+					<button name="change_product_qty" string="_Apply" type="object" class="oe_highlight"/>
+				</xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>
+

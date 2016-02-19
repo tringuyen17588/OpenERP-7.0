@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    
+       <!-- Create a new group -->
+	<data noupdate="0">
+		<record id="group_crea8s_own_quotation" model="res.groups">
+        <field name="name">Detail Own Quotation</field>
+       </record>
+	</data>
+	<data>
+	<!-- Customize the interface -->
+		<record id="change_invoice_line_form" model="ir.ui.view">
+            <field name="name">change.invoice.line.form</field>
+            <field name="model">change.invoice.line</field>
+            <field name="arch" type="xml">
+                <form string="Invoice" version="7.0">
+                <header>
+                    <button name="change_price" type="object" string="Validate"/>
+                </header>
+                <sheet string="Invoice">
+                    <field name="name"/>
+                    <field name="invoice_line" nolabel="1">
+                        <tree string="Invoice Lines" editable="bottom">                            
+                            <field name="name"/>
+                            <field name="qty" />
+                            <field name="uprice"/>
+                            <field name="discount"/>
+                            <field name="tax_id" widget="many2many_tags"/>
+                        </tree>
+                    </field>
+                </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="crea8s_view_account_invoice_form_inherit" model="ir.ui.view">
+            <field name="name">crea8s.view.account.invoice_form.inherit</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                	<field name="partner_invoice_id" groups="sale.group_delivery_invoice_address" context="{'default_type':'invoice'}"/>
+                	<field name="partner_shipping_id" groups="sale.group_delivery_invoice_address" context="{'default_type':'delivery'}"/>
+		       <field name="po_num"/>
+                </xpath>
+                <xpath expr="//button[@name='action_invoice_sent']" position="after">
+                	<button name="change_inv_line" string="Update Invoice" type="object"/>
+                </xpath>
+            </field>
+        </record>
+	<!-- For Account Invoice -->        
+        <report
+            auto="False"
+            id="account.account_invoices"
+            model="account.invoice"
+            name="account.invoice.jmd_pacific"
+            rml="crea8s_jmd_pacific_fix/account_print_invoice.rml"
+            string="Invoices with discount"
+            attachment_use="True"
+            usage="default"
+            />
+		<report
+            auto="False"
+            id="account.account_invoices_without"
+            model="account.invoice"
+            name="account.invoice.jmd_pacific_without"
+            rml="crea8s_jmd_pacific_fix/account_print_invoice_without.rml"
+            string="Invoices without discount"
+            attachment_use="True"
+            usage="default"
+            />
+            
+    <!-- For stock move -->
+    	<record id="crea8s_view_stock_move_tree_inherit_jmd" model="ir.ui.view">
+            <field name="name">crea8s.view.stock.move.tree.inherit.jmd</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_picking_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_id']" position="after">
+                	<field name="name"/>
+                </xpath>
+                <xpath expr="//tree[@string='Stock Moves']" position="attributes">
+                	<attribute name="editable">bottom</attribute>
+                </xpath>
+            </field>
+        </record>
+    
+    <!-- For Sale Order -->
+    	<report auto="False" id="sale.report_sale_order" model="sale.order" name="sale.order"
+                rml="crea8s_jmd_pacific_fix/sale_order.rml" string="Quotation / Order"
+                usage="default"/>
+        <report auto="False" id="report_sale_order_without" model="sale.order" name="sale.order.jmd_pacific_without"
+                rml="crea8s_jmd_pacific_fix/sale_order_without.rml" string="Quotation / Order without discount"
+                usage="default"/>
+
+	<report auto="False" id="purchase.report_purchase_order" model="purchase.order"
+                name="crea8s.purchase.order" rml="crea8s_jmd_pacific_fix/order.rml"
+                usage="default" string="Purchase Order"/>
+
+        <report auto="False" id="purchase.report_purchase_quotation" model="purchase.order" 
+                name="crea8s.purchase.quotation" rml="crea8s_jmd_pacific_fix/request_quotation.rml"
+                string="Request for Quotation"/>
+
+	<report id="stock.report_picking_list" model="stock.picking" name="crea8s.stock.picking.list.jmd" 
+		string="Picking Slip" rml="crea8s_jmd_pacific_fix/picking.rml"/>
+
+        <report id="stock.report_picking_list_in" model="stock.picking.in" name="crea8s.stock.picking.list.jmd.in" 
+		string="Receipt Slip" rml="crea8s_jmd_pacific_fix/picking.rml"/>
+
+        <report id="stock.report_picking_list_out" model="stock.picking.out" name="crea8s.stock.picking.list.jmd.out" 
+		string="Delivery Slip" rml="crea8s_jmd_pacific_fix/picking.rml"/>
+                 
+    </data>
+</openerp>

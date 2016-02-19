@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<record id="crea8s_invoice_tree_filter_report" model="ir.ui.view">
+            <field name="name">crea8s.account.invoice.tree.filter.report</field>
+            <field name="model">account.invoice</field>
+            <field name="arch" type="xml">
+               <tree string="Invoices">
+	                <field name="vehicle_no"/>
+                    <field name="partner_id" groups="base.group_user"/>
+                    <field name="date_invoice"/>
+                    <field name="number"/>
+                    <field name="reference" invisible="1"/>
+                    <field name="name" invisible="1"/>
+                    <field name="journal_id" invisible="1"/>
+                    <field name="period_id" invisible="1" groups="account.group_account_user"/>
+                    <field name="company_id" groups="base.group_multi_company" widget="selection"/>
+                    <field name="user_id"/>
+                    <field name="date_due"/>
+                    <field name="origin"/>
+                    <field name="currency_id" groups="base.group_multi_currency"/>
+                    <field name="residual" sum="Residual Amount"/>
+                    <field name="amount_untaxed" sum="Untaxed Amount"/>
+                    <field name="amount_tax" sum="GST"/>
+                    <field name="amount_total" sum="Total Amount"/>
+                    <field name="state"/>
+               </tree>
+        	</field>
+    	</record>
+
+    </data>
+</openerp>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+                
+        <report
+            auto="False"
+            id="account.account_invoices"
+            model="account.invoice"
+            name="crea8s.account.invoice.fix"
+            rml="crea8s_invoice_report/account_print_invoice.rml"
+            string="Invoices"
+            attachment=""
+            usage="default"
+            />
+
+    </data>
+</openerp>

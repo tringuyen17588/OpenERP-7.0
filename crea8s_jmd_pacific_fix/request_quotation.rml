@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<document filename="requestforquotation.pdf">
+  <template pageSize="(595.0,842.0)" title="Test" author="Martin Simon" allowSplitting="20">
+    <pageTemplate id="first">
+      <frame id="first" x1="34.0" y1="28.0" width="530" height="786"/>
+		  <header>
+			<frame id="first" x1="1.3cm" y1="3.0cm" height="21.7cm" width="19.0cm"/>
+			 <stylesheet>
+				<!-- Set here the default font to use for all <para> tags -->
+				<paraStyle name='Normal' fontName="DejaVu Sans"/>
+				<paraStyle name="main_company" fontSize="10.0" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+				<paraStyle name="main_footer" fontSize="8.0" alignment="CENTER"/>
+				<paraStyle name="signature" fontSize="8.0" alignment="LEFT"/>
+				<paraStyle name="main_header" fontSize="8.0" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+			 </stylesheet>
+			<pageGraphics>
+				<!-- Set here the default font to use for all <drawString> tags -->
+				<setFont name="DejaVu Sans" size="8"/>
+				<!-- You Logo - Change X,Y,Width and Height -->
+				<image x="16cm" y="26.8cm" height="60.0" >[[ company.logo or removeParentNode('image') ]]</image>
+				<fill color="black"/>
+				<stroke color="black"/>
+
+				<!-- page header -->
+				<!-- lines>1.3cm 27.7cm 20cm 27.7cm</lines -->
+				<!-- drawRightString x="20cm" y="27.8cm">[[ company.rml_header1 ]]</drawRightString -->
+				<place x="1.3cm" y="27.3cm" height="1.25cm" width="18.5cm">
+					<para style="main_company"><b> [[ company.partner_id.name ]] </b></para>
+				</place>
+				<place x="1.3cm" y="26.3cm" height="1.8cm" width="18.0cm">
+					<para style="main_header">[[ company.partner_id.street or  '' ]] [[ company.partner_id.street2 or  '' ]] </para>
+<!--para style="main_header">[[ display_address(company.partner_id) or  '' ]]</para-->
+				</place>
+                            <drawRightString x="10.05cm" y="27.45cm"> [[ company.partner_id.city or  '' ]] [[ company.partner_id.zip or  '' ]]   Tel: [[ company.partner_id.phone or  '' ]]   Fax: [[ company.partner_id.fax or  '' ]] </drawRightString>
+                            <drawRightString x="10.05cm" y="27.1cm"> Email: [[ company.partner_id.email or  '' ]]    [['Co/Gst Reg No:' ]] [[ company.company_registry or  '' ]]  </drawRightString>
+				<!-- Signature -->
+				<place x="16.3cm" y="3.5cm" height="1.5cm" width="19.0cm">
+					<para style="signature"> JMD Pacific Pte Ltd </para>
+				</place>
+				<lines>15.2cm 2.25cm 19.9cm 2.25cm</lines>
+				<place x="16.3cm" y="1.25cm" height="1.0cm" width="19.0cm">
+					<para style="signature"> Authorised Signature </para>
+				</place>
+				<!--page bottom-->
+				<lines>1.2cm 1.75cm 19.9cm 1.75cm</lines>
+				<place x="1.3cm" y="0cm" height="1.5cm" width="19.0cm">
+					<para style="main_footer">[[ 'Phone: ' + company.partner_id.phone + ' | ' + ' Fax: ' + company.partner_id.fax + ' | ' + ' Email: ' + company.partner_id.email + ' | ' + ' Website: ' + company.partner_id.website + ' | ' + ' Co/GST: ' + company.company_registry ]]</para>
+					<para style="main_footer">Created By : [[ user.name ]] <!-- Page: <pageNumber/--></para>
+				</place>
+			</pageGraphics>
+		
+	  </header>
+        </pageTemplate>
+  </template>
+  <stylesheet>
+    <blockTableStyle id="Standard_Outline">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Tableau1">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Tableau2">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table_Product_Header_Title">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table_Product_Line">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="3,-1" stop="3,-1"/>
+    </blockTableStyle>
+    <initialize>
+      <paraStyle name="all" alignment="justify"/>
+    </initialize>
+    <paraStyle name="P1" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="Standard"/>
+    <paraStyle name="terp_header" fontSize="12.0" leading="15" alignment="LEFT" spaceBefore="12.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_tblheader_Details" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_default_8" fontSize="8.0" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_tblheader_Details_Centre" fontSize="9.0" leading="11" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_default_9" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Bold_9" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Centre_9" fontSize="9.0" leading="11" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Right_9" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="Space bet user and signature" fontSize="4.0" leading="5" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <images/>
+  </stylesheet>
+  <story>
+    <para style="terp_default_9">[[repeatIn(objects,'order')]]</para>
+    <para style="terp_default_9">[[ setLang(order.partner_id.lang) ]]</para>
+    <para style="terp_default_9">
+      <font color="white"> </font>
+    </para>
+    <spacer length="2.0cm"/>
+    <blockTable colWidths="250.0,59.0,221.0" style="Tableau1">
+      <tr>
+        <td>
+          <blockTable colWidths="250.0" style="Tableau2">
+            <tr>
+              <td>
+                <para style="terp_default_Bold_9"><b>Expected Delivery address:</b></para>
+                <para style="terp_default_9">[[ (order.dest_address_id and order.dest_address_id.name) or (order.warehouse_id and order.warehouse_id.name) or '']]</para>
+                <para style="P1">[[ order.dest_address_id and display_address(order.dest_address_id) ]]</para>
+              </td>
+            </tr>
+          </blockTable>
+          <para style="terp_default_9">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="terp_default_9">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="terp_default_9">[[ (order.partner_id and order.partner_id.title and order.partner_id.title.name) or '' ]] [[ (order .partner_id and order.partner_id.name) or '' ]] </para>
+          <para style="terp_default_9">[[ order.partner_id and display_address(order .partner_id) ]] </para>
+          <para style="terp_default_9">
+            <font color="white"> </font>
+          </para>
+          <para style="terp_default_9">Tel.: [[ (order.partner_id and order.partner_id.phone) or removeParentNode('para') ]]</para>
+          <para style="terp_default_9">Fax: [[ (order.partner_id and order.partner_id.fax) or removeParentNode('para') ]]</para>
+          <para style="P1">TVA: [[ (order.partner_id and order.partner_id.vat) or removeParentNode('para') ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+    <para style="Standard">
+      <font color="white"> </font>
+    </para>
+    <para style="terp_header"><b>Request for Quotation : [[order.name]]</b></para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="371.0,98.0,61.0" repeatRows="1" style="Table_Product_Header_Title">
+      <tr>
+        <td>
+          <para style="terp_tblheader_Details"><b>Description</b></para>
+        </td>
+        <td>
+          <para style="terp_tblheader_Details_Centre"><b>Expected Date</b></para>
+        </td>
+        <td>
+          <para style="terp_tblheader_Details_Centre"><b>Qty</b></para>
+        </td>
+      </tr>
+    </blockTable>
+    <section>
+      <para style="terp_default_9">[[ repeatIn(order.order_line,'order_line') ]]</para>
+      <blockTable colWidths="371.0,98.0,61.0" style="Table_Product_Line">
+        <tr>
+          <td>
+            <para style="terp_default_9">[[ order_line.name ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_9">[[ formatLang(order_line.date_planned, date = True) ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_Right_9">
+                [[ formatLang(order_line.product_qty )]]
+                <i>[[ (order_line.product_uom and order_line.product_uom.name) or '' ]]</i>
+            </para>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_9">
+      <font color="white"> </font>
+    </para>
+    <para style="terp_default_9">[[ format(order.notes or '') ]]</para>
+    <para style="terp_default_9">
+      <font color="white"> </font>
+    </para>
+    <para style="terp_default_9">Regards,</para>
+    <para style="terp_default_9">
+      <font color="white"> </font>
+    </para>
+    <para style="Space bet user and signature">
+      <font color="white"> </font>
+    </para>
+    <para style="terp_default_9">[[ user.signature or '' ]]</para>
+  </story>
+</document>

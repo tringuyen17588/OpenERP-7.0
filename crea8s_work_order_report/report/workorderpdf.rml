@@ -1,0 +1,4537 @@
+﻿<?xml version="1.0"?>
+<document filename="Production Order.pdf">
+  <template title="Production Order" author="OpenERP S.A. (sales@openerp.com)" allowSplitting="20">
+    <pageTemplate id="first">
+      <frame id="first" x1="5.0" y1="60" width="547" height="758"/>
+	  
+	  
+         <stylesheet>
+            <!-- Set here the default font to use for all <para> tags -->
+            <paraStyle name='Normal' fontName="DejaVu Sans"/>
+            <paraStyle name="main_footer" fontSize="8.0" alignment="CENTER"/>
+            <paraStyle name="main_header" fontSize="8.0" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+         </stylesheet>
+        <pageGraphics>
+            <!-- Set here the default font to use for all <drawString> tags -->
+            <setFont name="DejaVu Sans" size="20"/>
+            <!-- You Logo - Change X,Y,Width and Height -->
+
+            <fill color="black"/>
+            <stroke color="black"/>
+
+            <!-- page header -->
+<fill color="black"/>
+            <drawString x="8.5cm" y="28.3cm"> 作  业  单 </drawString>
+            <drawString x="8cm" y="27.6cm"> WORK  SHEET </drawString>
+<setFont name="DejaVu Sans" size="8"/>
+            <!-- left margin -->
+
+
+            <!--page bottom-->
+           
+           
+        </pageGraphics>
+	  
+	  
+	  
+	  
+    </pageTemplate>
+  </template>
+  <stylesheet>
+    <blockTableStyle id="Standard_Outline">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table3">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#e6e6e6" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="2,-1" stop="2,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table5">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#e6e6e6" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="2,-1" stop="2,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table1" width="600">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+<lineStyle kind="GRID" colorName="black" borderStrokeWidth="22"  thickness="2"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table2">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#e6e6e6" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="3,-1" stop="3,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table6">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#e6e6e6" start="4,0" stop="4,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#e6e6e6" start="4,0" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#e6e6e6" start="4,0" stop="4,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="4,-1" stop="4,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table4">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+          <lineStyle kind="GRID" colorName="black" borderStrokeWidth="22"  thickness="2"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="0,-1" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="0,0" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="1,-1" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,0" stop="1,0" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,0" stop="2,-1" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,0" stop="2,0" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,0" stop="3,-1" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,0" stop="3,0" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,0" stop="4,-1" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="4,0" stop="4,-1" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,0" stop="4,0" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,0" stop="5,-1" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,0" stop="5,-1" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,0" stop="5,0" borderStrokeWidth="22"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1" borderStrokeWidth="22"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table8">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table9">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="3,-1" stop="3,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table10">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="3,-1" stop="3,-1"/>
+    </blockTableStyle>
+    <initialize>
+      <paraStyle name="all" alignment="justify"/>
+    </initialize>
+    <paraStyle name="terp_header" fontSize="15.0" leading="19" alignment="LEFT" spaceBefore="12.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_tblheader_Details" fontSize="11.0" leading="13" alignment="LEFT" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_default_8" fontSize="11.0" leading="13" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Bold_8" fontSize="11.0" leading="13" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_tblheader_General_Centre" fontSize="11.0" leading="13" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_tblheader_Details_Centre" fontSize="11.0" leading="13" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_default_Centre_8" fontSize="11.0" leading="12" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+        <paraStyle name="terp_default_Centre_81" fontSize="10.5" leading="12" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_9" fontSize="11.0" leading="13" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Bold_9" fontSize="11.0" leading="13" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Centre_9" fontSize="11.0" leading="13" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Right_9" fontSize="11.0" leading="13" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_2" fontSize="2.0" leading="3" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <images/>
+  </stylesheet>
+  
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<spacer length="0.5cm"/>
+    <para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 0 and '  ' or removeParentNode('story') ]]</para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </b></para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[0].id ==  line.id and str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+	    <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+  
+<!-- Page 2 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 1 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="0.25cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[1].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+  
+<!-- page 3 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 2 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="0.25cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[2].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- page 4 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 3 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[3].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- page 5 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 4 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[4].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- page 6 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 5 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[5].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- page 7 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 6 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[6].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- page 8 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 7 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[7].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- Page 9 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 8 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[8].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- Page 10 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 9 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[9].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+
+
+<!-- Page 11 -->
+
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 10 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[10].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- Page 12 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 11 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[11].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- Page 13 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 12 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[12].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- Page 14 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 13 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[13].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- Page 15 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 14 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[14].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- Page 16 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 15 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[15].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- Page 17 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 16 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[16].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- Page 18 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 17 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[17].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- Page 19 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 18 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[18].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- Page 20 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 19 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[19].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- Page 21 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 20 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[20].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- Page 22 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 21 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[21].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- Page 23 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 22 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[22].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- Page 24 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 23 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[23].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- Page 25 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 24 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[24].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- Page 26 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 25 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[25].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- Page 27 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 26 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[26].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- Page 28 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 27 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[27].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- Page 29 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 28 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[28].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- Page 30 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 29 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[29].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+<!-- Page 31 -->
+    <story>
+  <pto>     
+    <para style="terp_default_8">[[repeatIn(objects,'o')]] </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+	<para style="terp_default_8"> [[ len(o.routing_id.workcenter_lines) > 30 and '  ' or removeParentNode('story') ]]</para>
+	<spacer length="1cm"/>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>Customer (客户): [[ o.partner_id and o.partner_id.name or '' ]]</b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b>Job No (工作编号): [[ o.name and o.name or '' ]]</b></para>
+        </td>
+        <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+	<blockTable colWidths="185,200,185" repeatRows="1" style="Table1">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b> Date (日 期): [[ o.date_planned and formatLang(o.date_planned, date=True) or '' ]] </b></para>
+        </td>
+        <td>
+          <para style="terp_default_8"><b> Issuer (发单者): [[ o.routing_id and o.routing_id.user_create.name or '' ]] </b></para>
+        </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable>
+	<!--blockTable colWidths="100,350,120" repeatRows="1" style="Table1">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Qty (数量): [[ o.product_qty and o.product_qty or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Material (材料): [[ o.product_id and o.product_id.name or '' ]]</para>
+          </td>
+          <td>
+            <para style="terp_default_8"> Delivery Date (交货期): [[ o.date_required and formatLang(o.date_required, date=True) or '' ]]</para>
+          </td>
+      </tr>
+    </blockTable-->
+	<spacer length="0.15cm"/>
+	<para style="terp_default_8"> Activity List (工序要求): </para>
+	<spacer length="0.1cm"/>
+	<blockTable colWidths="32.0,90.0,70,74,74,100.0,130" style="Table4" borderStrokeWidth="10">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_8"> Step </para>
+            <para style="terp_default_Centre_8"> (步骤) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Activity (工序) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Material </para>
+            <para style="terp_default_Centre_8"> (材料)</para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Time per piece (单件时间) </para>
+	   </td>
+          <td>
+		<para style="terp_default_Centre_8"> Time Total (总需时间) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Operator (负责部门) </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> Barcode (条纹码) </para>
+          </td>
+        </tr>
+      </blockTable>
+	
+           <section>
+      <para style="terp_default_8">[[ repeatIn(o.routing_id.workcenter_lines,'line') ]]</para>
+      <blockTable colWidths="32.0,90.0,70,74,74,100.0,130" rowHeights="1cm" style="Table4">
+        <tr>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ get_number(o.routing_id.workcenter_lines, line) ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.name and line.name or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_81"><b> [[ line.note and line.note or '' ]] </b></para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[0],0) ]] hrs [[ line.hour_nbr and formatLang(divmod(line.hour_nbr,1)[1] * 60, 0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[0],0) ]] hrs [[ line.cycle_nbr and formatLang(divmod(line.cycle_nbr * line.hour_nbr or line.hour_nbr,1)[1] * 60,0) ]] min </para>
+          </td>
+          <td>
+            <para style="terp_default_Centre_8"> [[ line.workcenter_id and line.workcenter_id.name or '' ]] </para>
+          </td>
+          <td>
+<barCode code="Code128" x="260" height="20" quiet="0" barWidth="0.75" alignment="CENTER">[[o.routing_id.workcenter_lines[30].id ==  line.id and  str(o.id) + '-' + str(line.id) + '-' + str(line.workcenter_id.id) or  removeParentNode('barCode') ]]</barCode>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+        <blockTable colWidths="570" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_Bold_9"><b> Remarks (注意事项) </b></para>
+          </td>
+      </tr>
+    </blockTable>
+        <blockTable colWidths="190,190,190" repeatRows="1" style="Table4">
+      <tr>
+          <td>
+            <para style="terp_default_8"> Dwg/ 工作图: </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> IF IN DOUBT,ASK Issuer. </para>
+          </td>
+          <td>
+            <para style="terp_default_8"> 若有疑问，马上问发单者。</para>
+          </td>
+      </tr>
+    </blockTable>
+  </pto>
+  </story>
+
+
+
+</document>

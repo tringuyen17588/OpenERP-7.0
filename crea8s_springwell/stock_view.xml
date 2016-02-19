@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+	
+		<!-- domain="[('state','!=','draft')]" context="{'search_default_partner_id':partner_id}" -->
+		<!-- Delivery Order - FormView, okok -->
+<!--           <record id="picking_out_form" model="ir.ui.view"> -->
+<!--             <field name="name">crea8s_springwell.picking_out_form</field> -->
+<!--             <field name="model">stock.picking.out</field> -->
+<!--             <field name="inherit_id" ref="stock.view_picking_out_form" /> -->
+<!--             <field name="arch" type="xml"> -->
+<!-- 				 <field name="min_date" position="attributes"> -->
+<!-- 				 	<attribute name="readonly">[(False,'=',True)]</attribute>  -->
+<!-- 		           	<attribute name="attrs">{'invisible':False}</attribute> -->
+<!-- 		            &lt;&gt;  -->
+<!-- 		             nono, <attribute name="attrs">{'readonly':0}</attribute>    -->
+<!-- 		          </field> -->
+<!-- 		        <xpath expr="//field[@name='origin']" position="after"> -->
+<!-- 		          		<field name="crea8s_sw_po_ref"></field> -->
+<!-- 		          		<field name="crea8s_sw_terms"></field> -->
+<!-- 		          	 	<field name="crea8s_sw_terms_relate_so"></field> -->
+		          	
+<!-- 		          </xpath>   -->
+<!-- 		        <xpath expr="//field[@name='stock_journal_id']" position="before"> -->
+<!-- 		        		<label for="street" string="Delivery Address"/> -->
+<!-- 		          		<field name="crea8s_sw_shipping_id" nolabel="1"></field> -->
+		          		
+		          		
+		          		
+<!-- 		          		<label for="street" string=""/> -->
+<!-- 		          		<field name="crea8s_sw_delivery_address04" nolabel="1"></field>  -->
+		          	
+<!-- 		          </xpath>   -->
+<!--             </field> -->
+<!--         </record>  -->
+        
+        
+        <!-- Delivery Order TreeView, nonoAAA!!!--> 
+       <!--  <record id="picking_out_tree" model="ir.ui.view">
+            <field name="name">crea8s_springwell.picking_out_tree</field>
+            <field name="model">stock.picking.out</field>
+            <field name="inherit_id" ref="stock.view_picking_out_tree" />
+            <field name="arch" type="xml">
+				<xpath expr="//field[@name='min_date']" position="attributes">  position="replace"
+					<attribute name="invisible">1</attribute>
+                </xpath> 
+				
+            </field>
+        </record> --> 
+		 
+		 
+	   <!-- <record model="ir.ui.view" id="sale_journal_picking_order_tree_out">
+            <field name="name">stock.picking.journal.view.tree</field>
+            <field name="model">stock.picking.out</field>
+            <field name="inherit_id" ref="stock.view_picking_out_tree" />
+            <field name="arch" type="xml">
+                <field name="state" position="before">
+                    <field name="invoice_type_id"/>
+                </field>
+            </field>
+        </record> -->
+		
+    </data>
+</openerp>

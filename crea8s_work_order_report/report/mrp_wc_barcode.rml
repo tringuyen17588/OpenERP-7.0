@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<document filename="test.pdf">
+<template title="WC" author="Crea8s (sales@crea8s.com)" allowSplitting="20">
+<pageTemplate id="first">
+  <frame id="first" x1="34.0" y1="42.0" width="527" height="758"/>
+</pageTemplate>
+</template>
+<stylesheet>
+<initialize>
+  <paraStyle name="all" alignment="justify"/>
+</initialize>
+	<blockTableStyle id="Tableau1">
+	  <blockAlignment value="CENTER"/>
+	  <blockValign value="MIDDLE"/>
+	  <lineStyle kind="GRID" colorName="black"/>
+	  
+	</blockTableStyle>
+
+	<paraStyle name="P1" fontName="Times-Roman" fontSize="18.0" leading="5" alignment="CENTER"/>
+	<paraStyle name="P2" fontName="Times-Roman" fontSize="8.0" leading="8" alignment="CENTER"/>
+	<paraStyle name="P3" fontName="Times-Roman" fontSize="5.0" leading="8" alignment="CENTER"/>
+	<paraStyle name="P4" fontName="Times-Roman" fontSize="5.0" leading="8" alignment="CENTER"/>
+
+<paraStyle name="Standard" fontName="Times-Roman"/>
+<paraStyle name="Text body" fontName="Times-Roman" spaceBefore="0.0" spaceAfter="6.0"/>
+<paraStyle name="Heading" fontName="Helvetica" fontSize="14.0" leading="17" spaceBefore="12.0" spaceAfter="6.0"/>
+<paraStyle name="List" fontName="Times-Roman" spaceBefore="0.0" spaceAfter="6.0"/>
+<paraStyle name="Table Contents" fontName="Times-Roman"/>
+<paraStyle name="Caption" fontName="Times-Roman" fontSize="12.0" leading="15" spaceBefore="6.0" spaceAfter="6.0"/>
+<paraStyle name="Index" fontName="Times-Roman"/>
+</stylesheet>
+<story>
+	[[ repeatIn(objects,'o') ]]
+	<para style="P1"> Name of worker: [[ str(o.name) ]]</para>
+        <spacer length="1.5cm"/>
+        <section>
+        <para style="P2">[[ repeatIn(get_activity(),'line') ]]</para>
+	<blockTable colWidths="340,180" rowHeights="60" style="Tableau1">
+	  <tr>
+          <td>
+            <para style="P1"> [[ line.name and line.name or '' ]] </para>
+          </td>
+		<td>		  
+	<barCode code="code128" x="180" height="35" quiet="0" barWidth="1" fontName="Times-Roman" fontSize="60" alignment="CENTER">[[str(o.id) + '-' + str(line.id)]]</barCode>
+		</td>
+	  </tr>
+	</blockTable>
+        </section>
+</story>
+</document>

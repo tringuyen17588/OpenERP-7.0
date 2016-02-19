@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+    <record id="view_crea8s_nail_service_form" model="ir.ui.view">
+			<field name="name">Crea8s Service List</field>
+			<field name="model">crea8s.nail.service.listname</field>
+			<field name="arch" type="xml">
+				<form string="Service">
+					<field name="name"></field>
+					<field name="is_pck" invisible="1"></field>
+				</form>
+			</field>
+		</record>
+    
+     <record id="view_crea8s_nail_service_package_form" model="ir.ui.view">
+			<field name="name">crea8s.nail.service.package.form.view</field>
+			<field name="model">crea8s.nail.service.package</field>
+			<field name="arch" type="xml">
+			<form string="view_crea8s_nail_service_package_form-FORM" version="7.0">
+				
+				<sheet>
+					<h1>					
+						<label string="Service Details..."/>				
+					</h1>						
+					<field name="ref_detail_id"></field>
+				</sheet>
+			</form> 
+		   </field>
+		</record>
+	
+		
+		<record id="view_crea8s_nail_service_package_tree_inherit" model="ir.ui.view">
+			<field name="name">crea8s.nail.service.package.inherit</field>
+			<field name="model">crea8s.nail.service.package</field>
+			<field name="arch" type="xml">
+				<tree string="view_crea8s_nail_service_package_tree_inherit..." editable="bottom">
+					<!-- <field name="service_number"></field> -->
+					<field name="customer" domain="[('customer','=',True)]" ></field>
+					<field name="tel"></field>
+					<field name="service_list" context="{'is_pck': True}" domain="[('is_pck','=',True)]"/>
+					<field name="balance"></field>
+					<field name="late_visit_date"></field>
+					<field name="start_date"></field>
+					
+					  <button string="Go to Details"
+                     icon="gtk-redo"
+                     name="action_service_detail" type="object"/>
+				</tree>
+			</field>
+		</record>
+		
+		<record id="action_crea8s_nail_service_package" model="ir.actions.act_window">
+            <field name="name">Service Packages</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crea8s.nail.service.package</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+		<menuitem parent="base.menu_sales" sequence="6" id="menu_crea8s_nail_service" action="action_crea8s_nail_service_package" string="action-menuitem-asd-asd-asd" />
+               
+		
+		<record id="view_crea8s_nail_service_package_detail_tree_inherit" model="ir.ui.view">
+			<field name="name">Details</field>
+			<field name="model">crea8s.nail.service.package.detail</field>
+			<field name="arch" type="xml">
+				<tree string="view_crea8s_nail_service_package_detail_tree_inherit" editable="bottom">
+					<field name="date"></field>
+					<field name="service_list" context="{'is_pck': False}" domain="[('is_pck','=',False)]"/>
+					<field name="staff" domain="[]" ></field>
+					<field name="amount_in"></field>
+					<field name="amount_out"></field>
+					<field name="balance"></field>
+					<field name="remarks"></field>
+					
+				</tree>
+			</field>
+		</record>
+		
+		<record id="view_crea8s_nail_service_package_detail_form_inherit" model="ir.ui.view">
+			<field name="name">Details</field>
+			<field name="model">crea8s.nail.service.package.detail</field>
+			<field name="arch" type="xml">
+				<form string="view_crea8s_nail_service_package_detail_form_inherit">
+					<field name="date"></field>
+					<field name="staff"></field>
+					<field name="balance"></field>
+					<field name="remarks"></field>
+				</form>
+			</field>
+		</record>
+		<record id="action_crea8s_nail_service_package_detail" model="ir.actions.act_window">
+            <field name="name">Service Package Details</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crea8s.nail.service.package.detail</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+         
+           <!-- Sequences for crea8s.nail.service.package -->
+        <record id="seq_type_service_package" model="ir.sequence.type">
+            <field name="name">Service Package</field>
+            <field name="code">crea8s.nail.service.package</field>
+        </record>
+
+        <record id="seq_service_package" model="ir.sequence">
+            <field name="name">Service Package</field>
+            <field name="code">crea8s.nail.service.package</field>
+            <field name="prefix"></field>
+            <field name="padding">3</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</openerp>
+
+
+
+

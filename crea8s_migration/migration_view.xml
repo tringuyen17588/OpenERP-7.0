@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+    	<record id="view_crea8s_migration_tree" model="ir.ui.view">
+            <field name="name">crea8s.migration.tree</field>
+            <field name="model">crea8s.migration</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <tree string="Migration Database">
+                    <field name="name"/>
+                    <field name="user"/>
+                    <field name="password"/>
+                    <field name="database"/>
+                    <field name="port"/>
+                    <field name="model"/>
+                    
+                </tree>
+            </field>
+        </record>
+		
+		<record id="view_crea8s_migration_form" model="ir.ui.view">
+            <field name="name">view.crea8s.migration.form</field>
+            <field name="model">crea8s.migration</field>
+            <field name="arch" type="xml">
+                <form string="Migration Database" version="7.0">
+                       <header>
+	                    <button name="migration_database" type="object" string="Migration Database"/>
+	                </header>
+                    <sheet>
+                    <group colspan="4" col="4">
+                        <group colspan="4" col="2">
+                            <field name="name"/>
+		                    <field name="user"/>
+		                    <field name="password"/>
+		                    <field name="database"/>
+		                    <field name="port"/>
+		                    <field name="model"/>
+                        </group>
+                    </group>
+	                </sheet>
+                </form>
+           </field>
+        </record>
+        
+        <record id="action_view_crea8s_migration_form" model="ir.actions.act_window">
+            <field name="name">Migration Database</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crea8s.migration</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+                
+        <menuitem id="menu_action_view_crea8s_migration_form" name="Migration" parent="base.menu_sales" action="action_view_crea8s_migration_form"/>
+		
+    </data>
+</openerp>

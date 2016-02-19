@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+    	<record model="ir.ui.view" id="view_crea8s_active_hr_crm_oppr_kanban">
+            <field name="name">crea8s.active.hr.crm.oppr.kanban</field>
+            <field name="model">crm.lead</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="stage_id">
+                    <field name="state" groups="base.group_no_one"/>
+                    <field name="stage_id"/>
+                    <field name="color"/>
+                    <field name="priority"/>
+                    <field name="planned_revenue" sum="Expected Revenues"/>
+                    <field name="user_email"/>
+                    <field name="user_id"/>
+                    <field name="partner_address_email"/>
+                    <field name="message_summary"/>
+                    <field name="message_unread"/>
+                    <templates>
+                        <field name="date_deadline"/>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click">
+                                <div class="oe_dropdown_toggle oe_dropdown_kanban">
+                                    <span class="oe_e">í</span>
+                                    <ul class="oe_dropdown_menu">
+                                        <t t-if="widget.view.is_action_enabled('edit')"><li><a type="edit">Edit...</a></li></t>
+                                        <t t-if="widget.view.is_action_enabled('delete')"><li><a type="delete">Delete</a></li></t>
+                                        <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
+                                    </ul>
+                                </div>
+                                <div class="oe_kanban_content">
+                                    <div>
+                                        <b><field name="partner_id"/></b>
+                                    </div>
+                                    <div>
+                                    	<field name="job_pos"/>
+                                    </div>
+                                    <div style="padding-left: 0.5em">
+                                        <t t-if="record.date_deadline.raw_value and record.date_deadline.raw_value lt (new Date())" t-set="red">oe_kanban_text_red</t>
+                                        <span t-attf-class="#{red || ''}"><field name="date_action"/></span>
+                                        <t t-if="record.date_action.raw_value"> : </t>
+                                        <field name="title_action"/>
+                                    </div>
+                                    <div class="oe_kanban_bottom_right">
+                                        <a t-if="record.priority.raw_value == 1" type="object" name="set_normal_priority" class="oe_e oe_star_on">7</a>
+                                        <a t-if="record.priority.raw_value != 1" type="object" name="set_high_priority" class="oe_e oe_star_off">7</a>
+                                        <img t-att-src="kanban_image('res.users', 'image_small', record.user_id.raw_value)" t-att-title="record.user_id.value" width="24" height="24" class="oe_kanban_avatar" t-if="record.user_id.value"/>
+                                    </div>
+                                    <div class="oe_kanban_footer_left">
+                                        <t t-raw="record.message_summary.raw_value"/>
+                                    </div>
+                                </div>
+                                <div class="oe_clear"></div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+    
+    	<record model="ir.actions.act_window" id="relate_opportunities_job_requirement">
+            <field name="name">Opportunities</field>
+            <field name="res_model">crm.lead</field>
+            <field name="view_mode">kanban,tree,form,graph,calendar</field>
+            <field name="domain">[('type','=','opportunity')]</field>
+            <field name="context">{'default_job_requirement_id': active_id,'stage_type': 'opportunity', 'default_type': 'opportunity'}</field>
+            <field name="target">current</field>
+            <field name="search_view_id" ref="crm.view_crm_case_opportunities_filter"/>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="relate_job_number_opportunities_kanban">
+            <field name="sequence" eval="0"/>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="view_crea8s_active_hr_crm_oppr_kanban"/>
+            <field name="act_window_id" ref="relate_opportunities_job_requirement"/>
+        </record>
+        <record model="ir.actions.act_window.view" id="relate_job_number_opportunities_tree">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="crm.crm_case_tree_view_oppor"/>
+            <field name="act_window_id" ref="relate_opportunities_job_requirement"/>
+        </record>
+        <record model="ir.actions.act_window.view" id="relate_job_number_opportunities_form">
+            <field name="sequence" eval="2"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="crm.crm_case_form_view_oppor"/>
+            <field name="act_window_id" ref="relate_opportunities_job_requirement"/>
+        </record>
+
+		<record id="view_crea8s_job_requirement_tree" model="ir.ui.view">
+            <field name="name">crea8s.job.requirement.tree</field>
+            <field name="model">crea8s.job.requirement</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <tree string="Job Requirement" fonts="bold:message_unread==True">
+                    <field name="message_unread" invisible="1"/>
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="cus_name"/>
+                    <field name="job_pos"/>
+                    <field name="sa_range"/>
+                    <field name="vacancy"/>
+                    <field name="remark"/>
+                    <field name="oportunity" invisible="1"/>
+                    <button string="Convert to Opportunities"  type="object"  name="convert_opportunity" icon="gtk-go-forward" attrs="{'invisible': [('oportunity','!=', False)]}"/>
+                </tree>
+            </field>
+        </record>
+						
+		<record id="view_crea8s_job_requirement_form" model="ir.ui.view">
+            <field name="name">crea8s.job.requirement.form</field>
+            <field name="model">crea8s.job.requirement</field>
+            <field name="arch" type="xml">
+                <form string="Job Requirement" version="7.0">
+                    <sheet>
+                    <h1>
+                        <label string="Job No. "/>
+                        <field name="name" class="oe_inline" readonly="1"/>
+                    </h1>
+                    <group colspan="4" col="4">
+                        <group colspan="4" col="2">
+                            <field name="date"/>
+		                    <field name="cus_name"/>
+		                    <field name="job_pos"/>
+		                    <field name="requirement"/>
+		                    <field name="job_des"/>
+		                    <field name="srv_pck_type"/>
+		                    <field name="wk_hour"/>
+		                    <field name="sa_range"/>
+		                    <field name="vacancy"/>
+		                    <field name="remark"/>
+                        </group>
+                    </group>
+
+	                </sheet>
+	                <div class="oe_chatter">
+	                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+	                </div>
+                </form>
+           </field>
+        </record>
+                
+        <record id="view_crea8s_job_requirement_filter" model="ir.ui.view">
+	        <field name="name">Job Number</field>
+	        <field name="model">crea8s.job.requirement</field>
+	        <field name="arch" type="xml">
+	            <search string="Search Job Number">
+	               <field name="name" string="Job No."/>
+	               <field name="job_pos"/>
+                   <field name="requirement"/>
+                   <field name="sa_range"/>
+	               <group expand="0" string="Group By...">
+	                   <filter string="Position" domain="[]" context="{'group_by':'job_pos'}"/>
+	                   <filter string="Salary Range" domain="[]" context="{'group_by':'sa_range'}"/>
+	                   <filter string="Customer" domain="[]" context="{'group_by':'cus_name'}"/>
+	               </group>
+	           </search>
+	        </field>
+	    </record>
+        
+        <record id="action_view_crea8s_job_requirement_form" model="ir.actions.act_window">
+            <field name="name">Job Number</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crea8s.job.requirement</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,</field>
+        </record>
+       
+        <menuitem id="menu_action_view_crea8s_job_requirement_form" name="Job Number" sequence="4" parent="base.menu_sales" action="action_view_crea8s_job_requirement_form"/>
+				
+    </data>
+</openerp>

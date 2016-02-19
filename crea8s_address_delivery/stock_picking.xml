@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+
+    <data noupdate="0">
+        <record id="group_procurement_tab" model="res.groups">
+            <field name="name">Show Procurement</field>
+        </record>
+    </data>
+    <data>
+        <record id="crea8s_view_purchase_order_form_inherit" model="ir.ui.view">
+            <field name="name">crea8s.purchase.order.form.inherit</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                
+            	<xpath expr="//field[@name='origin']" position="after">
+                    <!--group colspan="1" col="3">
+                        <field name="name" class="oe_inline" readonly="1" nolabel="1"/-->
+                        <field name="revision_note" string="Revision"/>
+                    <!--/group-->
+                </xpath>
+            </field>
+        </record>
+
+		<record id="crea8s_view_crea8s_so_2po_form" model="ir.ui.view">
+            <field name="name">crea8s.crea8s.so.2po.form</field>
+            <field name="model">crea8s.so.2po</field>
+            <field name="arch" type="xml">
+                <form string="Generate PO" version="7.0">
+                	<sheet>
+                		<group>
+                		    <group>
+                		    	<field name="name" invisible="1"/>
+                		    	<field name="po_ids" nolabel="1"/>
+                		    </group>
+						</group>
+					<footer>
+                        <button name="generate_po" string="OK" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+					</sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="crea8s_view_crea8s_so_2po_form_action" model="ir.actions.act_window">
+            <field name="name">Generate PO</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crea8s.so.2po</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form,tree</field>
+            <field name="target">new</field>
+        </record>
+		
+
+
+
+
+
+
+        <record id="crea8s_view_sale_order_form_inherit" model="ir.ui.view">
+            <field name="name">crea8s.sale.order.form.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="crea8s_vector_quo.view_sale_order_form_inherit"/>
+            <field name="arch" type="xml">
+                
+            	<xpath expr="//field[@name='crea8s_vec_ob_ref']" position="after">
+                        <field name="revision_note" string="Revision"/>
+                </xpath>
+                <xpath expr="//button[@name='print_quotation']" position="replace">
+                	<button name="%(crea8s_view_crea8s_so_2po_form_action)d" string="Related PO" type="action"  class="oe_highlight" context="{'sale_id':active_id}"/>
+                	<button name="action_view_po" string="View Purchase Orders" type="object"  class="oe_highlight"/>
+                </xpath>
+                
+            </field>
+        </record>
+
+        <record id="crea8s_view_picking_out_form_inherit" model="ir.ui.view">
+            <field name="name">crea8s.stock.picking.out.form.inherit</field>
+            <field name="model">stock.picking.out</field>
+            <field name="inherit_id" ref="stock.view_picking_out_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='partner_id']" position="after">
+                    <group colspan="2" col="2">
+                        <field name="other_add" attrs="{'invisible': [('is_add','&lt;&gt;',True)]}"/>
+                        <field name="is_add"/>
+                        <field name="inv_comc"/>
+                    </group>
+                </xpath>
+                <xpath expr="//button[@name='action_process']" position="after">
+                    <button name="commercial_inv" string="Commercial Invoice" type="object" class="oe_highlight"/>
+                </xpath>
+            </field>
+        </record>
+
+	<record id="crea8s_view_product_price_form_inherit" model="ir.ui.view">
+            <field name="name">crea8s.view.product.price.form.inherit</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="stock.view_product_standard_price_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='list_price']" position="replace">
+                    <group colspan="2" col="2">
+                    	<field name="list_price"/>
+                        <field name="cprice_sale" string="Sale Cost Price"/>
+                    </group>
+                </xpath>
+                <xpath expr="//page[@string='Procurements']" position="replace">
+                        <page string="Procurements" groups="crea8s_address_delivery.group_procurement_tab">
+                                <group name="procurement">
+                                    <group name="general">
+                                        <field name="procure_method" groups="base.group_user"/>
+                    			<field name="supply_method" groups="base.group_user"/> 
+                                        <field name="cost_method" groups="product.group_costing_method"/>
+                                        <field name="standard_price" attrs="{'readonly':[('cost_method','=','average')]}" string="Cost Price"/>
+                                    </group>
+                                    <group name="procurement_uom" groups="product.group_uom" string="Purchase">
+                                        <field name="uom_po_id"/>
+                                    </group>
+                                </group>
+                                <separator string="Description for Suppliers"/>
+                                <field name="description_purchase" placeholder="This note will be displayed on requests for quotation..."/>
+                            </page>
+                </xpath>
+            </field>
+        </record>
+		<record id="crea8s_view_invoice_commercial_tree" model="ir.ui.view">
+            <field name="name">crea8s.commercial.invoice.tree</field>
+            <field name="model">crea8s.invoice.commercial</field>
+            <field name="arch" type="xml">
+                <tree string="Commercial Invoice">
+                    <field name="message_unread" invisible="1"/>
+                    <field name="number"/>
+                    <field name="date"/>
+                    <field name="bill_to"/>
+                    <field name="ship_to"/>
+                    <field name="po_no"/>
+                </tree>
+            </field>
+        </record>
+
+		<record id="crea8s_view_invoice_commercial_form" model="ir.ui.view">
+            <field name="name">crea8s.ommercial.invoice.form</field>
+            <field name="model">crea8s.invoice.commercial</field>
+            <field name="arch" type="xml">
+                <form string="Commercial Invoice" version="7.0">
+                	<sheet>
+                		<h1>
+	                        <label string="Commercial Invoice "/>
+	                        <field name="number" class="oe_inline"/>
+	                    </h1>
+                		<group>
+                		    <group>
+                		    	<field name="bill_to" context="{ 'show_address': 1}" options='{"always_reload": True}'/>
+                		    	<field name="ship_to" context="{ 'show_address': 1}" options='{"always_reload": True}'/>
+                		    	<field name="po_no"/>
+                		    </group>
+                		    <group>
+                		    	<field name="date"/>
+                		    	<field name="payment_term"/>
+                		    	<field name="ship_term"/>
+                		    	<field name="requestor"/>
+ 								<field name="ship_via"/>
+ 								<field name="curcy"/>
+                		    </group>
+                		</group>
+                		<group>
+ 							<field name="line" colspan="4" nolabel="1" context="{'currency_id': curcy}">
+ 								<tree string="Invoice Line" editable="bottom">
+ 									<field name="item"/>
+ 									<field name="name"/>
+ 									<field name="qty"/>
+ 									<field name="rate"/>
+ 									<field name="amount" sum="Total"/>
+ 								</tree>
+ 							</field>
+                		</group>
+                	</sheet>
+                    <div class="oe_chatter">
+	                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+	                </div>
+                </form>
+            </field>
+        </record>
+        
+        <record id="crea8s_invoice_commercial_form_action" model="ir.actions.act_window">
+            <field name="name">Commercial Invoice</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crea8s.invoice.commercial</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+        </record>
+		
+		<menuitem action="crea8s_invoice_commercial_form_action" 
+		id="menu_crea8s_invoice_commercial_form_action" 
+		parent="stock.menu_stock_warehouse_mgmt" sequence="5"/>
+		
+        <report
+            id="crea8s_invoice_commercial"
+            model="crea8s.invoice.commercial"
+            name="rp_crea8s_invoice_commercial"
+            rml="crea8s_address_delivery/account_print_invoice.rml"
+            string="Invoice Commercial"
+            />
+
+			<report id="stock.report_picking_list_out" 
+			model="stock.picking.out" 
+			name="crea8s.vector.stock.picking.list.out" 
+			string="Delivery Slip" 
+			rml="crea8s_address_delivery/picking.rml"/>
+
+    </data>
+</openerp>

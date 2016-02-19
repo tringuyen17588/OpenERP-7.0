@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    
+	<data noupdate="0">
+        <record id="group_hidden_menu" model="res.groups">
+        <field name="name">Hidden Menu</field>
+    </record>
+	</data>
+	<data>
+		<menuitem id="base.module_mi" parent="base.menu_management" sequence="10" action="base.modules_act_cl" groups="group_hidden_menu"/>
+		<menuitem id="base.menu_module_updates" parent="base.menu_management" sequence="20" action="base.modules_updates_act_cl" groups="group_hidden_menu"/>
+	</data>
+</openerp>

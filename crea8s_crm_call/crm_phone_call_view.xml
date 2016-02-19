@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		
+        <record model="ir.ui.view" id="crea8s_crm_case_phone_form_view_inherit">
+	        <field name="name">CRM - Phone Call Form Inherit</field>
+	        <field name="model">crm.phonecall</field>
+	        <field name="inherit_id" ref="crm.crm_case_phone_form_view"/>
+	        <field name="arch" type="xml">
+	        	<xpath expr="//field[@name='partner_id']" position="replace">
+                	<field name="cnt_contact"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_mobile']" position="after">
+                	<field name="email"/>
+                	<field name="telephone"/>
+                </xpath>
+                <xpath expr="//label[@for='name']" position="attributes">
+                	<attribute name="string">Company</attribute>
+                </xpath>
+	        </field>
+	    </record>
+	    
+	    <record model="ir.ui.view" id="crea8s_crm_case_inbound_phone_tree_view_inherit">
+	        <field name="name">CRM - Logged Phone Calls Tree Inherit</field>
+	        <field name="model">crm.phonecall</field>
+	        <field name="inherit_id" ref="crm.crm_case_inbound_phone_tree_view"/>
+	        <field name="arch" type="xml">
+				<xpath expr="//field[@name='partner_id']" position="replace">
+                	<field name="telephone"/>
+                	<field name="cnt_contact"/>
+                	<field name="email"/>
+                </xpath>
+				<xpath expr="//field[@name='name']" position="attributes">
+                	<attribute name="string">Company</attribute>
+                </xpath>
+			</field>
+		</record>
+                
+                
+        <record model="ir.ui.view" id="crea8s_view_crm_case_phonecalls_filter_inherit">
+	        <field name="name">CRM - Phone Calls Search Inherit</field>
+	        <field name="model">crm.phonecall</field>
+	        <field name="inherit_id" ref="crm.view_crm_case_phonecalls_filter"/>
+	        <field name="arch" type="xml">
+				<xpath expr="//field[@name='date']" position="after">
+                	<field name="telephone"/>
+                	<field name="cnt_contact"/>
+                	<field name="email"/>
+                	<field name="opportunity_id" string="Opportunity"/>
+                	<field name="meeting_ids"/>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="replace">
+                	<field name="name" string="Company"/>
+                </xpath>
+                
+        	</field>
+    	</record>
+        
+    </data>
+</openerp>

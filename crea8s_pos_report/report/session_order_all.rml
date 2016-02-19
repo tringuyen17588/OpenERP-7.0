@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<document filename="Orders.pdf">
+  <template leftMargin="0cm" pageSize="(8.6cm,29.7cm)" title="Orders" author="Crea8s(info@crea8s.com)" allowSplitting="1">
+	<pageTemplate id="first">
+      <frame id="first" x1="0.15cm" y1="0.25cm" width="8.1cm" height="29cm"/>
+    </pageTemplate>
+  </template>
+  <stylesheet>
+    <blockTableStyle id="Table2">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+	<blockTableStyle id="Table1">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+	  
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+    </blockTableStyle>
+		<blockTableStyle id="Table3">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+    </blockTableStyle>
+    <initialize>
+      <paraStyle name="all" alignment="justify"/>
+    </initialize>
+    <paraStyle name="Standard" fontName="Helvetica"/>
+    <paraStyle name="terp_default_9" fontName="Helvetica" fontSize="8.0" leading="8" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_default_R" fontName="Helvetica" fontSize="8.0" leading="8" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_default_title" fontName="Helvetica" fontSize="8.0" leading="8" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+  </stylesheet>
+  <story>
+  <pto>
+    <para style="terp_default_8">[[repeatIn(objects,'session')]] </para>
+	<pto_header>
+	</pto_header>
+	<para style="terp_default_9">
+    </para>
+		<para style="terp_default_title"> [[ session.name and session.name or '' ]] </para>
+		<para style="terp_default_title"> [[ session.user_id and session.user_id.name or '' ]] </para>
+		<para style="terp_default_title"> From: [[ session.start_at and process_date_nomal(session.start_at)  or '' ]] To: [[ session.stop_at and process_date_nomal(session.stop_at)  or '' ]] </para>
+	<section>
+	<para style="terp_default_9">[[ repeatIn(get_order(session.id),'order') ]]</para>
+	<blockTable colWidths="8.3cm" style="Table2">
+      <tr>
+        <td>
+			
+			<para style="terp_default_title"> [[ order['name'] and order['name'] or '' ]] </para>
+			
+			<section>
+				<para style="terp_default_9">[[ repeatIn(order['order_line'],'order_line') ]]</para>
+					<blockTable colWidths="0.5cm,4.5cm,1cm,2.1cm" style="Table1">
+						<tr>
+							<td>
+								<para style="terp_default_9">   </para>
+							</td>
+							<td>
+								<para style="terp_default_9"> [[ order_line['product'] ]]  </para>
+							</td>
+							<td>
+								<para style="terp_default_R"> [[ formatLang(order_line['qty'], digits=0) ]]  </para>
+							</td>
+							<td>
+								<para style="terp_default_R"> $[[ order_line['total'] ]] </para>
+							</td>
+						</tr>
+					</blockTable>
+			</section>
+			<para style="terp_default_9">  </para>
+		</td>
+		</tr>
+	</blockTable>
+	</section>
+	<blockTable colWidths="4.5cm,1.5cm,2.3cm" style="Table3">
+		<tr>
+			<td>
+				<para style="terp_default_9">   </para>
+			</td>
+			<td>
+				<para style="terp_default_R"> TOTAL </para>
+			</td>
+			<td>
+				<para style="terp_default_R"> $[[ get_total_all(session.id) ]] </para>
+			</td>
+		</tr>
+	</blockTable>
+  </pto>
+  </story>
+</document>

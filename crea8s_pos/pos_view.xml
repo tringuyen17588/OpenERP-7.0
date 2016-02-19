@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+	        
+        <record id="crea8s_pos_order_tree_view_inherit" model="ir.ui.view">
+            <field name="name">crea8s.pos.order.tree.inherit</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='session_id']" position="after">
+                	<field name="type"/>
+                </xpath>
+                <xpath expr="//field[@name='amount_total']" position="replace">
+                	<field name="amount_total" sum="Amount total"/>
+                </xpath>
+                <xpath expr="//field[@name='date_order']" position="after">
+                	<field name="order_date" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="crea8s_pos_order_filter_view_inherit" model="ir.ui.view">
+            <field name="name">crea8s.pos.order.filter.inherit</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_order_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@string='Order Date']" position="replace">
+                	
+                	<filter string="Shift" name="shift" icon="terp-go-month" domain="[]" context="{'group_by':'type'}"/>
+                </xpath>
+		  <xpath expr="//filter[@string='Salesman']" position="replace">
+			<filter string="Order Date" name="date_default" icon="terp-go-month" domain="[]" context="{'group_by':'order_date'}"/>
+                     <filter string="Salesman" name="saleman" icon="terp-personal" domain="[]" context="{'group_by':'type'}"/>
+		</xpath>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="point_of_sale.action_pos_pos_form">
+            <field name="name">Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pos.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" eval="False"/>
+            <field name="domain">[]</field>
+            <field name="context">{'search_default_date_default':1, 'search_default_saleman':1}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a new order.
+              </p><p>
+                Use this menu to browse your preceeding orders. To record new
+                orders, you should better use the menu <i>Your Session</i> for
+                the touchscreen interface.
+              </p>
+            </field>
+        </record>
+                        		
+    </data>
+</openerp>

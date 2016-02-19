@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<report auto="False" id="report_crea8s_pos_order" model="pos.order" name="crea8s.pos.order"
+                rml="crea8s_pos_report/report/session_order_10.rml" string="Print 10 Orders"
+                usage="default"/>
+                
+        <report auto="False" id="report_crea8s_pos_order_all" model="pos.session" name="crea8s.pos.order.all"
+                rml="crea8s_pos_report/report/session_order_all.rml" string="Print Session"
+                usage="default"/>
+				
+    </data>
+</openerp>

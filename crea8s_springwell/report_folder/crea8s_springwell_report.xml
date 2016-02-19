@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    	<!-- Sale Order report -->
+		<report auto="False" id="sale.report_sale_order" model="sale.order" name="crea8s_springwell_quo01"
+                rml="crea8s_springwell/report_folder/sale_order.rml" string="Springwell Quotation / Order"
+                usage="default"/>
+                
+        <!-- Purchase Order report  -->
+		<report auto="False" id="purchase.report_purchase_order" model="purchase.order" name="crea8s_springwell_po01"
+                rml="crea8s_springwell/report_folder/purchase_order.rml" string="Springwell Quotation / Order"
+                usage="default"/>
+                
+        <!-- PO Request Order  -->
+		<!-- <report auto="False" id="crea8s_springwell_po02_id" model="purchase.order" name="crea8s_springwell_po02"
+                rml="crea8s_springwell/report_folder/purchase_request_quotation.rml" string="Springwell Request Quote"
+                usage="default"/> -->
+                
+		<!-- stock reports for model "stock.picking.in"... -->
+		<!-- <report id="report_picking_list" model="stock.picking" name="stock.picking.list" string="Picking Slip" rml="stock/report/picking.rml"/>
+        <report id="report_picking_list_in" model="stock.picking.in" name="stock.picking.list.in" string="Receipt Slip" rml="stock/report/picking.rml"/> -->
+        
+        <!-- stock reports for model "stock.picking.out"... -->
+        <!-- crea8s_springwell_stock_picking_out_id -->
+        <report id="stock.report_picking_list_out" model="stock.picking.out" 
+        	name="crea8s_springwell_stock_picking_out" string="Springwell Delivery Order" 
+        	rml="crea8s_springwell/report_folder/stock_picking.rml"/>
+	<!-- 	
+			<report id="stock.report_picking_list_out" 
+			model="stock.picking.out" 
+			name="crea8s.stock.picking.list.out.inherit" 
+			string="Delivery Oder" 
+			rml="price_list_report/report/crea8s_picking_out.rml"/>
+	 -->	
+		
+		<!-- ok, nono, SO->tab: Service Note... report  -->
+		<!-- Service Note function report  -->
+		<report auto="False" id="crea8s_springwell_so_id02" model="crea8s.sw.service.note" name="crea8s_springwell_servive_note_report_name"
+                rml="crea8s_springwell/report_folder/service_note.rml" string="Springwell Service Note"
+                usage="default"/>
+	
+		<!-- Invoice -->
+		<report auto="False" id="account.account_invoices" model="account.invoice" name="crea8s_springwell_invoice_report_name"
+                rml="crea8s_springwell/report_folder/invoice.rml" string="Springwell Invoice"
+                usage="default"/> 
+                	
+    </data>
+</openerp>
+
+

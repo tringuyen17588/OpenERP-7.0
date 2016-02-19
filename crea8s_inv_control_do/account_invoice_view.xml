@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<record id="crea8s_account_invoice_view_formdo_inherit" model="ir.ui.view">
+            <field name="name">crea8s.account.invoice.view.formdo</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+			<field name="arch" type="xml">
+			
+			<xpath expr="//button[@name='action_invoice_sent']" position="before">
+				<button name="action_view_delivery" type="object" string="Delivery Order" domain="[('id', '=', do_id)]" attrs="{'invisible': [('do_id','=', False)]}"/>
+			</xpath>
+			
+            <xpath expr="//field[@name='move_id']" position="after">
+                <field name="do_control"/>
+                <field name="do_id" attrs="{'invisible': [('do_control','!=', 'manu')]}"/>
+                <field name="lot_id" attrs="{'invisible': [('do_control','=', False)], 'required': [('do_control','in', ['before', 'after'])]}" domain="[('usage', '=', 'internal')]"/>
+            </xpath>
+            </field>
+        </record>
+        
+        <record id="account.act_open" model="workflow.activity">
+            <field name="wkf_id" ref="account.wkf"/>
+            <field name="name">open</field>
+            <field name="action">action_date_assign()
+								 action_move_create()
+								 action_number()
+								 invoice_validate()
+								 map_picking()</field>
+            <field name="kind">function</field>
+        </record>
+        
+        <record id="account.act_paid" model="workflow.activity">
+            <field name="wkf_id" ref="account.wkf"/>
+            <field name="name">paid</field>
+            <field name="action">confirm_paid()
+            					 map_picking_paid()</field>
+            <field name="kind">function</field>
+            <field name="signal_send">subflow.paid</field>
+        </record>
+		
+    </data>
+</openerp>

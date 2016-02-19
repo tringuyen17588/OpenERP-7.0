@@ -1,0 +1,413 @@
+<?xml version="1.0"?>
+<document filename="Delivery Order.pdf">
+  <template pageSize="(595.0,842.0)" title="Delivery Order" author="Crea8s(info@crea8s.com)" allowSplitting="20">
+	<pageTemplate id="first">
+      <frame id="first" x1="20.0" y1="7.0" width="538" height="828"/>
+		<header>
+	    <pageGraphics>
+			<stylesheet>
+				<paraStyle name="main_footer" fontSize="7.0" alignment="CENTER"/>
+				<paraStyle name="left_footer" fontSize="5.0" alignment="LEFT"/>
+			</stylesheet>
+			<image x="1.3cm" y="27.7cm" height="40.0" >[[ company.logo or removeParentNode('image') ]]</image>
+			<image x="11.8cm" y="27.7cm" height="40.0"> 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 </image>
+		  <image x="16.8cm" y="27.7cm" height="40.0"> iVBORw0KGgoAAAANSUhEUgAAAIIAAAA7CAIAAAA4pMUXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABfHSURBVHhe7VwHVFTntkZX1IgoSlBAOiIoCmhs0dhb9Fkwlhf1GmM0UWOi0dzElmesETUau6Ko2AB7QVAsgFKUzpRzZmCGMjCVDjPD0GbgfWf+ETEXBV2Jz7XefJdL9tnnb2d/u51hEpP6RigsLAwNDT18+PDOnTt37NjxuxF/K2BS3507T/qffPjwYVFhocHoeryg4e7du3v++OP+/XCpVFpTU1NnxD+A2tpauUweERHx559/Xr9+HRpifAMNwcHBAQEBGo2GXBrxT6O6uvrixYvHjx/XarW4ZGgICQk5c+aM/q4R7xSBgYFXrlyBYIJ64OvrW1VVRW4Y8S6BHLVv3778/HwTlARUDIPaiHeOmNiYsLAwE6QnmUxm0BnxzlFaWnrg4AETZCSEhkFnxDsHmqU9e/aYoJltaJuM+D8BmlcTvFbodDqDwoiW4e91WyMNbwwkDq1OS2hQlZZkx8SxLgQ9O+4ff+I0dfWGjMd/C4aMNLwlCkSi6E3bb0yYenPExHtTZkXP+zpmyYpHi5bd+WY5KzpaJBbrdMxLWQthpOENADfHj65Ol+LnH+je765rP/aEmTlfLMlb9rN0ww6Z78HCYwGKk+cFEY+jYmNTU1OV5eWYpWtB4TXS8CaoY2hIuHI9eNHSx3v3s06fF548J9p/NGv9lvTFP/AXr8r5ZbN8+76CiCf87Kw0LhV7+UpW1BP9vGbQPA21THQ1wScmIOqIHoTrNXUYqVcw/9Dn0Loa7YuVdXVa8vkJ7uIf2jrDLZ1hEgNGr7/GPaJmdtExLkU0jcYyO+otY0DDFAACLhuSeGPgiaq1tZhruMZg/eL4aQCjaXys52CxWAH+/nfCwx9ERz9JSIhns1npfPwvJyk550IwvXoDd8EycchdWWFhdl6ugMu5Nn+RLI2NiU2s1QjN0IDJNTpdZX19fkKi9FxwYUBg8dmg/LPBkoAgdVlZIYsjPXpafiu0Wm9cnL1Co5Fevik9fqacS2MujFel1cnvR0iOBiiintTW6ap1dfLwR5JjpwqiYvRzmGnaurridFpx4oz85NkiQWbDUQrikySHTsjDHjIf9ur5KObw8o6czNuyW3LQryAptcYw0ACNuiL/Trhk7+G8rbtFB/2UxSVYSlOhkYWE5fr+mbvVV34uWCWRYJ0qnU6lUkrPBxacOJMfEVXFHJVZQSmRiU+czTsXpFKqQNRfoFAo/P39gy9dCg0Li4yIjI2LS0pKYrM5/IyMHLFYWlyUnycW+J8VR0SVKdWyfEVhURF1yO/2/MXVlVVN2/c5mo8GHFqw6880S1fOhzaprbqkteqSamKe0LpLWZ5Y9NvONJMOaR6DK/VJEFBKpWkOfdNMOop2/IFLPFp1fV3q+BksEzNqxr+wFN4SOWOnpZm053++oIEG/L8gPjHRrDuntSV//mIYF7eU+fncPp8mm7TN3LQTh6uurRH8tjPVzoPT2iKldWeOSRdWNxfBhq2amhrcxU95hpA7xofd2ZHdugtOldjJvqy4pIzLSxs/hdPBNs2kC2ax2lhxeg/KC7yE8ZVqNXvQaLaJZXIPb5VEikNgX/6y1WkmpmlDx6o0FeCenI8AvhISfs/v4vkbDx6Ex8RExj97mpiQkppC05RQKBTlimRyWX5xcalarVQpy5XlJeVleD0uuBZyb/YC9qVrWOGl5V5G8zSUi0Rs537pXV35Ez7P3bZbvM03d/Pvor0Ha7RayW++VAc7atCYqjKGBmxTIZPRfT+BUrL7AJleDbvPmM9r310w/xsMYEidNo9ubyuct6TxsSBnLFzGM3dm2/QsfBwNjeDnX+kPreg+w5VyBS6zNvtS7az5Xd2EP/ySd/GyYONmytaT1c4669ARrFmt1fHnLqE62PIcPAVr1uWcOiu/dL08T8LpP5I2tcXvzIPHc85f4vv8i2fuwLZwloeEYk1J0BWOuSOvs3P2+i24VDyIoCxdueb2itt3mDVfbnVKlMrrBw4+3bSNtWl72t6DrMtX6MREXp4oQ5yXLRJJpVKFXF5cXKxSq8vLy9VqdUWlRqVWyf0C2Gs23Fu8vJYkjFegeRqKE5I4Nr04XZzybt4xqPRWw0/exu14cmrwmOrnNKhlMkpPg/g5DXAxzox5vPa2GfO/wR4MDdPnMzToWWmMEopKc+6TbuHCnzYv93ww19aDZ2YnCbyOWaVsim3jQXV2Eu0xLAvk7DtCtbehBo+tqKqsKCrg9hlKm9unr/yFLIuNhOu3YV+OkyceQa+rV6rV9LipfDMH7qhJlZrKqpoaeuoc0MDp0S836Co96r+otl353/xAPth5ORjq0wIvhVk6863cud1cE61co+08YgaOTljxU/bd8MKSkvzyckVxkVKJHdQVFRVKlaqiuqqiuES0YUf2uq0hU2cpMjIMCzWF5mkoS0yCRbgWTrnXQzAI+b1Kq61F1ayvF/9KaBj7VxrM7MR7DpLpDA0+83imzdDAVMT6+uwjfrRlz3S7PhwbN263nqINW4lF8vYe4XR04Dl4ic4GyaNi5A+i8yPjhIf8eN3cuQ59VZnZFXIZ5TqQ29FeeuykfkZ9taaKM3xyuplD+uwFBmLQIODMh/zoTk6c7u5FCSnQF7K4bLcBGd17Y0e+ZS963Azly3+bbMC95asemNqku/TnOHsnO3rFOno+6d47orPz3e5uMV98JY2OVdfpVBpNZWWlChxoNJDVRaXCVevzlv373oTp6XfDDQs1hRbRwLHzSHfoyxs6UThxjmDCrIwhk7J89+PW62jQRwM0qA0tiQa4HtIXSiU160ueVQ+BjQdn0LiySg3GgInsX/6HsnBJ7/Exu6NDcjur1DbWKW2sUzt055s7pnSwLWaxqhQK2nUAqJIdP0UW1CgKKM+hfDPH9JU/k41QhHGAgmt3KAtntqWz7JYhuDOPneRauGTa92Vbu0sjY5gdm7JG2JwF0RbOehr6JTt6PnP0jHXyinHyinLyvG/pfMfWPf7XzWUyOYoKaEBMMNBqFZGPM79Y/HDkJNaFYMNCTaFFNLDtPPjOXjznfjR+HPtxzV1YK9fiuGKSlIaMq1aqyOAKhYLyGso1s8vz/ROXWLSKoQG1wVYw/1tMAQ0ZpDb8Bw0wtywsnOv2Mc+yJ2XVi2vjnrlpO5RYBGFBmzulO/cXrdss2bFHsn2XdNtuybZdku17srfuUhUWanLzQANIekFDaRm//2heR4eMxd8RDYHiwiW+uROnWw/5o0hclkuk1Gc+vG49qG5uSDj8SbPRX+GQ/4mwWfPiLHtkuHwMGlKdvJIcPeMcPUHDE2evSBev+85e19t1TdmyHZ6EtzZkJ6WyHLFRUqnJ3br7bu/B7AtBhoWaQkujgfrIJc//XLVUXi2WVuWKNeXlmJCFaDCzpbw/VauUZLBKrqDdBtGm9pIDx3GJ50FSomf+i7H7F4YWqEkagCJ+OrvnAK5pd+HaX7PWbuZ1caI7O4uv3MQt8flAbicHqqubNCTsJfL0sYKTVAiE+miwb6ABfQ793wtpMwf641EaJXM84gSCZavpTo5U7wGq/PxKrZaavYDXxip9/Oe5J85QDn0Rx+lLV+vXRI/80gEffLMiyspV6DaIcmFoSHH0THDoG+PEMPHY2SvKoc99+1558c9U1dWozKUlpWUgQ6UsrFCLIx/fdvUWPA++JtEyGlAbOjvJb981qPTABNmFy3QHe8rGPWffYWVxsbKgIPu33/mWPVgWLkXxieWFhUUZmcUsiho0Lt3Ujr/4e2KyJmlAO5g+ZxHdzpoaMamiqqqqtoY3agoP3WffT9WKAk1JCbv/yHRzJ9r9k7yAQHW2qEKUK7/3kL9gaUFEFKZXCDOpl5MSc7zQeyxzR+oj5/RlK8uycpSFBbl+AZRtH25764xfmdZIfOoselnaxqMw9hkuBb9uo80duV2cxDdu4aj6V7oXiNuzPxTZ0vNTnttAjp4JJjU59I11QnbyftTJnr1qbUFlRWFhAfqlMkCtLioqkshl2ULh7YnTJSlphoWaQvM0lD6LZ5vbUx9Y5QZfNaj0gBHVxSWssZO5ptYcNBt9hrF6D0E6oj+0Fn63Bo4vWPoTu5MDbefFt+jBMrURX76OWYw/jvPhmXROn7mQxD5e8fDMspt32G2tqA4OCn0pw+LSO6HsTvZ0q67Zqzcyl5HRaT37c9vbsc3suI5elKN3WvvuqSZt0jf/jrvKjEzaqjdlYik9cEy/KrMsik3Wjj3szs68tta0oyfbYzBCDc0VPXcRWhl1fj7dcxBt8pHg3xuwArNIURHHc1jGB1ZocNXFxdA0RnZc/DX73vwBYwRewykkGdf+qc5Manrm2DfOyi2610AxTecpFGKpRIbXvHxFiUQmLyjKFOVQPCpiy3Z1eZlhoabQPA1F6elpU+ckT5ieGxPb+GRoPGDrMok4Y+1v9KgpfK8R1Mcj+dPm5hw9UVldDRNk/ubL8x5O9RvFHTU1+9CJGv17Kryev3ZTyrDPBL/vJTRAW4sEsmtf8tCJ3NXrKnVabR1sWK+pqeYtX5M2dhpr4dJylRpUFWcIhes388b5UP1HUUPG8+cuzvELQFWsq68rkypYc75KGTVZcvNO40PihLKw++kLvqEHj+V9PII3fV6u3xlEGxMrkU8SR/0Xa9rcUmEWphBvEJ04kzpuWsIEH2l8UuN1IFfX1NyaPDO29yfCweMz+o2g+3yCFivFxTsJAWFuL/Q7I5TJsrIys7OzcosK8yIfJ4yZLM0QCLKy4+LihGksw0KvQPM0wKB4GBwRvxunS5ybhC1UtTU11eXlNUqVwcFhbq0OU2o1ldWlZTW1zIsumanT1WEd8sMYmyiZDzl00GA6krKO+SCIuYetsUi1rq66FvQZBmu12upyZY1Gg1sEunpdjX46ftCYNSwLkH2xbG2FplZlOB40GKPVMW5ENoUKZ6jRMZ9/kSet0TLPpx/OgEj8u+FXHfvQwycLhkwQ9B/J6/spx31QsoUD9d1qGu/wNEVxufwsYY5MSsMn2nQVbtzGzcpMSEyo0r7avno0T4MRDQAZD9esC3PxzhjjIxg6KWPgWNrJm/fFIlZ84tPk5ISEhFQOmy3KzvTdl2bpghY/yXPY04iH+aUlhvmvhpGGN0OFWh2yYHFoD29q2CRBv9EZS1fFPop88PhxZGRETFxcLJeTefo8beuR6eAVb9XjgrWLKDUVs16E1StgpOENQJKwWqOO/Pf60Ik+cdt874SGXrl963ZISOiDB5FxsZl4sXfyTO3aM9TUOsjVk75xG+NbYlkjDW8AFAuUECKjE719L/yU/6lT/v5B58+HnDodtWjpQzPb26bdrrl4PViztihXTEY2GwqAkYa3B+yLzpTLpeIvX7v/49qw+YujN25hX75WJJW0xPSNYaThbwB6LdKDNeBNrWmk4b2AkYb3AkYa3gsYaXgvYKThvYCRhvcCRhreCxhpeC/wNjQ0/gT4fcY/dM4XH7n/fb77BjQUFxevW7fuwoULhutXoOGU5HN/gUAwevTokJAQomw5ioqLw8PDVSrDlw1aDpFINHbs2KCgoMY0XLp0ae3atd9999369evv379v0L4VsOjevXvHjR+v1WofP348YsSItLTX/YGzJXgDGk6ePGliYtKxY0el/i/sr8G2bdvwzESOjIjALH9/f3LZcpw4cQIT7927Z7huMZKTkzHxjz+Yb282YOLEiVC6u7t/9NFHEFasWGG48VaYNm0aFoFw/PhxCDExMUT/1ngDGj755JNO5ubYNfBioEH1cuATGb+tra2dnJzImtHR0Zhy7do1+I5CwXwNsjHkcnlpaanh4vkKlZWVhYWFcoX85o2bJc/vYiTCkcgEGFNUVGS40KOiogJbcLlc7HjwoOH7agQ+Pj5QqtXqqqqqcePGQebz+eQWNpVKpfq/2xqg0WigafyvZeLw0JCvowNz585t3749hDNnzmCpp0+fEj0gk0r/87+0kJ+f//p/ybOlNHDYHPJsjo6Ow4cPJ0qYuG/fvhEREZDhEZDj4+M3bdr0wQcftGvXztXV9fLly8QoI0eOtLOzgzB58mRidwTykCFDMNLU1HT58uWwDswxZcqUqVOndu3a9YcffkhMTMRGGAZbQ4nH/vDDDxcuXIi5BQUFs2fPbt8eU02///77mpoaKAMDA62srLBgnz59sNGhQ4egbAChgRgIqRXys2fMtzGQLd3c3Nq0aeNgb08y57lz5+zt7du2bQtnwgNCc/HiRTw1xuCJyMOCBhwGAqEhLi4OMm55eXlhGCZiCjTHjx8bOHAgshZSCJiA5lVgaPD19W2Whp9++gkbEAEbC4VCyLdu3YKMtNsgw+tpmra1tXV2dg4LCxOLxSAGegcHh127di1YsICMh2t07969a7dumLV161Yot2xhvrECJeSff/6ZxWKBQshJSUm7d++GEBAQgFKByoSjIsPACg8fPgwKDsYtZDy4autWrfv3748Fv/rqKygPHz6MBRswY8YMKGNjY2HrLl264IQIHR6P17p1a2SY1NTU6dOng2kenw8CPDw8QP/Ro0dzcnISEhIwEWumpKSgyHXu3Bke8+WXXzamAdMRhZiOAUiJixYtghK+guQMYfz48WfPnm0+GpqlAVkCKXXo0KHY7Pz581h667Zt0IeGhkKG6Rvk69eZb8HAH2ERZmZ9/ZMnT6An3oFyDRlWg6dDgGXJGPhjjx494NSwDqorUcLiGAMarl69CmHSpEnE6WAaXGJ9mGn//v2QERkkR8PKGAAXgfyXpDRnzhwoYXT8hk+AZigRuLhctWrVkSNHFn3F2A57IUbhcCgtpDtYunQp9AggbPf5559DRnxD2ZgGPBcRlixZgmEoPJDB934Y18QELsKc4LVoEQ2ok1iuVatW8BRkG8juvXpBf/fuXci3bzN/6kNIQr5x4wZk917u/fr1Y2Y+rw2IdMhsNhsyXAO9CgSECxkzbNiwbt26IWMgcTXQAOYw5sGDB5BPnz7dq1cvXH777bewIAQ4LKwPR4afYvENGzZASWKUoijIf6EB0YDzg6cBAwaAbGJipD6MRMZDysJqixcvRnzAiyGAMDg+Ehd2xBhMn+7jAy5haIlE8vXXXzemAfuCNgifffYZRs6cORMDuBR3586dUIIk/RFehxbRgKVBAHJCVFQUWrT58+djdUQingrCocOH4chYBDKhATkUPQmZGx3NRANMD5lYEB0X8WjSrqD24pFQMyAjq44ZM4aZ1kDDw4cN4Uy8DFkCBho0aBBREpw6dQq3SCIizuHn50duESDnQAmBnGH2nDmQiRH/kr4Q+vgtk8nABIxO+kMUHnKXAIYmJZq0c9nZ2ciQEJBgyQCCjRs3Qpnx2q/UEzA0IGuTFqVJZGVlYS34i+G6vp6ky5mzZqHYmpmZQUZRxW+A1IlZs2ZBhsOuWbMGXQRkHBd6pFfI2A4y4XLQ4MHI1KhgySkpUCLUGuxLbAR/RO6ysLCYMGECfiMXoV05duwYbpmbm6N5Q7YMDg5GC0TCBfnQxsYGAvqFxh0L6Y5InURHABnZFVke9RMyjgr07t0bPoGJCOVRo0ZBD+tjEW9vb8jeXl7wLRLlP/74IzRwlEePHkHAs8CPSReLMSjUKHJYnNCACNMf4XVgaEANfE0BAdUIcBTeBqpgCGQJPAZkmGnlypVIshDggHBzKFFCUHLhSigY+QUFyLzEI9DzQEZqgoxzI5kgeHFWErZYHxpMITKmIM/CcHl5eQh59Ejo6Bo61MjISOR0FMMDBw5gADSwIDZFDsFJkCGxEQxBBgNIgzge8XS892BlFHPIsDJcBMfAU0BTodEgVX6/YgXyEjkJAG+DBZD91qxZjbs4uUwmxywkBvIUAIYhJSDoMREviXBHXCJhoGiVlb3ua5MAHpbJaaiZeAaDzojm8JrM8XYoLSsDzUwZRHAZdEa8c6ADRE1l/utiyEvkJciIdwyktT179uAFi+kf0Ps3dPFGvEsEBQWRlyqGBnCCmoNS07i7MOIfBdoi9Hio4aQ/YmggwGsatGhC0DXjHmoR6HlrYLoRgMEczwHDogqgy9q7d++VK1cwgBj/BQ0AXi/j4+PRjKJaIGehkXo7YC7eIf+fAx02fhssose+fftgfbwwoibjbdxgdKC+/n8BAxkf83K8NC8AAAAASUVORK5CYII= </image>
+			<lines>1.2cm 2.65cm 19.9cm 2.65cm</lines>
+            <place x="1.3cm" y="0cm" height="2.55cm" width="19.0cm">
+                <para style="main_footer">[[ company.name ]]</para>
+                <para style="main_footer">Contact : [[ company.rml_footer ]] </para>
+		        <para style="main_footer"> Page: <pageNumber/></para>
+            </place>
+		</pageGraphics>
+	  </header>
+	</pageTemplate>
+  </template>
+  <stylesheet>
+    <blockTableStyle id="Standard_Outline">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table_Address_detail">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="0,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table_Title_String">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Header_Order_Reference_Tbl">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,0" stop="4,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="4,0" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,0" stop="4,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Content_Order_Reference_Table">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,0" stop="4,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Move_Line_Header">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Move_Line_Contect_Assign_State">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table1">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+	  <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="3,-1"/>
+    </blockTableStyle>
+	<blockTableStyle id="Table1b">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+	  <lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="3,0"/>
+	  <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="3,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="1,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="0,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,0" stop="2,-1"/>
+    </blockTableStyle>
+	<blockTableStyle id="Table1bll">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,0" stop="2,-1"/>
+    </blockTableStyle>
+	<blockTableStyle id="Table1bb">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+	  <lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="4,0"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,0" stop="2,-1"/>
+    </blockTableStyle>
+	<blockTableStyle id="Table1r">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,0" stop="2,-1"/>
+    </blockTableStyle>
+	<blockTableStyle id="Table1bb1">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+	  <lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="4,0"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="1,-1"/>
+	  <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="0,-1"/>
+    </blockTableStyle>
+	<blockTableStyle id="Table1bb2">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+	  <lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="4,0"/>
+    </blockTableStyle>
+	<blockTableStyle id="Table1ab2">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+	  <lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="4,0"/>
+    </blockTableStyle>
+	<blockTableStyle id="Table_noline">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table2">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,0" stop="2,0"/>
+    </blockTableStyle>
+    <initialize>
+      <paraStyle name="all" alignment="justify"/>
+    </initialize>
+    <paraStyle name="Standard" fontName="Helvetica"/>
+    <paraStyle name="Heading" fontName="Helvetica" fontSize="14.0" leading="17" spaceBefore="12.0" alignment="CENTER" spaceAfter="6.0"/>
+    <paraStyle name="Text body" fontName="Helvetica" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="List" fontName="Helvetica" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="Caption" fontName="Helvetica-Oblique" fontSize="12.0" leading="15" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="Index" fontName="Helvetica"/>
+    <paraStyle name="terp_header" fontName="Helvetica-Bold" fontSize="12.0" leading="15" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_header_Centre" fontName="Helvetica-Bold" fontSize="12.0" leading="15" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_8" fontName="Helvetica" fontSize="7.0" leading="10" alignment="JUSTIFY" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_default_8r" fontName="Helvetica" fontSize="7.0" leading="10" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_default_8c" fontName="Helvetica" fontSize="7.0" leading="10" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="note" fontName="Helvetica" fontSize="5.5" leading="7" alignment="JUSTIFY" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Bold_8" fontName="Helvetica-Bold" fontSize="8.0" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_tblheader_Details" fontName="Helvetica-Bold" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_tblheader_Details_Centre" fontName="Helvetica" fontSize="9.0" leading="11" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Centre_8" fontName="Helvetica" fontSize="8.0" leading="10" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_tblheader_General_Centre" fontName="Helvetica" fontSize="8.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_tblheader_General_Centre1" fontName="Helvetica" fontSize="8.0" leading="11" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+	<paraStyle name="terp_tblheader_General_Rightbl" fontName="Helvetica" fontSize="8.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_tblheader_General" fontName="Helvetica" fontSize="8.0" leading="10" alignment="JUSTIFY" spaceBefore="6.0" spaceAfter="6.0"/>
+	
+    <paraStyle name="terp_tblheader_General_Right" fontName="Helvetica" fontSize="10.0" leading="10" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="Table Contents" fontName="Helvetica"/>
+    <paraStyle name="Footer" fontName="Helvetica"/>
+    <paraStyle name="Table Heading" fontName="Helvetica" alignment="CENTER"/>
+    <paraStyle name="Horizontal Line" fontName="Helvetica" fontSize="6.0" leading="8" spaceBefore="0.0" spaceAfter="14.0"/>
+    <paraStyle name="Heading 9" fontName="Helvetica-Bold" fontSize="75%" leading="NaN" spaceBefore="12.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_tblheader_Details_Right" fontName="Helvetica-Bold" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+
+    <images/>
+  </stylesheet>
+  <story>
+  <pto>
+    <para style="terp_default_8">[[repeatIn(objects,'b')]] </para>
+    <section>
+	<spacer length="2cm"/>
+	<blockTable colWidths="530" rowHeights="1.5cm" style="Table_Title_String">
+	  <tr>
+        <td>
+          <para style="Heading"><b> SALE AGREEMENT </b></para>
+        </td>
+      </tr>
+	</blockTable>
+	<para style="terp_default_8">[[repeatIn([get_all(b.sale_agr_id)],'o')]] </para>
+	<section>
+	<blockTable colWidths="540" rowHeights="0.75cm" style="Table_Title_String">
+	  <tr>
+        <td>
+          <para style="terp_default_8"> This sales Agreement is made on the [[ o.date and formatLang(o.date, date=True) or '' ]] between Docu ConneX Pte Ltd, a company incorporated in Singapore and having its office at 4010 Ang Mo Kio Ave 10 #07-12 S569626 (hereinafter called DCPL) AND Customer: </para>
+        </td>
+      </tr>
+	</blockTable>
+	<blockTable colWidths="553" rowHeights="15.7" style="Table_Title_String">
+	  <tr>
+        <td>
+          <para style="terp_default_p1" backColor="black" ><font color="black">...</font><font color="white"> Customer Information </font></para>
+        </td>
+      </tr>
+	</blockTable>
+
+	<blockTable colWidths="540" style="Header_Order_Reference_Tbl">
+	  <tr>
+        <td>
+          <para style="terp_default_8"> Company Name: [[ o.partner_id and (o.partner_id.parent_id and o.partner_id.parent_id.name or (o.partner_id.name and o.partner_id.name or '')) or ''  ]] </para>
+        </td>
+      </tr>
+	</blockTable>
+
+	<blockTable colWidths="540" rowHeights="1.5cm" style="Header_Order_Reference_Tbl">
+	  <tr>
+        <td>
+          <para style="terp_default_8"> Installation Address: </para>
+		  <para style="terp_default_8"> [[ o.partner_id and display_address(o.partner_id) or ' ' ]] </para>
+        </td>
+      </tr>
+	</blockTable>
+	
+	<blockTable colWidths="150,150,120,120" style="Header_Order_Reference_Tbl">
+	  <tr>
+        <td>
+          <para style="terp_default_8"> Contact Person </para>
+		  <para style="terp_default_8"> [[ o.contact_person and o.contact_person or ' ' ]] </para>
+        </td>
+		<td>
+          <para style="terp_default_8"> Designation </para>
+		  <para style="terp_default_8"> [[ o.designation and o.designation or ' ' ]] </para>
+        </td>
+		<td>
+          <para style="terp_default_8"> Telephone No. </para>
+		  <para style="terp_default_8"> [[ o.partner_id and (o.partner_id.phone and o.partner_id.phone or '') or ''  ]] </para>
+        </td>
+		<td>
+          <para style="terp_default_8"> Fax Number </para>
+		  <para style="terp_default_8"> [[ o.partner_id and (o.partner_id.fax and o.partner_id.fax or '') or ''  ]] </para>
+        </td>
+      </tr>
+	</blockTable>
+	
+	<blockTable colWidths="553" rowHeights="15.7" style="Table_Title_String">
+	  <tr>
+        <td>
+          <para style="terp_default_p1" backColor="black" ><font color="black">...</font><font color="white"> Equipment Information   </font></para>
+        </td>
+      </tr>
+	</blockTable>
+	
+	<blockTable colWidths="50,320,170" style="Header_Order_Reference_Tbl">
+	  <tr>
+        <td>
+          <para style="terp_default_8c"><b> Item </b></para>
+        </td>
+		<td>
+          <para style="terp_default_8c"><b> Product Information </b></para>
+        </td>
+		<td>
+          <para style="terp_default_8c"><b> Total Contractual Price </b></para>
+        </td>
+      </tr>
+	</blockTable>
+	
+	<section>
+		<para style="terp_default_8">[[ repeatIn(get_line(o.line_ids),'line') ]]</para>
+		<blockTable colWidths="50,320,170" rowHeights="0.55cm" style="Header_Order_Reference_Tbl">
+		  <tr>
+			<td>
+			  <para style="terp_default_8"> [[ line['item'] and line['item'] or ' ' ]] </para>
+			</td>
+			<td>
+			  <para style="terp_default_8"> [[ line['product'] and line['product'] or ' ' ]] </para>
+			</td>
+			<td>
+			  <para style="terp_default_8r"> [[ line['total'] and '$' or '' ]] [[ line['total'] and line['total'] or ' ' ]] </para>
+			</td>
+		  </tr>
+		</blockTable>
+	</section>
+		
+	<blockTable colWidths="540" rowHeights="1.75cm" style="Header_Order_Reference_Tbl">
+	  <tr>
+        <td>
+          <para style="terp_default_8"> Special instructions </para>
+		  <para style="terp_default_8"> [[ o.spec_instruction and o.spec_instruction or ' ' ]] </para>
+        </td>
+      </tr>
+	</blockTable>
+	
+	<blockTable colWidths="108,108,108,108,108" rowHeights="2cm" style="Header_Order_Reference_Tbl">
+	  <tr>
+        <td>
+          <para style="terp_default_8"><b> Rental / Leasing / Cash </b></para>
+		  <para style="terp_default_8"> [[ o.rent_lc and o.rent_lc or ' ' ]] </para>
+        </td>
+		<td>
+          <para style="terp_default_8"><b> Deposit/Downpayment </b></para>
+		  <para style="terp_default_8"> [[ o.deposit_down and (o.currency_id and o.currency_id.symbol or '') or '' ]] [[ o.deposit_down and o.deposit_down or ' ' ]] </para>
+        </td>
+		<td>
+          <para style="terp_default_8"><b> Monthly Payment </b></para>
+		  <para style="terp_default_8"> [[ o.monthly_payment and (o.currency_id and o.currency_id.symbol or '') or '' ]] [[ o.monthly_payment and o.monthly_payment or ' ' ]] </para>
+        </td>
+		<td>
+          <para style="terp_default_8"><b> Term </b></para>
+		  <para style="terp_default_8"> [[ o.term and o.term or ' ' ]] </para>
+        </td>
+		<td>
+          <para style="terp_default_8"><b> Final Payment </b></para>
+		  <para style="terp_default_8"> [[ o.final_payment and (o.currency_id and o.currency_id.symbol or '') or '' ]] [[ o.final_payment and o.final_payment or ' ' ]] </para>
+        </td>
+      </tr>
+	</blockTable>
+	
+	<blockTable colWidths="108,108,108,108,108" rowHeights="2cm" style="Header_Order_Reference_Tbl">
+	  <tr>
+        <td>
+          <para style="terp_default_8"><b> B &amp; W Copy Charge </b></para>
+		  <para style="terp_default_8"> [[ o.bw_copy_charge and (o.currency_id and o.currency_id.symbol or '') or '' ]] [[ o.bw_copy_charge and o.bw_copy_charge or ' ' ]] </para>
+        </td>
+		<td>
+          <para style="terp_default_8"><b> Colour Copy Charge </b></para>
+		  <para style="terp_default_8"> [[ o.color_copy_charge and (o.currency_id and o.currency_id.symbol or '') or '' ]] [[ o.color_copy_charge and o.color_copy_charge or ' ' ]] </para>
+        </td>
+		<td>
+          <para style="terp_default_8"><b> Sales Consultant </b></para>
+		  <para style="terp_default_8"> [[ o.sale_consultant and o.sale_consultant or ' ' ]] </para>
+        </td>
+		<td>
+          <para style="terp_default_8"><b> Amount Received </b></para>
+		  <para style="terp_default_8"> [[ o.amount_receive and (o.currency_id and o.currency_id.symbol or '') or '' ]] [[ o.amount_receive and o.amount_receive or ' ' ]] </para>
+        </td>
+		<td>
+          <para style="terp_default_8"><b> Cash / Cheque Number </b></para>
+		  <para style="terp_default_8"> [[ o.cash_cheque_num and o.cash_cheque_num or ' ' ]] </para>
+        </td>
+      </tr>
+	</blockTable>
+	<blockTable colWidths="540" style="Table_Title_String">
+	  <tr>
+        <td>
+          <para style="terp_default_8"> All payments to be made payable to <b> Docu ConneX Pte Ltd </b> and all pricing are subject to Good and Services Tax at the prevailing rate. </para>
+        </td>
+      </tr>
+	</blockTable>
+	<blockTable colWidths="540" style="Table_Title_String">
+	  <tr>
+        <td>
+          <para style="terp_default_8"> Should the customer decide for whatever reason not to proceed with this agreement before the installation/delivery of the said equipment by DCPL, the customer shall compensate DCPL 20% of the total contractual value or the deposit paid, whichever is higher, being an estimated loss to be incurred by DCPL under this agreement. Upon receipt of this settlement, either parties should not have claims upon each other on this agreement and each party shall revert to their prior position. For rental or financing schemes, customers are to provide the necessary documents for the finance company's assessments. All hardware and software sold are being warranted by the manufacturer, if any. </para>
+        </td>
+      </tr>
+	</blockTable>
+	</section>
+	<blockTable colWidths="267,267" style="Header_Order_Reference_Tbl">
+		  <tr>
+			<td>
+			  <para style="terp_tblheader_General_Centre1"><b> Signed on behalf of </b></para>
+			  <para style="terp_tblheader_General_Centre1"><b> DOCU CONNEX PTE LTD </b></para>
+			  <spacer length="0.25cm"/>
+			  <blockTable colWidths="67,200" style="Table_Title_String">
+				  <tr>
+					<td>
+					  <para style="terp_tblheader_General_Centre"> Signed: </para>
+					  <spacer length="0.25cm"/>
+					  <para style="terp_tblheader_General_Centre"> Name: </para>
+					  <spacer length="0.25cm"/>
+					  <para style="terp_tblheader_General_Centre"> Designation: </para>
+					</td>
+					<td>
+					  <para style="terp_tblheader_General_Centre"> _________________________________ </para>
+					  <spacer length="0.25cm"/>
+					  <para style="terp_tblheader_General_Centre"> _________________________________ </para>
+					  <spacer length="0.25cm"/>
+					  <para style="terp_tblheader_General_Centre"> _________________________________ </para>
+					</td>
+				  </tr>
+				</blockTable>
+			</td>
+			<td>
+			  <para style="terp_tblheader_General_Centre1"><b> Signed on behalf of Customer </b></para>
+			  
+					  <spacer length="0.7cm"/>
+				<blockTable colWidths="67,200" style="Table_Title_String">
+				  <tr>
+					<td>
+					  <para style="terp_tblheader_General_Centre"> Signed: </para>
+					  <spacer length="0.25cm"/>
+					  <para style="terp_tblheader_General_Centre"> Name: </para>
+					  <spacer length="0.25cm"/>
+					  <para style="terp_tblheader_General_Centre"> Designation: </para>
+					  <spacer length="0.25cm"/>
+					  <para style="terp_tblheader_General_Centre"> Co Stamp: </para>
+					</td>
+					<td>
+					  <para style="terp_tblheader_General_Centre"> _________________________________ </para>
+					  <para style="note"> (Must be signed by duly authoried represntative of Customer) </para>
+					  <spacer length="0.05cm"/>
+					  <para style="terp_tblheader_General_Centre"> _________________________________ </para>
+					  <spacer length="0.25cm"/>
+					  <para style="terp_tblheader_General_Centre"> _________________________________ </para>
+					  <spacer length="0.25cm"/>
+					  <para style="terp_tblheader_General_Centre"> _________________________________ </para>
+					</td>
+				  </tr>
+				</blockTable>
+			  </td>
+		  </tr>
+		</blockTable>
+		</section>
+  </pto>
+  </story>
+</document>
